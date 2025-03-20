@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     <Box
       component="section"
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -17,10 +17,12 @@ const Hero: React.FC = () => {
         bgcolor: "#000",
         color: "#fff",
         px: 2,
+        position: "relative",
+        overflow: "hidden",
       }}
     >
       <Helmet>
-        <title>Transforming BFSI with AI-Powered Innovation | RxSynapse</title>
+        <title>RxSynapse | Transforming BFSI with AI-Powered Innovation</title>
         <meta
           name="description"
           content="RxSynapse specializes in AI-driven solutions for BFSI, including automation, integration, migration, strategic analysis, and reporting."
@@ -45,11 +47,10 @@ const Hero: React.FC = () => {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.25, // 25% opacity
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.25 }}
-        transition={{ duration: 1 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 2 }}
       />
 
       {/* Title */}
@@ -58,6 +59,7 @@ const Hero: React.FC = () => {
         variant="h3"
         fontWeight="bold"
         sx={{ mt: 3, maxWidth: "600px" }}
+        zIndex={1}
       >
         Transforming BFSI with AI-Powered Innovation
       </Typography>

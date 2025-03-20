@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
             },
           }}
         >
-          <img src="/logo/white.png" alt="RxSynapse Logo" />
+          <img src="/logo/rxsynapse-white-logo.png" alt="RxSynapse Logo" />
           RxSynapse
         </Typography>
       </Box>

@@ -1,59 +1,45 @@
 import { Helmet } from "react-helmet-async";
 
-export default function SEO() {
+interface SEOProps {
+  title: string;
+  description?: string;
+  url?: string;
+  image?: string;
+}
+
+const SEO = ({ title, description, url, image }: SEOProps) => {
+  const siteUrl = "https://rxsynapse.com";
+  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
+  const defaultImage = `${siteUrl}/images/og-image-square.jpg`;
+
   return (
     <Helmet>
-      <title>RxSynapse | AI-Powered BFSI Innovation</title>
-      <meta
-        name="description"
-        content="RxSynapse leverages AI to transform BFSI with automation, integration, migration, strategic analysis, and reporting."
-      />
-      <meta
-        name="keywords"
-        content="AI, BFSI, Automation, Integration, Migration, AI Strategy"
-      />
-      <meta name="author" content="RxSynapse" />
+      {/* ✅ Dynamic Title & Description */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
 
-      {/* Open Graph (Facebook, LinkedIn) */}
-      <meta
-        property="og:title"
-        content="RxSynapse | AI-Powered BFSI Transformation"
-      />
-      <meta
-        property="og:description"
-        content="Leading AI-driven solutions for BFSI with automation, integration, and strategic analysis."
-      />
-      <meta property="og:image" content="/images/og-image.jpg" />
-      <meta property="og:url" content="https://rxsynapse.com" />
+      {/* ✅ Open Graph Meta Tags (For Facebook, LinkedIn) */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image || defaultImage} />
+      <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
 
-      <meta property="og:image" content="/images/og-image-square.jpg" />
-      <meta property="og:image:width" content="1080" />
-      <meta property="og:image:height" content="1080" />
-
-      {/* Twitter Meta Tags */}
+      {/* ✅ Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="RxSynapse | AI-Powered BFSI Transformation"
-      />
-      <meta
-        name="twitter:description"
-        content="Leading AI-driven solutions for BFSI."
-      />
-      <meta name="twitter:image" content="/images/twitter-card.jpg" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image || defaultImage} />
 
+      {/* ✅ JSON-LD Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "RxSynapse",
-          url: "https://rxsynapse.com",
-          logo: "https://rxsynapse.com/logo.png",
-          description:
-            "RxSynapse provides AI-driven solutions for BFSI with automation, integration, migration, and strategic analysis.",
+          url: fullUrl,
+          logo: `${siteUrl}/logo.png`,
+          description: description,
           sameAs: [
             "https://linkedin.com/company/rxsynapse",
             "https://twitter.com/rxsynapse",
@@ -62,4 +48,6 @@ export default function SEO() {
       </script>
     </Helmet>
   );
-}
+};
+
+export default SEO;
