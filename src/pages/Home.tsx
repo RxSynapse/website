@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import { Box } from "@mui/material";
 import ContactUs from "../components/ContactUs";
 import SEO from "../components/SEO";
+import Services from "../components/Services";
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       />
       <Navbar />
       <Hero />
+      <Services />
       <ContactUs />
     </Box>
   );
