@@ -15,7 +15,6 @@ import {
   Insights,
   AutoAwesome,
 } from "@mui/icons-material";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
 const services = [
@@ -60,28 +59,7 @@ const services = [
 const Services: React.FC = () => {
   return (
     <>
-      {/* SEO Optimization */}
-      <Helmet>
-        <title>Our Services | RxSynapse - AI-Powered BFSI Solutions</title>
-        <meta
-          name="description"
-          content="Explore RxSynapse's AI-driven BFSI solutions including automation, integration, migration, risk analysis, and compliance reporting."
-        />
-        <meta
-          name="keywords"
-          content="BFSI, AI in Finance, Automation, Risk Management, Compliance, Data Migration"
-        />
-        <meta
-          property="og:title"
-          content="Our Services | RxSynapse - AI-Powered BFSI Solutions"
-        />
-        <meta
-          property="og:description"
-          content="Transform BFSI with AI-powered automation, data migration, and strategic insights."
-        />
-      </Helmet>
-
-      <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Container component="section" maxWidth="lg" sx={{ py: 8 }}>
         <Typography variant="h4" component="h2" align="center" gutterBottom>
           Our Services
         </Typography>

@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  setContactOpen: (state: boolean) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ setContactOpen }) => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <Box
       component="section"
@@ -21,25 +26,12 @@ const Hero: React.FC = () => {
         overflow: "hidden",
       }}
     >
-      <Helmet>
-        <title>RxSynapse | Transforming BFSI with AI-Powered Innovation</title>
-        <meta
-          name="description"
-          content="RxSynapse specializes in AI-driven solutions for BFSI, including automation, integration, migration, strategic analysis, and reporting."
-        />
-        <meta
-          name="keywords"
-          content="AI BFSI, automation, fintech, strategic analysis, reporting"
-        />
-      </Helmet>
-      {/* Background Video */}
-      <motion.video
-        src="/hero/background.mp4"
-        onLoadedMetadata={(e) => (e.currentTarget.playbackRate = 0.75)}
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* Background Image  */}
+      <motion.img
+        src="/hero/background-placeholder.png"
+        alt="Background"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: videoLoaded ? 0 : 0.5 }}
         style={{
           position: "absolute",
           top: 0,
@@ -48,9 +40,27 @@ const Hero: React.FC = () => {
           height: "100%",
           objectFit: "cover",
         }}
+      />
+
+      {/* Background Video  */}
+      <motion.video
+        src="/hero/background.mp4"
+        onCanPlayThrough={() => setVideoLoaded(true)}
+        onLoadedMetadata={(e) => (e.currentTarget.playbackRate = 0.75)}
+        autoPlay
+        loop
+        muted
+        playsInline
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ duration: 2 }}
+        animate={{ opacity: videoLoaded ? 0.5 : 0 }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
       />
 
       {/* Title */}
@@ -87,6 +97,7 @@ const Hero: React.FC = () => {
           borderRadius: "8px",
           "&:hover": { bgcolor: "#0056b3" },
         }}
+        onClick={() => setContactOpen(true)}
       >
         Get Started Today
       </Button>

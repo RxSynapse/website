@@ -13,41 +13,43 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Helmet } from "react-helmet-async";
 
-const navItems: string[] = [];
+interface NavbarProps {
+  setContactOpen: (state: boolean) => void;
+}
 
-const Navbar: React.FC = () => {
+const navItems = [
+  { label: "Services", id: "services" },
+  { label: "About Us", id: "about-us" },
+];
+
+const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", p: 2 }}>
-      <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: 1 }}>
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: "bold",
-            display: "flex",
-            alignItems: "center",
-            "& img": {
-              height: "1.2em",
-              marginRight: "8px",
-            },
-          }}
-        >
-          <img src="/logo/rxsynapse-white-logo.png" alt="RxSynapse Logo" />
-          RxSynapse
-        </Typography>
-      </Box>
+      <Typography variant="h6" fontWeight="bold">
+        RxSynapse
+      </Typography>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+        {navItems.map(({ label, id }) => (
+          <ListItem key={id} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => handleScroll(id)}
+            >
+              <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -57,20 +59,8 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <meta property="og:title" content="RxSynapse - AI Innovation in BFSI" />
-        <meta
-          property="og:description"
-          content="RxSynapse provides AI-driven solutions for BFSI, enhancing automation, migration, and strategic reporting."
-        />
-        <meta property="og:image" content="/logo/white.png" />
-        <meta property="og:url" content="https://www.rxsynapse.com" />
-      </Helmet>
-
-      {/* Top Navigation */}
       <AppBar position="sticky" sx={{ bgcolor: "#000", color: "#fff" }}>
         <Toolbar>
-          {/* Mobile Menu Button */}
           <IconButton
             edge="start"
             color="inherit"
@@ -82,35 +72,19 @@ const Navbar: React.FC = () => {
           </IconButton>
 
           {/* Logo */}
-          <Box
-            sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: 1 }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                display: "flex",
-                alignItems: "center",
-                "& img": {
-                  height: "1.2em",
-                  marginRight: "8px",
-                },
-              }}
-            >
-              <img
-                src="/logo/rxsynapse-white-logo.png"
-                alt="RxSynapse AI BFSI Logo"
-                loading="lazy"
-              />
-              RxSynapse
-            </Typography>
-          </Box>
+          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold" }}>
+            RxSynapse
+          </Typography>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+            {navItems.map(({ label, id }) => (
+              <Button
+                key={id}
+                sx={{ color: "#fff" }}
+                onClick={() => handleScroll(id)}
+              >
+                {label}
               </Button>
             ))}
           </Box>
@@ -124,8 +98,7 @@ const Navbar: React.FC = () => {
               ml: 2,
               "&:hover": { bgcolor: "#0056b3" },
             }}
-            component="a"
-            href="/get-started"
+            onClick={() => setContactOpen(true)}
           >
             Get Started
           </Button>

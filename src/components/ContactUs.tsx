@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   Box,
   Button,
@@ -8,31 +6,20 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-
 import ChatIcon from "@mui/icons-material/Chat";
 
-const ContactUs = () => {
-  const [open, setOpen] = useState(false);
+interface ContactUsProps {
+  open: boolean;
+  setContactOpen: (state: boolean) => void;
+}
+
+const ContactUs: React.FC<ContactUsProps> = ({ open, setContactOpen }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Detects mobile screens
   const calendlyLink = "https://calendly.com/kuduwa-keshavram/30min";
 
   return (
     <>
-      {/* ✅ SEO Optimization */}
-      <Helmet>
-        <meta
-          name="description"
-          content="Schedule a meeting with us instantly using our integrated Calendly booking system."
-        />
-        <meta property="og:title" content="Contact Us - Schedule a Meeting" />
-        <meta
-          property="og:description"
-          content="Easily book a meeting with our team through Calendly."
-        />
-        <meta property="og:url" content="https://yourwebsite.com/contact" />
-      </Helmet>
-
       {/* ✅ Floating Button */}
       <Box
         sx={{
@@ -43,13 +30,13 @@ const ContactUs = () => {
         }}
       >
         {isMobile ? (
-          <ChatIcon onClick={() => setOpen(true)} />
+          <ChatIcon onClick={() => setContactOpen(true)} />
         ) : (
           <Button
             variant="contained"
             color="primary"
             startIcon={<ChatIcon />}
-            onClick={() => setOpen(true)}
+            onClick={() => setContactOpen(true)}
           >
             Contact Us
           </Button>
@@ -59,7 +46,7 @@ const ContactUs = () => {
       {/* ✅ Contact Modal */}
       <Dialog
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => setContactOpen(false)}
         maxWidth="sm"
         fullWidth
       >
