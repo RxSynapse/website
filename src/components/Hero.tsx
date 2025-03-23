@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ setContactOpen }) => {
     >
       {/* Background Image  */}
       <motion.img
-        src="/hero/background-placeholder.png"
+        src="/hero/background-placeholder.webp"
         alt="Background"
         initial={{ opacity: 0 }}
         animate={{ opacity: videoLoaded ? 0 : 0.5 }}

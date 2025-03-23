@@ -44,11 +44,8 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
       </Typography>
       <List>
         {navItems.map(({ label, id }) => (
-          <ListItem key={id} disablePadding>
-            <ListItemButton
-              sx={{ textAlign: "center" }}
-              onClick={() => handleScroll(id)}
-            >
+          <ListItem key={id} disablePadding onClick={() => handleScroll(id)}>
+            <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>

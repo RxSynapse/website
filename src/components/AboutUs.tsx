@@ -56,7 +56,7 @@ const AboutUs: React.FC = () => {
     >
       {/* Background Image  */}
       <motion.img
-        src="/about-us/background-placeholder.jpg"
+        src="/about-us/background-placeholder.webp"
         alt="Background"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.0625 }}
@@ -140,7 +140,7 @@ const AboutUs: React.FC = () => {
         Why Choose RxSynapse?
       </Typography>
 
-      <Grid container spacing={4} sx={{ maxWidth: "1000px", mx: "auto" }}>
+      <Grid container spacing={4} sx={{ maxWidth: "1000px" }}>
         {advantages.map((advantage, idx) => (
           <Grid
             item
