@@ -140,7 +140,7 @@ const AboutUs: React.FC = () => {
         Why Choose RxSynapse?
       </Typography>
 
-      <Grid container spacing={4} sx={{ maxWidth: "1000px" }}>
+      <Grid container sx={{ maxWidth: "1000px", mx: "auto" }}>
         {advantages.map((advantage, idx) => (
           <Grid
             item
