@@ -69,7 +69,20 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
           </IconButton>
 
           {/* Logo */}
-          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              flexGrow: 1,
+              fontWeight: "bold",
+              display: "flex",
+              alignItems: "center",
+              "& img": {
+                height: "1.2em",
+                marginRight: "8px",
+              },
+            }}
+          >
+            <img src="/logo/rxsynapse-white-logo.png" alt="RxSynapse Logo" />
             RxSynapse
           </Typography>
 
