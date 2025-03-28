@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import Navbar from "../components/Navbar";
+import React from "react";
 import Hero from "../components/home/Hero";
 import { Box } from "@mui/material";
-import ContactUs from "../components/ContactUs";
 import SEO from "../components/SEO";
 import Services from "../components/home/Services";
 import AboutUs from "../components/home/AboutUs";
-import Footer from "../components/Footer";
 
-const Home: React.FC = () => {
-  const [isContactOpen, setContactOpen] = useState(false);
+interface HomeProps {
+  setContactOpen: (state: boolean) => void;
+}
 
+const Home: React.FC<HomeProps> = ({ setContactOpen }) => {
   return (
     <Box
       sx={{ minHeight: "100vh", overflowY: "auto", scrollBehavior: "smooth" }}
@@ -21,7 +20,6 @@ const Home: React.FC = () => {
         image="/images/og-image-square.jpg"
         url="/"
       />
-      <Navbar setContactOpen={(state) => setContactOpen(state)} />
       <Box id="hero">
         <Hero setContactOpen={(state) => setContactOpen(state)} />
       </Box>
@@ -30,13 +28,6 @@ const Home: React.FC = () => {
       </Box>
       <Box id="about-us">
         <AboutUs />
-      </Box>
-      <Footer />
-      <Box id="contact-us">
-        <ContactUs
-          open={isContactOpen}
-          setContactOpen={(state) => setContactOpen(state)}
-        />
       </Box>
     </Box>
   );

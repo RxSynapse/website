@@ -75,7 +75,22 @@ export default () => {
                 The system automatically detects issues, recommends actions, and
                 surfaces insights that would be impossible to find manually.
               </Typography>
-              <Button variant="outlined" size="large" sx={{ mt: 2 }}>
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{ mt: 2 }}
+                onClick={() => {
+                  const section: HTMLElement | null = document.getElementById(
+                    "analytics-dashboard-demo"
+                  );
+                  if (section) {
+                    section.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                }}
+              >
                 Explore Dashboard Features
               </Button>
             </Grid>

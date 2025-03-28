@@ -78,7 +78,8 @@ const Hero: React.FC = () => {
         variant="h6"
         sx={{ mt: 2, maxWidth: "600px", opacity: 0.8 }}
       >
-        AI-powered solutions that transform customer interactions from cost centers to strategic assets
+        AI-powered solutions that transform customer interactions from cost
+        centers to strategic assets
       </Typography>
 
       {/* CTA Button */}
@@ -93,6 +94,13 @@ const Hero: React.FC = () => {
           py: 1.5,
           borderRadius: "8px",
           "&:hover": { bgcolor: "#0056b3" },
+        }}
+        onClick={() => {
+          const section: HTMLElement | null =
+            document.getElementById("analytics-demo");
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         }}
       >
         View Demo

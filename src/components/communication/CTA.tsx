@@ -1,6 +1,10 @@
 import { Container, Typography, Button } from "@mui/material";
 
-export default () => {
+interface CtaProps {
+  setContactOpen: (state: boolean) => void;
+}
+
+export default ({ setContactOpen }: CtaProps) => {
   return (
     <>
       <Container maxWidth="lg" sx={{ py: 8, textAlign: "center" }}>
@@ -20,7 +24,12 @@ export default () => {
           Discover how RxSynapse can revolutionize your customer interactions
           and drive measurable business results.
         </Typography>
-        <Button variant="contained" size="large" sx={{ mt: 3, px: 5, py: 1.5 }}>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ mt: 3, px: 5, py: 1.5 }}
+          onClick={() => setContactOpen(true)}
+        >
           Schedule a Consultation
         </Button>
       </Container>

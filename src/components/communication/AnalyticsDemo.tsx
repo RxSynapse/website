@@ -12,6 +12,8 @@ import {
   Divider,
   Box,
   IconButton,
+  styled,
+  keyframes,
 } from "@mui/material";
 import {
   PlayArrow,
@@ -71,6 +73,20 @@ const AnalyticsDemo = () => {
   const [identifiedSpeakers, setIdentifiedSpeakers] = useState<SpeakerInfo[]>(
     []
   );
+
+  const pulse = keyframes`
+  0% { box-shadow: 0 0 0 0 rgba(25, 118, 210, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(25, 118, 210, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(25, 118, 210, 0); }
+`;
+
+  const PulsingButton = styled(IconButton)(({ disabled }) => ({
+    animation: !disabled ? `${pulse} 1.5s infinite` : "none",
+    "&:hover": {
+      animation: "none",
+      backgroundColor: "#1565c0",
+    },
+  }));
 
   // Refs for WaveSurfer
   const waveformRef = useRef<HTMLDivElement>(null);
@@ -529,13 +545,13 @@ const AnalyticsDemo = () => {
                 Real-Time Analysis Demo
               </Typography>
               <Box display="flex" alignItems="center" gap={2}>
-                <IconButton
+                <PulsingButton
                   color="primary"
                   onClick={startAnalysis}
                   disabled={isAnalyzing || !isWaveformReady}
                 >
                   <PlayArrow />
-                </IconButton>
+                </PulsingButton>
                 <IconButton
                   color="secondary"
                   onClick={pauseAnalysis}
