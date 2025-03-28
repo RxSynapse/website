@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 import { Box } from "@mui/material";
 import ContactUs from "../components/ContactUs";
 import SEO from "../components/SEO";
-import Services from "../components/Services";
-import AboutUs from "../components/AboutUs";
+import Services from "../components/home/Services";
+import AboutUs from "../components/home/AboutUs";
 import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
