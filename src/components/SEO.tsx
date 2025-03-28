@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const defaultKeywords =
-  "AI in BFSI, AI-driven BFSI solutions, AI in financial services, AI-powered banking solutions, AI automation in fintech, Fintech automation, BFSI digital transformation, AI automation for banking, AI-driven compliance automation, Financial process automation, AI in risk management, AI-powered risk assessment, AI for fraud detection in finance, AI for regulatory compliance, BFSI compliance automation, AI risk analysis for banks, AI for financial data migration, AI-driven data analytics for BFSI, Secure data migration for BFSI, AI-powered financial reporting, Automated reporting for banks, AI-driven strategic analysis in BFSI, AI chatbots for BFSI, AI in customer engagement for banks";
+  "RxSynapse, Reactive Synapse, AI in BFSI, AI-driven banking solutions, Financial services automation, AI-powered fintech, Digital transformation in banking, Regulatory compliance automation, AI risk management, Fraud detection AI, Financial data migration, AI analytics for finance, Automated financial reporting, AI chatbots for banking, Customer engagement AI, AI process optimization, Intelligent banking systems, Machine learning in finance, Cognitive computing for banks, AI-powered decision making, Financial predictive analytics, Smart banking technologies";
 
 const SEO = ({
   title,

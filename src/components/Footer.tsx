@@ -12,19 +12,47 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const footerLinks = [
-  { label: "Services", id: "services" },
-  { label: "About Us", id: "about-us" },
+  { label: "Services", path: "/", id: "services" },
+  { label: "About Us", path: "/", id: "about-us" },
+  { label: "Rx-Communication", path: "/communication", id: "hero" },
 ];
 
 export default function Footer() {
-  const handleScroll = (id: string) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path: string, id: string) => {
+    if (location.pathname !== path) {
+      // Navigate to the new page first
+      navigate(path, { state: { scrollTo: id } });
+    } else if (id) {
+      // Already on the correct page, just scroll to section
+      scrollToSection(id);
+    }
+  };
+
+  const scrollToSection = (id: string) => {
+    if (!id) return;
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  // Handle scroll after navigation
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        scrollToSection(location.state.scrollTo);
+        // Clear the scroll state after handling it
+        navigate(location.pathname, { replace: true, state: {} });
+      }, 100);
+    }
+  }, [location, navigate]);
 
   return (
     <Box component="footer" sx={{ bgcolor: "#121212", color: "white", py: 4 }}>
@@ -64,14 +92,21 @@ export default function Footer() {
             <Typography variant="h6" fontWeight="bold">
               Quick Links
             </Typography>
-            {footerLinks.map(({ label, id }) => (
-              <Typography
-                key={id}
-                sx={{ cursor: "pointer", my: 1 }}
-                onClick={() => handleScroll(id)}
-              >
-                {label}
-              </Typography>
+            {footerLinks.map(({ label, path, id }) => (
+              <Box key={`${path}-${id}`} sx={{ my: 1 }}>
+                <Typography
+                  sx={{
+                    cursor: "pointer",
+                    display: "inline-block",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
+                  onClick={() => handleNavigation(path, id)}
+                >
+                  {label}
+                </Typography>
+              </Box>
             ))}
           </Grid>
 
@@ -80,12 +115,6 @@ export default function Footer() {
             <Typography variant="h6" fontWeight="bold">
               Contact
             </Typography>
-            {/* <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
-              📍 123 AI Boulevard, Tech City, USA
-            </Typography> */}
-            {/* <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
-              📞 +1 (800) 123-4567
-            </Typography> */}
             <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
               ✉️ contact@rxsynapse.com
             </Typography>
