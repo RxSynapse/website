@@ -937,7 +937,11 @@ const AnalyticsDashboardDemo = () => {
                                 ["Positive", "Neutral", "Positive"][item - 1]
                               }
                               size="small"
-                              color={["success", "info", "success"][item - 1]}
+                              color={
+                                (["success", "info", "success"] as const)[
+                                  item - 1
+                                ]
+                              }
                             />
                             <Typography variant="body2">
                               Score: {[92, 85, 89][item - 1]}/100
