@@ -20,7 +20,7 @@ const SEO = ({
 }: SEOProps) => {
   const siteUrl = "https://rxsynapse.com";
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-  const defaultImage = `${siteUrl}/images/og-image-square.jpg`;
+  const defaultImage = `${siteUrl}${image || "/images/og-image.jpg"}`;
 
   return (
     <Helmet>
@@ -34,7 +34,9 @@ const SEO = ({
       {/* ✅ Open Graph Meta Tags */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image || defaultImage} />
+      <meta property="og:image" content={defaultImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
 
@@ -54,6 +56,7 @@ const SEO = ({
           logo: `${siteUrl}/logo.png`,
           description: description,
           sameAs: [
+            "https://facebook.com/rxsynapse",
             "https://linkedin.com/company/rxsynapse",
             "https://twitter.com/rxsynapse",
           ],

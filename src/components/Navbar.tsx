@@ -6,7 +6,6 @@ import {
   IconButton,
   Typography,
   Button,
-  Drawer,
   List,
   ListItem,
   ListItemButton,
@@ -15,6 +14,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import { Link } from "react-router-dom";
+const Drawer = React.lazy(() => import("@mui/material/Drawer"));
 
 interface NavbarProps {
   setContactOpen: (state: boolean) => void;
@@ -30,7 +30,11 @@ const navItems: NavItem[] = [
   { label: "Services", path: "/", id: "services" },
   { label: "About Us", path: "/", id: "about-us" },
   { label: "Rx-Market", path: "/market", id: "market-hero" },
-  { label: "Rx-Communication", path: "/communication", id: "communication-hero" },
+  {
+    label: "Rx-Communication",
+    path: "/communication",
+    id: "communication-hero",
+  },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
@@ -71,7 +75,12 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
             disablePadding
             onClick={() => handleNavigation(path, id)}
           >
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              component={Link}
+              to={path}
+              state={{ scrollTo: id }}
+              sx={{ textAlign: "center" }}
+            >
               <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>
@@ -82,7 +91,11 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ bgcolor: "#000", color: "#fff" }}>
+      <AppBar
+        component="nav"
+        position="sticky"
+        sx={{ bgcolor: "#000", color: "#fff" }}
+      >
         <Toolbar>
           <IconButton
             edge="start"
@@ -97,6 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
           {/* Logo with link to home */}
           <Link
             to="/"
+            rel="canonical"
             style={{ textDecoration: "none", color: "inherit", flexGrow: 1 }}
           >
             <Typography
@@ -112,18 +126,26 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
                 },
               }}
             >
-              <img src="/logo/rxsynapse-white-logo.png" alt="RxSynapse Logo" />
+              <img
+                src="/logo/rxsynapse-white-logo.png"
+                alt="RxSynapse - AI-Powered BFSI Solutions"
+              />
               RxSynapse
             </Typography>
           </Link>
 
           {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map(({ label, id, path }: NavItem) => (
+          <Box
+            sx={{ display: { xs: "none", sm: "block" } }}
+            aria-label="Desktop navigation"
+          >
+            {navItems.map(({ label, id, path }) => (
               <Button
                 key={id}
+                component={Link}
+                to={path}
+                state={{ scrollTo: id }}
                 sx={{ color: "#fff" }}
-                onClick={() => handleNavigation(path, id)}
               >
                 {label}
               </Button>
@@ -147,14 +169,11 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
       </AppBar>
 
       {/* Mobile Drawer */}
-      <Drawer
-        anchor="left"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{ display: { sm: "none" } }}
-      >
-        {drawer}
-      </Drawer>
+      <React.Suspense fallback={null}>
+        <Drawer anchor="left" open={mobileOpen} onClose={handleDrawerToggle}>
+          {drawer}
+        </Drawer>
+      </React.Suspense>
     </>
   );
 };

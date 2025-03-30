@@ -15,7 +15,7 @@ const Market: React.FC = () => {
       <SEO
         title="BlackBox Trading | No-Code Algorithmic Trading Platform"
         description="Transform your trading with BlackBox - the intuitive no-code platform for algorithmic trading. Connect existing accounts, build strategies in plain English, and automate your trades."
-        image="/images/blackbox-og-image.jpg"
+        image="/images/og-image.jpg"
         url="/blackbox-trading"
         keywords="rxmarket, reactive market, no-code algo trading, algorithmic trading platform, automated stock trading, retail algo trading, AI trading strategies, automated trading software, stock market automation, trading bot platform, algorithmic trading for beginners, automated investment platform"
       />

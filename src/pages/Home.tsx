@@ -17,7 +17,7 @@ const Home: React.FC<HomeProps> = ({ setContactOpen }) => {
       <SEO
         title="RxSynapse | AI-Powered BFSI Innovation"
         description="Leading AI-driven solutions for BFSI with automation, integration, and strategic analysis."
-        image="/images/og-image-square.jpg"
+        image="/images/og-image.jpg"
         url="/"
       />
       <Box id="hero">

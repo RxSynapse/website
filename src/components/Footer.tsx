@@ -3,16 +3,17 @@ import {
   Grid,
   Typography,
   List,
-  Link,
   Box,
   Divider,
   IconButton,
+  ListItem,
+  Link,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link as RouterLink } from "react-router-dom";
 import { useEffect } from "react";
 
 const footerLinks = [
@@ -29,16 +30,6 @@ const footerLinks = [
 export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const handleNavigation = (path: string, id: string) => {
-    if (location.pathname !== path) {
-      // Navigate to the new page first
-      navigate(path, { state: { scrollTo: id } });
-    } else if (id) {
-      // Already on the correct page, just scroll to section
-      scrollToSection(id);
-    }
-  };
 
   const scrollToSection = (id: string) => {
     if (!id) return;
@@ -73,17 +64,36 @@ export default function Footer() {
               strategic insights.
             </Typography>
             <List sx={{ mt: 2, display: "flex" }}>
-              <IconButton component="a" href="#" sx={{ color: "white" }}>
+              <IconButton
+                component="a"
+                href="#"
+                rel="nofollow noopener"
+                aria-label="RxSynapse on Facebook"
+                sx={{ color: "white" }}
+              >
                 <FacebookIcon />
               </IconButton>
-              <IconButton component="a" href="#" sx={{ color: "white" }}>
+              <IconButton
+                component="a"
+                href="#"
+                rel="nofollow noopener"
+                aria-label="RxSynapse on LinkedIn"
+                sx={{ color: "white" }}
+              >
                 <LinkedInIcon />
               </IconButton>
-              <IconButton component="a" href="#" sx={{ color: "white" }}>
+              <IconButton
+                component="a"
+                href="#"
+                rel="nofollow noopener"
+                aria-label="RxSynapse on Twitter"
+                sx={{ color: "white" }}
+              >
                 <TwitterIcon />
               </IconButton>
               <IconButton
                 component="a"
+                rel="nofollow noopener"
                 href="mailto:contact@rxsynapse.com"
                 sx={{ color: "white" }}
               >
@@ -93,26 +103,37 @@ export default function Footer() {
           </Grid>
 
           {/* Quick Links */}
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            component="nav"
+            aria-label="Footer navigation"
+          >
             <Typography variant="h6" fontWeight="bold">
               Quick Links
             </Typography>
-            {footerLinks.map(({ label, path, id }) => (
-              <Box key={`${path}-${id}`} sx={{ my: 1 }}>
-                <Typography
-                  sx={{
-                    cursor: "pointer",
-                    display: "inline-block",
-                    "&:hover": {
-                      textDecoration: "underline",
-                    },
-                  }}
-                  onClick={() => handleNavigation(path, id)}
-                >
-                  {label}
-                </Typography>
-              </Box>
-            ))}
+            <List>
+              {footerLinks.map(({ label, path, id }) => (
+                <ListItem key={`${path}-${id}`} disablePadding>
+                  <Box
+                    component={RouterLink}
+                    to={path}
+                    state={{ scrollTo: id }}
+                    sx={{
+                      color: "inherit",
+                      textDecoration: "none",
+                      "&:hover": { textDecoration: "underline" },
+                      py: 0.5,
+                      display: "block",
+                    }}
+                  >
+                    {label}
+                  </Box>
+                </ListItem>
+              ))}
+            </List>
           </Grid>
 
           {/* Contact Information */}
@@ -120,7 +141,11 @@ export default function Footer() {
             <Typography variant="h6" fontWeight="bold">
               Contact
             </Typography>
-            <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
+            <Typography
+              variant="body2"
+              sx={{ mt: 1, opacity: 0.8 }}
+              itemProp="email"
+            >
               ✉️ contact@rxsynapse.com
             </Typography>
           </Grid>
