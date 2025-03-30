@@ -27,9 +27,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Services", id: "services", path: "/#services" },
-  { label: "About Us", id: "about-us", path: "/#about-us" },
-  { label: "Rx-Communication", id: "communication", path: "/communication" },
+  { label: "Services", path: "/", id: "services" },
+  { label: "About Us", path: "/", id: "about-us" },
+  { label: "Rx-Market", path: "/market", id: "market-hero" },
+  { label: "Rx-Communication", path: "/communication", id: "communication-hero" },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
@@ -40,35 +41,21 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleNavigation = (path: string, id?: string): void => {
-    // Close mobile menu if open
-    setMobileOpen(false);
+  const handleNavigation = (path: string, id: string) => {
+    if (location.pathname !== path) {
+      // Navigate to the new page first
+      navigate(path, { state: { scrollTo: id } });
+    } else if (id) {
+      // Already on the correct page, just scroll to section
+      scrollToSection(id);
+    }
+  };
 
-    // Check if we're already on the home page
-    if (path.startsWith("/#") && window.location.pathname === "/") {
-      // Scroll to section on home page
-      const section: HTMLElement | null = document.getElementById(id || "");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    } else {
-      // Navigate to new route
-      if (path.startsWith("/#")) {
-        // Going to home page with hash
-        navigate(path);
-        // Use setTimeout to ensure the page has loaded before scrolling
-        setTimeout(() => {
-          const section: HTMLElement | null = document.getElementById(
-            path.substring(2)
-          );
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }, 100);
-      } else {
-        // Regular route navigation
-        navigate(path);
-      }
+  const scrollToSection = (id: string) => {
+    if (!id) return;
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

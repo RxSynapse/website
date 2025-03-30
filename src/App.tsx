@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Box } from "@mui/material";
 import ContactUs from "./components/ContactUs";
+import Market from "./pages/Market";
 
 const App: React.FC = () => {
   const [isContactOpen, setContactOpen] = useState(false);
@@ -28,6 +29,7 @@ const App: React.FC = () => {
               />
             }
           />
+          <Route path="/market" element={<Market />} />
         </Routes>
         <Footer />
         <Box id="contact-us">

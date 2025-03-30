@@ -18,7 +18,12 @@ import { useEffect } from "react";
 const footerLinks = [
   { label: "Services", path: "/", id: "services" },
   { label: "About Us", path: "/", id: "about-us" },
-  { label: "Rx-Communication", path: "/communication", id: "hero" },
+  { label: "Rx-Market", path: "/market", id: "market-hero" },
+  {
+    label: "Rx-Communication",
+    path: "/communication",
+    id: "communication-hero",
+  },
 ];
 
 export default function Footer() {
