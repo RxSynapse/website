@@ -14,6 +14,7 @@ import {
   IconButton,
   styled,
   keyframes,
+  Button,
 } from "@mui/material";
 import {
   PlayArrow,
@@ -794,6 +795,14 @@ const AnalyticsDemo = () => {
                 <Box>
                   <Typography variant="body1" color="text.secondary">
                     Results will appear once analysis is completed
+                    <br />
+                    <Button
+                      sx={{ my: 2 }}
+                      variant="contained"
+                      onClick={() => setShowResults(true)}
+                    >
+                      View Results Now
+                    </Button>
                   </Typography>
                 </Box>
               </Paper>

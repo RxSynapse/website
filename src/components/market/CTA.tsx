@@ -25,6 +25,7 @@ const CTA: React.FC = () => {
           size="large"
           color="secondary"
           sx={{ mt: 3, px: 5, py: 1.5 }}
+          onClick={() => window.open("https://market.rxsynapse.com", "_blank")}
         >
           Get Started for FREE Now
         </Button>

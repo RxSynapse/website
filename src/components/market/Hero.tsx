@@ -95,13 +95,7 @@ const Hero: React.FC = () => {
           borderRadius: "8px",
           "&:hover": { bgcolor: "#0056b3" },
         }}
-        onClick={() => {
-          const section: HTMLElement | null =
-            document.getElementById("analytics-demo");
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }}
+        onClick={() => window.open("https://market.rxsynapse.com", "_blank")}
       >
         Free Forever
       </Button>
