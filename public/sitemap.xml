@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://rxsynapse.com/</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rxsynapse.com/images/og-image.jpg</image:loc>
+      <image:title>RxSynapse - AI-Powered BFSI Solutions</image:title>
+    </image:image>
+  </url>
+
+  <!-- RxFlow Page -->
+  <url>
+    <loc>https://rxsynapse.com/flow</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rxsynapse.com/images/og-image.jpg</image:loc>
+      <image:title>RxFlow - Real-Time Options Intelligence Platform</image:title>
+    </image:image>
+  </url>
+
+  <!-- RxCommunication Page -->
+  <url>
+    <loc>https://rxsynapse.com/communication</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rxsynapse.com/images/og-image.jpg</image:loc>
+      <image:title>RxCommunication - AI-Powered Customer Support</image:title>
+    </image:image>
+  </url>
+
+</urlset>

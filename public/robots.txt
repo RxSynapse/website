@@ -1,0 +1,15 @@
+# RxSynapse - AI-Powered BFSI Solutions
+# https://rxsynapse.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://rxsynapse.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/

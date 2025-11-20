@@ -1,4 +1,4 @@
-import { AccountBalanceWallet, ShowChart, Security } from "@mui/icons-material";
+import { AccountBalance, ShowChart, Security, TrendingUp } from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -9,7 +9,7 @@ import {
   ListItemIcon,
 } from "@mui/material";
 
-const Wallet: React.FC = () => {
+const Intelligence: React.FC = () => {
   return (
     <>
       <Box sx={{ py: 8, bgcolor: "background.paper", color: "white" }}>
@@ -19,7 +19,7 @@ const Wallet: React.FC = () => {
               <Box
                 component="img"
                 src="/market/wallet/virtual-wallet.png"
-                alt="BlackBox Wallet"
+                alt="Smart Money Intelligence Dashboard"
                 sx={{
                   width: "100%",
                   borderRadius: 2,
@@ -36,19 +36,21 @@ const Wallet: React.FC = () => {
                 gutterBottom
                 sx={{ fontWeight: 600 }}
               >
-                The Virtual Wallet
+                Unified Smart Money Dashboard
               </Typography>
               <Typography variant="body1" paragraph>
-                Practice risk-free with our virtual wallet system. Every
-                workspace gets 100,000 credits to test strategies.
+                Stop wasting 2-3 hours daily checking NSE website, Excel sheets, and multiple platforms. Get all institutional activity intelligence in one unified, actionable dashboard.
+              </Typography>
+              <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+                RxFlow automatically aggregates FII/DII flows, bulk deals, insider trades, and participant-wise open interest - with historical pattern recognition to identify what matters.
               </Typography>
               <List>
                 <ListItem>
                   <ListItemIcon sx={{ color: "white" }}>
-                    <AccountBalanceWallet />
+                    <AccountBalance />
                   </ListItemIcon>
                   <Typography variant="body1">
-                    Virtual credits for risk-free testing
+                    <strong>FII/DII Flows:</strong> Real-time tracking with sector-wise breakdowns and 5-day trend alerts
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -56,7 +58,7 @@ const Wallet: React.FC = () => {
                     <ShowChart />
                   </ListItemIcon>
                   <Typography variant="body1">
-                    Credits increase with profitable strategies
+                    <strong>Bulk & Block Deals:</strong> Instant alerts when published, with operator pattern recognition
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -64,7 +66,15 @@ const Wallet: React.FC = () => {
                     <Security />
                   </ListItemIcon>
                   <Typography variant="body1">
-                    Build confidence before trading real money
+                    <strong>Insider Trading:</strong> Automated monitoring with filters for "unusual" vs routine activity
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon sx={{ color: "white" }}>
+                    <TrendingUp />
+                  </ListItemIcon>
+                  <Typography variant="body1">
+                    <strong>Smart Correlations:</strong> Historical analysis showing market reactions to smart money moves
                   </Typography>
                 </ListItem>
               </List>
@@ -76,4 +86,4 @@ const Wallet: React.FC = () => {
   );
 };
 
-export default Wallet;
+export default Intelligence;

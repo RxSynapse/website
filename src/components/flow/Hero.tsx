@@ -64,40 +64,44 @@ const Hero: React.FC = () => {
         component="h1"
         variant="h3"
         fontWeight="bold"
-        sx={{ mt: 3, maxWidth: "600px" }}
+        sx={{ mt: 3, maxWidth: "800px" }}
         zIndex={1}
       >
-        Algorithmic Trading
+        India's First Real-Time
         <br />
-        Made Simple
+        Options Intelligence Platform
       </Typography>
 
       {/* Subtitle */}
       <Typography
         component="h2"
         variant="h6"
-        sx={{ mt: 2, maxWidth: "600px", opacity: 0.8 }}
+        sx={{ mt: 2, maxWidth: "700px", opacity: 0.8 }}
       >
-        Build, test, and execute automated trading strategies using plain
-        English - no coding required
+        Track unusual options activity, smart money flows, FII/DII movements, and institutional trades in real-time - all in one unified dashboard
       </Typography>
 
       {/* CTA Button */}
       <Button
         variant="contained"
+        disabled
         sx={{
           mt: 4,
-          bgcolor: "#007BFF",
+          bgcolor: "#666",
           color: "#fff",
           fontSize: "1.2rem",
           px: 4,
           py: 1.5,
           borderRadius: "8px",
-          "&:hover": { bgcolor: "#0056b3" },
+          cursor: "not-allowed",
+          "&:hover": { bgcolor: "#666" },
+          "&.Mui-disabled": {
+            bgcolor: "#666",
+            color: "#fff",
+          }
         }}
-        onClick={() => window.open("https://market.rxsynapse.com", "_blank")}
       >
-        Free Forever
+        Coming Soon
       </Button>
     </Box>
   );

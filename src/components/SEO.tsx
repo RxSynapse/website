@@ -32,19 +32,26 @@ const SEO = ({
       <link rel="canonical" href={fullUrl} />
 
       {/* ✅ Open Graph Meta Tags */}
+      <meta property="og:site_name" content="RxSynapse" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={defaultImage} />
+      <meta property="og:image:secure_url" content={defaultImage} />
+      <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={`${title} - RxSynapse`} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_IN" />
 
       {/* ✅ Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@rxsynapse" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image || defaultImage} />
+      <meta name="twitter:image" content={defaultImage} />
+      <meta name="twitter:image:alt" content={`${title} - RxSynapse`} />
 
       {/* ✅ JSON-LD Structured Data (Better for Search Ranking) */}
       <script type="application/ld+json">
@@ -53,13 +60,40 @@ const SEO = ({
           "@type": "Organization",
           name: "RxSynapse",
           url: fullUrl,
-          logo: `${siteUrl}/logo.png`,
+          logo: `${siteUrl}/logo/rxsynapse-white-logo.png`,
           description: description,
+          foundingDate: "2024",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "IN"
+          },
           sameAs: [
             "https://facebook.com/rxsynapse",
             "https://linkedin.com/company/rxsynapse",
             "https://twitter.com/rxsynapse",
           ],
+          makesOffer: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "SoftwareApplication",
+                name: "RxFlow",
+                applicationCategory: "FinanceApplication",
+                operatingSystem: "Web",
+                description: "Real-time options intelligence and smart money tracking platform for Indian markets"
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "SoftwareApplication",
+                name: "RxCommunication",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Web",
+                description: "IVR-less customer support and conversational AI platform for BFSI"
+              }
+            }
+          ]
         })}
       </script>
 

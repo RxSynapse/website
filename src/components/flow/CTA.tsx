@@ -10,24 +10,34 @@ const CTA: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600 }}
         >
-          Ready to Transform Your Trading?
+          Ready to See What Smart Money Is Doing?
         </Typography>
         <Typography
           variant="body1"
           paragraph
           sx={{ maxWidth: 600, mx: "auto" }}
         >
-          Join the revolution in algorithmic trading - no coding required, just
-          results.
+          Join India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements - before it's too late.
         </Typography>
         <Button
           variant="contained"
           size="large"
-          color="secondary"
-          sx={{ mt: 3, px: 5, py: 1.5 }}
-          onClick={() => window.open("https://market.rxsynapse.com", "_blank")}
+          disabled
+          sx={{
+            mt: 3,
+            px: 5,
+            py: 1.5,
+            bgcolor: "#666",
+            color: "#fff",
+            cursor: "not-allowed",
+            "&:hover": { bgcolor: "#666" },
+            "&.Mui-disabled": {
+              bgcolor: "#666",
+              color: "#fff",
+            }
+          }}
         >
-          Get Started for FREE Now
+          Coming Soon
         </Button>
       </Container>
     </>
