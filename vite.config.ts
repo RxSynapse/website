@@ -7,7 +7,13 @@ export default defineConfig({
   plugins: [react(),
     createSitemap({
       hostname: 'https://rxsynapse.com',
-      dynamicRoutes: ['/', '/market', '/communication'],
+      dynamicRoutes: ['/', '/flow', '/communication'],
     })
   ],
+  cacheDir: '.vite',
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'esbuild',
+  },
 })

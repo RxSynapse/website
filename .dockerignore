@@ -1,9 +1,9 @@
-# Railway Ignore File
-# Files and directories to exclude from Railway deployment
+# Docker Ignore File
+# Exclude these files and directories from Docker build context
 
-node_modules/
-.git/
-.github/
+node_modules/.cache
+.cache
+.vite
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -19,6 +19,7 @@ coverage/
 *.swp
 *.swo
 *~
-.cache/
-.vite/
-node_modules/.cache
+.git/
+.github/
+README.md
+RAILWAY_DEPLOYMENT.md
