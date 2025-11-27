@@ -78,18 +78,20 @@ const TelegramGuide: React.FC = () => {
         {/* Steps Grid */}
         <Grid container spacing={4} sx={{ mb: 8 }}>
           {steps.map((step, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: "flex" }}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
+                style={{ width: "100%", display: "flex" }}
               >
                 <Card
                   sx={{
-                    height: "100%",
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                     textAlign: "center",
-                    position: "relative",
                     "&:hover": {
                       transform: "translateY(-8px)",
                       transition: "all 0.3s",
@@ -97,32 +99,12 @@ const TelegramGuide: React.FC = () => {
                     },
                   }}
                 >
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: -20,
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      bgcolor: "primary.main",
-                      color: "white",
-                      borderRadius: "50%",
-                      width: 40,
-                      height: 40,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontWeight: "bold",
-                      fontSize: "1.2rem",
-                    }}
-                  >
-                    {step.number}
-                  </Box>
-                  <CardContent sx={{ pt: 4, pb: 3 }}>
+                  <CardContent sx={{ py: 4, flexGrow: 1, display: "flex", flexDirection: "column" }}>
                     <Box sx={{ mb: 2 }}>{step.icon}</Box>
                     <Typography variant="h6" gutterBottom fontWeight="600">
                       {step.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" sx={{ flexGrow: 1 }}>
                       {step.description}
                     </Typography>
                   </CardContent>
