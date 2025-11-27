@@ -78,30 +78,31 @@ const Hero: React.FC = () => {
         variant="h6"
         sx={{ mt: 2, maxWidth: "700px", opacity: 0.8 }}
       >
-        Track unusual options activity, smart money flows, FII/DII movements, and institutional trades in real-time - all in one unified dashboard
+        Track unusual options activity, smart money flows, FII/DII movements, and institutional trades in real-time. Get instant alerts on Telegram - start free today!
       </Typography>
 
       {/* CTA Button */}
       <Button
         variant="contained"
-        disabled
+        href="https://flow.rxsynapse.com"
+        target="_blank"
+        rel="noopener noreferrer"
         sx={{
           mt: 4,
-          bgcolor: "#666",
+          bgcolor: "primary.main",
           color: "#fff",
           fontSize: "1.2rem",
           px: 4,
           py: 1.5,
           borderRadius: "8px",
-          cursor: "not-allowed",
-          "&:hover": { bgcolor: "#666" },
-          "&.Mui-disabled": {
-            bgcolor: "#666",
-            color: "#fff",
+          "&:hover": {
+            bgcolor: "primary.dark",
+            transform: "scale(1.05)",
+            transition: "all 0.2s"
           }
         }}
       >
-        Coming Soon
+        Get Started Free
       </Button>
     </Box>
   );

@@ -21,9 +21,23 @@ import React from "react";
 const Features: React.FC = () => {
   const features = [
     {
+      title: "Instant Telegram Alerts",
+      description: "Get real-time alerts directly in Telegram",
+      icon: <Notifications fontSize="medium" color="primary" />,
+      details:
+        "Receive unusual options activity alerts instantly on Telegram. No app downloads needed - just start the bot and customize your preferences. Choose severity levels, trading hours filters, and watchlist. Works on all devices - mobile, desktop, and web.",
+    },
+    {
+      title: "Generous Free Tier",
+      description: "Start tracking smart money for free",
+      icon: <AutoAwesome fontSize="medium" color="primary" />,
+      details:
+        "FREE tier includes: Unlimited EXTREME severity alerts (always free!), 25 HIGH alerts/day, 25 MEDIUM alerts/day, 50 LOW alerts/day. All features included - no credit card required. Perfect for retail traders who want institutional intelligence without the institutional price tag.",
+    },
+    {
       title: "Live Options Flow Scanner",
       description: "Detect unusual options activity the moment it happens",
-      icon: <AutoAwesome fontSize="medium" color="primary" />,
+      icon: <Dashboard fontSize="medium" color="primary" />,
       details:
         "Real-time monitoring of volume spikes (3x-20x thresholds), open interest changes, aggressive buy/sell detection, and premium value movements across Nifty, BankNifty, FinNifty, and top 50 Indian stocks. Get instant alerts when institutions make large moves.",
     },
@@ -35,29 +49,16 @@ const Features: React.FC = () => {
         "Every alert is contextualized against 7-day historical averages. Filter out false signals and focus on truly unusual patterns that indicate institutional positioning. Know when activity is genuinely abnormal vs regular market noise.",
     },
     {
-      title: "Actionable Composite Scoring",
-      description: "0-100 intelligence score for every alert",
-      icon: <Assessment fontSize="medium" color="primary" />,
-      details:
-        "Institutional-grade scoring algorithm combines 10+ parameters including volume, OI direction, order aggression, premium value, moneyness, time-of-day patterns, and historical context. Higher scores = higher conviction institutional moves.",
-    },
-    {
-      title: "Institutional Strategy Detection",
-      description: "Identify sweeps, spreads, and multi-strike positioning",
+      title: "Smart Quota Management",
+      description: "Never miss critical alerts with intelligent quotas",
       icon: <TrendingUp fontSize="medium" color="primary" />,
-      details: "Advanced clustering algorithms automatically detect when institutions build complex positions across multiple strikes simultaneously. Catch iron condors, straddles, strangles, and directional spreads as they're being constructed.",
+      details: "EXTREME severity alerts are always unlimited and free - we never paywall critical market information. Lower severity alerts have daily quotas with automatic depletion warnings. Quotas reset daily at 9:15 AM IST. Upgrade anytime for unlimited access to all alert levels.",
     },
     {
-      title: "Smart Multi-Condition Alerts",
-      description: "Build complex triggers combining any parameters",
-      icon: <Notifications fontSize="medium" color="primary" />,
-      details: "Create sophisticated alerts like 'Nifty breaks 22,500 AND call OI increases >20% AND FII bought yesterday AND volume >2x' with delivery via Telegram, email, SMS, or app push notifications. Pre-market and post-market digests included.",
-    },
-    {
-      title: "Unified Intelligence Dashboard",
-      description: "All market intelligence in one powerful view",
-      icon: <Dashboard fontSize="medium" color="primary" />,
-      details: "Single dashboard showing unusual options activity, FII/DII flows, bulk deals, insider trades, max pain calculations, put/call ratios, and participant-wise OI. Stop checking 5 different platforms - see everything that matters in real-time.",
+      title: "Affordable Premium Plans",
+      description: "Unlock unlimited alerts with Telegram Stars",
+      icon: <Assessment fontSize="medium" color="primary" />,
+      details: "Premium plans via Telegram Stars: 1 Day (7★), 7 Days (45★), 1 Month (165★), 3 Months (450★), 1 Year (1500★). Get unlimited alerts across all severity levels, priority delivery, and support our development. Pay securely directly in Telegram - no external payment processors.",
     },
   ];
 

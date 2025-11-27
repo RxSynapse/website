@@ -17,27 +17,26 @@ const CTA: React.FC = () => {
           paragraph
           sx={{ maxWidth: 600, mx: "auto" }}
         >
-          Join India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements - before it's too late.
+          Join India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts always unlimited!
         </Typography>
         <Button
           variant="contained"
           size="large"
-          disabled
+          href="https://flow.rxsynapse.com"
+          target="_blank"
+          rel="noopener noreferrer"
           sx={{
             mt: 3,
             px: 5,
             py: 1.5,
-            bgcolor: "#666",
-            color: "#fff",
-            cursor: "not-allowed",
-            "&:hover": { bgcolor: "#666" },
-            "&.Mui-disabled": {
-              bgcolor: "#666",
-              color: "#fff",
+            fontSize: "1.1rem",
+            "&:hover": {
+              transform: "scale(1.05)",
+              transition: "all 0.2s"
             }
           }}
         >
-          Coming Soon
+          Get Started Free on Telegram
         </Button>
       </Container>
     </>

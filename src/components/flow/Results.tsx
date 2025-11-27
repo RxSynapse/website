@@ -3,10 +3,10 @@ import {motion} from "framer-motion";
 
 const Results: React.FC = () => {
   const stats = [
-    {value: "500+", label: "Options strikes monitored live"},
-    {value: "24/7", label: "Real-time market monitoring"},
-    {value: "3000+", label: "Instruments tracked simultaneously"},
-    {value: "<100ms", label: "Alert delivery latency"},
+    {value: "471+", label: "Options strikes monitored live"},
+    {value: "∞", label: "EXTREME alerts always free"},
+    {value: "Telegram", label: "Instant alert delivery"},
+    {value: "<2sec", label: "Average alert latency"},
   ];
 
   return (
@@ -28,8 +28,8 @@ const Results: React.FC = () => {
               paragraph
               sx={{mb: 4}}
           >
-            Built for F&O traders who are tired of missing institutional moves and manually tracking
-            smart money across multiple platforms
+            Now Live! Join traders receiving real-time unusual options alerts on Telegram.
+            Start free today - no credit card required.
           </Typography>
           <Grid container spacing={4} sx={{mt: 4}}>
             {stats.map((stat, index) => (

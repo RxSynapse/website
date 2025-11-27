@@ -1,5 +1,4 @@
 import { AutoAwesome, SmartToy, CheckCircle, Timeline } from "@mui/icons-material";
-import AccountTree from "@mui/icons-material/AccountTree";
 import {
   Container,
   Typography,
@@ -17,6 +16,30 @@ import { motion } from "framer-motion";
 const Innovations: React.FC = () => {
   const innovations = [
     {
+      title: "Telegram-First Delivery",
+      description:
+        "Get real-time alerts directly in Telegram - no app downloads, no signups, no hassle. Just start the bot and begin receiving institutional-grade intelligence instantly",
+      icon: <SmartToy fontSize="large" color="primary" />,
+      features: [
+        "Instant delivery: Alerts appear in Telegram within 2 seconds",
+        "Works everywhere: Mobile, desktop, and web - Telegram syncs across all devices",
+        "Simple commands: /start, /subscribe, /settings, /status to control everything",
+        "Customizable: Choose severity levels, trading hours filter, and watchlist",
+      ],
+    },
+    {
+      title: "Truly Free Tier",
+      description:
+        "Unlike other platforms that paywall everything, RxFlow offers generous free daily quotas. EXTREME severity alerts are unlimited forever - we never paywall critical market information",
+      icon: <CheckCircle fontSize="large" color="primary" />,
+      features: [
+        "∞ Unlimited EXTREME alerts (top 1% activity) - always free!",
+        "25 HIGH severity alerts/day (top 5% activity)",
+        "25 MEDIUM severity alerts/day (top 10% activity)",
+        "50 LOW severity alerts/day (all unusual activity)",
+      ],
+    },
+    {
       title: "Real-Time Unusual Options Activity Scanner",
       description:
         "Detect institutional-level options activity the moment it happens - large orders, volume spikes, and aggressive trades across Nifty, BankNifty, FinNifty and top stocks",
@@ -29,36 +52,13 @@ const Innovations: React.FC = () => {
       ],
     },
     {
-      title: "Unified Smart Money Intelligence",
-      description:
-        "Stop checking multiple sources - track FII/DII flows, bulk deals, insider trades, and participant-wise OI data all in one powerful dashboard",
-      icon: <AccountTree fontSize="large" color="primary" />,
-      features: [
-        "Real-time institutional money flow tracking with provisional updates",
-        "Automated bulk & block deal alerts from NSE/BSE publications",
-        "Insider trading activity with unusual pattern flagging",
-        "Historical correlation: 'When FII bought X, market moved Y'",
-      ],
-    },
-    {
-      title: "Intelligent Multi-Condition Alert System",
-      description: "Never miss a trading opportunity - get instant notifications via Telegram, email, or push when your custom multi-parameter conditions trigger",
-      icon: <SmartToy fontSize="large" color="primary" />,
-      features: [
-        "Build complex alerts: 'Price breakout + Volume spike + FII buying'",
-        "Pre-market scanners with automated gap-up/gap-down reports",
-        "Post-market summaries highlighting unusual activity and opportunities",
-        "Cross-asset alerts: 'US markets down + India VIX rising'",
-      ],
-    },
-    {
       title: "Institutional-Grade Detection Algorithms",
-      description: "Sophisticated pattern recognition powered by machine learning - identify market maker activities, sweeps, spreads, and position building before the crowd",
+      description: "Sophisticated pattern recognition identifies market maker activities, sweeps, spreads, and position building. Every alert includes a 0-100 intelligence score combining 10+ parameters",
       icon: <Timeline fontSize="large" color="primary" />,
       features: [
         "OI directional analysis: Long build-up vs short covering detection",
         "Time-aware pattern recognition for opening, lunch, and closing sessions",
-        "Composite scoring (0-100) combining 10+ parameters for actionability",
+        "Composite scoring (0-100) combining volume, OI, aggression, and more",
         "Multi-strike clustering to identify institutional spread strategies",
       ],
     },
@@ -74,7 +74,7 @@ const Innovations: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600 }}
         >
-          Options Intelligence for Everyone
+          Institutional Intelligence, Retail Pricing
         </Typography>
         <Typography
           variant="subtitle1"
@@ -83,8 +83,8 @@ const Innovations: React.FC = () => {
           paragraph
           sx={{ mb: 6 }}
         >
-          RxFlow brings institutional-grade options intelligence to individual
-          traders - see what smart money is doing before it's too late
+          RxFlow brings institutional-grade options intelligence to individual traders via Telegram.
+          Start free with generous daily quotas - EXTREME alerts always unlimited!
         </Typography>
 
         <Grid container spacing={4}>
