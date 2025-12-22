@@ -58,7 +58,7 @@ const Features: React.FC = () => {
       title: "Affordable Premium Plans",
       description: "Unlock unlimited alerts with Telegram Stars",
       icon: <Assessment fontSize="medium" color="primary" />,
-      details: "Premium plans via Telegram Stars: 1 Day (7★), 7 Days (45★), 1 Month (165★), 3 Months (450★), 1 Year (1500★). Get unlimited alerts across all severity levels, priority delivery, and support our development. Pay securely directly in Telegram - no external payment processors.",
+      details: "Premium plans via Telegram Stars: 1 Day (20★ ≈ ₹41), 7 Days (100★ ≈ ₹205), 1 Month (200★ ≈ ₹410), 3 Months (533★ ≈ ₹1,093), 1 Year (1,600★ ≈ ₹3,280). Get unlimited alerts across all severity levels, priority delivery, and support our development. Pay securely directly in Telegram - no external payment processors.",
     },
   ];
 

@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
         variant="h6"
         sx={{ mt: 2, maxWidth: "700px", opacity: 0.8 }}
       >
-        Track unusual options activity, smart money flows, FII/DII movements, and institutional trades in real-time. Get instant alerts on Telegram - start free today!
+        Track unusual options activity and institutional flows. Get instant Telegram alerts - start free!
       </Typography>
 
       {/* CTA Button */}
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
           }
         }}
       >
-        Get Started Free
+        Start Free on Telegram
       </Button>
     </Box>
   );

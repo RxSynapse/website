@@ -74,7 +74,7 @@ const Innovations: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600 }}
         >
-          Institutional Intelligence, Retail Pricing
+          Professional-Grade Intelligence, Made Accessible
         </Typography>
         <Typography
           variant="subtitle1"

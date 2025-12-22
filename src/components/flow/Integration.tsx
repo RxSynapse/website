@@ -18,7 +18,7 @@ const Integration: React.FC = () => {
     },
     {
       name: "Deep Market Analysis",
-      description: "20-level order book depth for institutional insights",
+      description: "Deep market data for institutional-grade insights",
       icon: <TrendingUp fontSize="large" color="primary" />
     },
     {

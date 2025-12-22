@@ -10,14 +10,14 @@ const CTA: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600 }}
         >
-          Ready to See What Smart Money Is Doing?
+          Ready to Track Smart Money Like Institutions?
         </Typography>
         <Typography
           variant="body1"
           paragraph
           sx={{ maxWidth: 600, mx: "auto" }}
         >
-          Join India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts always unlimited!
+          India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts always unlimited!
         </Typography>
         <Button
           variant="contained"

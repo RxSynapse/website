@@ -27,7 +27,7 @@ const TelegramGuide: React.FC = () => {
     },
     {
       number: "2",
-      title: "Subscribe",
+      title: "Activate Free Account",
       description: "Type /subscribe to activate your free account with generous daily quotas",
       icon: <PlayArrow fontSize="large" color="primary" />,
     },
@@ -39,8 +39,8 @@ const TelegramGuide: React.FC = () => {
     },
     {
       number: "4",
-      title: "Get Alerts",
-      description: "Receive real-time unusual options activity alerts directly in Telegram!",
+      title: "Receive Real-Time Alerts",
+      description: "Get instant unusual options activity alerts directly in Telegram!",
       icon: <Notifications fontSize="large" color="primary" />,
     },
   ];
