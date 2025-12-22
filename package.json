@@ -9,7 +9,12 @@
     "build": "tsc -b && vite build",
     "start": "serve dist -s -l tcp://0.0.0.0:${PORT:-3000}",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gsc:list-sites": "node scripts/gsc/list-sites.cjs",
+    "gsc:submit-sitemap": "node scripts/gsc/submit-sitemap.cjs",
+    "gsc:check-sitemap": "node scripts/gsc/check-sitemap.cjs",
+    "gsc:search-performance": "node scripts/gsc/get-search-performance.cjs",
+    "gsc:page-performance": "node scripts/gsc/get-page-performance.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -18,6 +23,7 @@
     "@mui/icons-material": "^6.4.8",
     "@mui/material": "^6.4.8",
     "framer-motion": "^12.5.0",
+    "googleapis": "^169.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet-async": "^2.0.5",

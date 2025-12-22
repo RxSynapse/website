@@ -8,7 +8,7 @@ import {
   CardContent,
   Chip,
 } from "@mui/material";
-import { CheckCircle, Cancel, Remove } from "@mui/icons-material";
+import { CheckCircle, Cancel } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
 interface ComparisonFeature {
