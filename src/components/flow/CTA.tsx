@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Typography, Button } from "@mui/material";
 
 const CTA: React.FC = () => {

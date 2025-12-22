@@ -1,3 +1,5 @@
+'use client';
+
 import React, { JSX, useState } from "react";
 import {
   AppBar,
@@ -12,12 +14,11 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useNavigate, NavigateFunction } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 const Drawer = React.lazy(() => import("@mui/material/Drawer"));
 
 interface NavbarProps {
-  setContactOpen: (state: boolean) => void;
+  setContactOpen?: (state: boolean) => void;
 }
 
 interface NavItem {
@@ -39,27 +40,18 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const navigate: NavigateFunction = useNavigate();
 
   const handleDrawerToggle = (): void => {
     setMobileOpen(!mobileOpen);
   };
 
   const handleNavigation = (path: string, id: string) => {
-    if (location.pathname !== path) {
-      // Navigate to the new page first
-      navigate(path, { state: { scrollTo: id } });
-    } else if (id) {
-      // Already on the correct page, just scroll to section
-      scrollToSection(id);
-    }
-  };
-
-  const scrollToSection = (id: string) => {
-    if (!id) return;
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    // For same-page navigation, scroll to section
+    if (typeof window !== 'undefined' && window.location.pathname === path && id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
@@ -73,12 +65,11 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
           <ListItem
             key={id}
             disablePadding
-            onClick={() => handleNavigation(path, id)}
           >
             <ListItemButton
               component={Link}
-              to={path}
-              state={{ scrollTo: id }}
+              href={path}
+              onClick={() => handleNavigation(path, id)}
               sx={{ textAlign: "center" }}
             >
               <ListItemText primary={label} />
@@ -109,8 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
 
           {/* Logo with link to home */}
           <Link
-            to="/"
-            rel="canonical"
+            href="/"
             style={{ textDecoration: "none", color: "inherit", flexGrow: 1 }}
           >
             <Typography
@@ -143,8 +133,8 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
               <Button
                 key={id}
                 component={Link}
-                to={path}
-                state={{ scrollTo: id }}
+                href={path}
+                onClick={() => handleNavigation(path, id)}
                 sx={{ color: "#fff" }}
               >
                 {label}
@@ -153,18 +143,20 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
           </Box>
 
           {/* CTA */}
-          <Button
-            variant="contained"
-            sx={{
-              bgcolor: "#007BFF",
-              color: "#fff",
-              ml: 2,
-              "&:hover": { bgcolor: "#0056b3" },
-            }}
-            onClick={() => setContactOpen(true)}
-          >
-            Get Started
-          </Button>
+          {setContactOpen && (
+            <Button
+              variant="contained"
+              sx={{
+                bgcolor: "#007BFF",
+                color: "#fff",
+                ml: 2,
+                "&:hover": { bgcolor: "#0056b3" },
+              }}
+              onClick={() => setContactOpen(true)}
+            >
+              Get Started
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
 

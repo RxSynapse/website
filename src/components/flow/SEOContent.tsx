@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { Container, Typography, Box, Grid, Card, CardContent } from "@mui/material";
 import { TrendingUp, ShowChart, Assessment, Speed } from "@mui/icons-material";

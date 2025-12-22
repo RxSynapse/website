@@ -1,3 +1,5 @@
+'use client';
+
 import { AutoAwesome, Call, SmartToy, CheckCircle } from "@mui/icons-material";
 import {
   Container,

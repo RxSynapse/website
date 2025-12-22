@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-import "@fontsource/space-grotesk/index.css";
 
 const theme = createTheme({
   typography: {

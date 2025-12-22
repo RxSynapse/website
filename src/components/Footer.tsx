@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Container,
   Grid,
@@ -7,14 +9,13 @@ import {
   Divider,
   IconButton,
   ListItem,
-  Link,
+  Link as MuiLink,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
-import { useNavigate, useLocation, Link as RouterLink } from "react-router-dom";
-import { useEffect } from "react";
+import Link from "next/link";
 
 const footerLinks = [
   { label: "Services", path: "/", id: "services" },
@@ -28,27 +29,15 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const scrollToSection = (id: string) => {
-    if (!id) return;
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleNavigation = (path: string, id: string) => {
+    // For same-page navigation, scroll to section
+    if (typeof window !== 'undefined' && window.location.pathname === path && id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
-
-  // Handle scroll after navigation
-  useEffect(() => {
-    if (location.state?.scrollTo) {
-      setTimeout(() => {
-        scrollToSection(location.state.scrollTo);
-        // Clear the scroll state after handling it
-        navigate(location.pathname, { replace: true, state: {} });
-      }, 100);
-    }
-  }, [location, navigate]);
 
   return (
     <Box component="footer" sx={{ bgcolor: "#121212", color: "white", py: 4 }}>
@@ -117,20 +106,18 @@ export default function Footer() {
             <List>
               {footerLinks.map(({ label, path, id }) => (
                 <ListItem key={`${path}-${id}`} disablePadding>
-                  <Box
-                    component={RouterLink}
-                    to={path}
-                    state={{ scrollTo: id }}
-                    sx={{
+                  <Link
+                    href={path}
+                    onClick={() => handleNavigation(path, id)}
+                    style={{
                       color: "inherit",
                       textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                      py: 0.5,
+                      padding: "4px 0",
                       display: "block",
                     }}
                   >
                     {label}
-                  </Box>
+                  </Link>
                 </ListItem>
               ))}
             </List>
@@ -155,13 +142,13 @@ export default function Footer() {
         <Divider sx={{ bgcolor: "gray", my: 3 }} />
         <Typography variant="body2" align="center" sx={{ opacity: 0.6 }}>
           © {new Date().getFullYear()} RxSynapse. All rights reserved. |{" "}
-          <Link href="#" underline="hover" color="inherit">
+          <MuiLink href="#" underline="hover" color="inherit">
             Privacy Policy
-          </Link>{" "}
+          </MuiLink>{" "}
           |{" "}
-          <Link href="#" underline="hover" color="inherit">
+          <MuiLink href="#" underline="hover" color="inherit">
             Terms of Service
-          </Link>
+          </MuiLink>
         </Typography>
       </Container>
     </Box>

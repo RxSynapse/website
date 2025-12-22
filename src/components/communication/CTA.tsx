@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Typography, Button } from "@mui/material";
 
 interface CtaProps {

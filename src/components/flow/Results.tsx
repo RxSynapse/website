@@ -1,3 +1,5 @@
+'use client';
+
 import {Container, Typography, Grid, Card, CardContent} from "@mui/material";
 import {motion} from "framer-motion";
 

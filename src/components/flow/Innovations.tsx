@@ -1,3 +1,5 @@
+'use client';
+
 import { AutoAwesome, SmartToy, CheckCircle, Timeline } from "@mui/icons-material";
 import {
   Container,

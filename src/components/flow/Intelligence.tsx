@@ -1,3 +1,5 @@
+'use client';
+
 import { AccountBalance, ShowChart, Security, TrendingUp } from "@mui/icons-material";
 import {
   Box,
