@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 
 const Results: React.FC = () => {
   const stats = [
-    {value: "471+", label: "Options strikes monitored live"},
+    {value: "528+", label: "Option Strikes Monitored"},
     {value: "∞", label: "EXTREME alerts always free"},
     {value: "Telegram", label: "Instant alert delivery"},
     {value: "<2sec", label: "Average alert latency"},

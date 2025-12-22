@@ -12,7 +12,7 @@ import {
 const Intelligence: React.FC = () => {
   return (
     <>
-      <Box sx={{ py: 8, bgcolor: "background.paper", color: "white" }}>
+      <Box sx={{ py: 8, bgcolor: "background.paper" }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
@@ -46,7 +46,7 @@ const Intelligence: React.FC = () => {
               </Typography>
               <List>
                 <ListItem>
-                  <ListItemIcon sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "primary.main" }}>
                     <AccountBalance />
                   </ListItemIcon>
                   <Typography variant="body1">
@@ -54,7 +54,7 @@ const Intelligence: React.FC = () => {
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <ListItemIcon sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "primary.main" }}>
                     <ShowChart />
                   </ListItemIcon>
                   <Typography variant="body1">
@@ -62,7 +62,7 @@ const Intelligence: React.FC = () => {
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <ListItemIcon sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "primary.main" }}>
                     <Security />
                   </ListItemIcon>
                   <Typography variant="body1">
@@ -70,7 +70,7 @@ const Intelligence: React.FC = () => {
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <ListItemIcon sx={{ color: "white" }}>
+                  <ListItemIcon sx={{ color: "primary.main" }}>
                     <TrendingUp />
                   </ListItemIcon>
                   <Typography variant="body1">
