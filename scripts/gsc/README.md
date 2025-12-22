@@ -15,11 +15,13 @@ This directory contains scripts for interacting with Google Search Console API p
 - **`client.js`** - Reusable GSC API client with authentication and common methods
 
 ### Scripts
-- **`list-sites.js`** - List all sites accessible to the service account
-- **`submit-sitemap.js`** - Submit sitemap to Google Search Console
-- **`check-sitemap.js`** - Check sitemap status and indexing progress
-- **`get-search-performance.js`** - Get top search queries with clicks, impressions, CTR
-- **`get-page-performance.js`** - Get performance metrics grouped by page/URL
+- **`list-sites.cjs`** - List all sites accessible to the service account
+- **`submit-sitemap.cjs`** - Submit sitemap to Google Search Console
+- **`check-sitemap.cjs`** - Check sitemap status and indexing progress
+- **`get-search-performance.cjs`** - Get top search queries with clicks, impressions, CTR
+- **`get-page-performance.cjs`** - Get performance metrics grouped by page/URL
+- **`weekly-report.cjs`** - Generate comprehensive weekly performance report
+- **`inspect-url.cjs`** - Inspect URL indexing status (requires full permissions)
 
 ## 🚀 Quick Start
 
@@ -231,6 +233,136 @@ rowLimit: 1000  // Maximum 25,000
 - [Search Console API Reference](https://developers.google.com/webmaster-tools/v1/api_reference_index)
 - [Search Analytics API](https://developers.google.com/webmaster-tools/v1/searchanalytics)
 - [Sitemaps API](https://developers.google.com/webmaster-tools/v1/sitemaps)
+
+## 📅 Weekly Reports & Automation
+
+### Generate Weekly Report
+Get a comprehensive week-over-week performance comparison:
+
+```bash
+npm run gsc:weekly-report
+```
+
+The report includes:
+- Overall performance summary with week-over-week changes
+- Top 10 search queries with metrics
+- Top pages by clicks
+- Automated insights and recommendations
+- Trend indicators (↑ ↓ →)
+
+### Save Report to File
+```bash
+npm run gsc:weekly-report -- --save
+```
+
+This creates a JSON file in `reports/gsc-report-YYYY-MM-DD.json` for archival and historical tracking.
+
+### Automate Reports with Cron
+
+#### macOS/Linux Setup
+
+1. **Open crontab editor:**
+```bash
+crontab -e
+```
+
+2. **Add weekly report (every Monday at 9 AM):**
+```cron
+0 9 * * 1 cd /Users/keshavram/WebstormProjects/website && /usr/local/bin/node scripts/gsc/weekly-report.cjs --save >> logs/gsc-cron.log 2>&1
+```
+
+3. **Add daily quick check (every day at 8 AM):**
+```cron
+0 8 * * * cd /Users/keshavram/WebstormProjects/website && /usr/local/bin/node scripts/gsc/get-search-performance.cjs >> logs/gsc-daily.log 2>&1
+```
+
+4. **Find your node path:**
+```bash
+which node
+```
+
+**Cron Schedule Format:**
+```
+* * * * * command
+│ │ │ │ │
+│ │ │ │ └─── Day of week (0-7, 0 and 7 are Sunday)
+│ │ │ └───── Month (1-12)
+│ │ └─────── Day of month (1-31)
+│ └───────── Hour (0-23)
+└─────────── Minute (0-59)
+```
+
+**Common Schedules:**
+- `0 9 * * 1` - Every Monday at 9 AM
+- `0 */6 * * *` - Every 6 hours
+- `0 0 * * *` - Daily at midnight
+- `0 8 * * 1-5` - Weekdays at 8 AM
+
+#### Create Log Directory
+```bash
+mkdir -p /Users/keshavram/WebstormProjects/website/logs
+```
+
+#### View Cron Logs
+```bash
+tail -f logs/gsc-cron.log
+```
+
+### Email Reports
+
+To email reports automatically, you can pipe the output to mail:
+
+```bash
+# Install mailutils (Ubuntu/Debian)
+sudo apt-get install mailutils
+
+# Modify cron job
+0 9 * * 1 cd /path/to/project && node scripts/gsc/weekly-report.cjs | mail -s "Weekly GSC Report" your@email.com
+```
+
+For macOS, use the built-in `mail` command or set up with Gmail SMTP.
+
+### Alternative: GitHub Actions
+
+Create `.github/workflows/gsc-weekly-report.yml`:
+
+```yaml
+name: Weekly GSC Report
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 9 AM UTC
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate GSC Report
+        env:
+          GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS }}
+        run: |
+          echo "$GSC_CREDENTIALS" > rxsynapse-09e57aab275d.json
+          npm run gsc:weekly-report -- --save
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: gsc-report
+          path: reports/
+```
+
+Then add your credentials as a GitHub secret named `GSC_CREDENTIALS`.
 
 ## ⚠️ Common Issues
 

@@ -14,7 +14,8 @@
     "gsc:submit-sitemap": "node scripts/gsc/submit-sitemap.cjs",
     "gsc:check-sitemap": "node scripts/gsc/check-sitemap.cjs",
     "gsc:search-performance": "node scripts/gsc/get-search-performance.cjs",
-    "gsc:page-performance": "node scripts/gsc/get-page-performance.cjs"
+    "gsc:page-performance": "node scripts/gsc/get-page-performance.cjs",
+    "gsc:weekly-report": "node scripts/gsc/weekly-report.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

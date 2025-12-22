@@ -24,7 +24,7 @@ class GSCClient {
       // Load service account credentials
       const auth = new google.auth.GoogleAuth({
         keyFile: this.credentialsPath,
-        scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
+        scopes: ['https://www.googleapis.com/auth/webmasters'],
       });
 
       this.auth = await auth.getClient();
