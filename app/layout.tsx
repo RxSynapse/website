@@ -3,6 +3,7 @@ import { Space_Grotesk } from 'next/font/google';
 import { Providers } from './providers';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -68,6 +69,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={spaceGrotesk.className}>
+        {/* Google Analytics 4 Tracking */}
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
+
         <Providers>
           <Navbar />
           {children}

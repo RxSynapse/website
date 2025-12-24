@@ -12,9 +12,16 @@
     "gsc:list-sites": "node scripts/gsc/list-sites.cjs",
     "gsc:submit-sitemap": "node scripts/gsc/submit-sitemap.cjs",
     "gsc:check-sitemap": "node scripts/gsc/check-sitemap.cjs",
+    "gsc:request-indexing": "node scripts/gsc/request-indexing.cjs",
     "gsc:search-performance": "node scripts/gsc/get-search-performance.cjs",
     "gsc:page-performance": "node scripts/gsc/get-page-performance.cjs",
-    "gsc:weekly-report": "node scripts/gsc/weekly-report.cjs"
+    "gsc:weekly-report": "node scripts/gsc/weekly-report.cjs",
+    "ga:list-properties": "node scripts/ga/list-properties.cjs",
+    "ga:get-measurement-id": "node scripts/ga/get-measurement-id.cjs",
+    "ga:verify-setup": "node scripts/ga/verify-setup.cjs",
+    "ga:traffic": "node scripts/ga/get-traffic.cjs",
+    "ga:realtime": "node scripts/ga/get-realtime.cjs",
+    "ga:weekly-report": "node scripts/ga/weekly-report.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
