@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
+import { Suspense } from 'react';
 import { Providers } from './providers';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
@@ -70,7 +71,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={spaceGrotesk.className}>
         {/* Google Analytics 4 Tracking */}
-        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
+        <Suspense fallback={null}>
+          <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
+        </Suspense>
 
         <Providers>
           <Navbar />
