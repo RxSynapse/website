@@ -21,7 +21,8 @@
     "ga:verify-setup": "node scripts/ga/verify-setup.cjs",
     "ga:traffic": "node scripts/ga/get-traffic.cjs",
     "ga:realtime": "node scripts/ga/get-realtime.cjs",
-    "ga:weekly-report": "node scripts/ga/weekly-report.cjs"
+    "ga:weekly-report": "node scripts/ga/weekly-report.cjs",
+    "ga:setup-conversions": "node scripts/ga/setup-conversions.cjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

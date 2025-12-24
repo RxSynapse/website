@@ -1,3 +1,15 @@
+/**
+ * Example: Home Hero Component with GA4 Tracking
+ *
+ * This is an example showing how to add tracking to your existing Hero component.
+ * Compare this with src/components/home/Hero.tsx to see the changes.
+ *
+ * Key Changes:
+ * 1. Import TrackedCTAButton instead of regular Button
+ * 2. Add tracking properties to the button
+ * 3. That's it! Automatic tracking is already enabled globally.
+ */
+
 'use client';
 
 import React, { useState } from "react";
@@ -87,8 +99,24 @@ const Hero: React.FC<HeroProps> = ({ setContactOpen }) => {
         Reporting
       </Typography>
 
-      {/* CTA Button */}
+      {/*
+        CTA Button with Tracking
+
+        What gets tracked:
+        - Event name: "cta_click"
+        - CTA name: "get_started_home"
+        - CTA location: "home_hero"
+        - CTA destination: "contact_form"
+        - CTA text: "Get Started Today"
+        - Page URL: "/"
+        - Timestamp: ISO format
+
+        You can view this in GA4:
+        - Reports > Engagement > Events > "cta_click"
+        - Or run: npm run ga:realtime -- --watch
+      */}
       <TrackedCTAButton
+        // Tracking properties
         trackingName="get_started_home"
         trackingLocation="home_hero"
         trackingDestination="contact_form"
@@ -96,7 +124,8 @@ const Hero: React.FC<HeroProps> = ({ setContactOpen }) => {
           pageSection: 'hero',
           priority: 'primary',
         }}
-        variant="contained"
+
+        // Regular MUI Button props
         sx={{
           mt: 4,
           bgcolor: "#007BFF",
@@ -116,3 +145,46 @@ const Hero: React.FC<HeroProps> = ({ setContactOpen }) => {
 };
 
 export default Hero;
+
+/**
+ * How to Apply This to Your Component:
+ *
+ * 1. Open src/components/home/Hero.tsx
+ *
+ * 2. Replace the import:
+ *    FROM: import { Box, Typography, Button } from "@mui/material";
+ *    TO:   import { Box, Typography } from "@mui/material";
+ *          import { TrackedCTAButton } from '@/components/TrackedButton';
+ *
+ * 3. Replace the Button with TrackedCTAButton:
+ *    FROM: <Button
+ *            variant="contained"
+ *            sx={{ ... }}
+ *            onClick={() => setContactOpen(true)}
+ *          >
+ *            Get Started Today
+ *          </Button>
+ *
+ *    TO:   <TrackedCTAButton
+ *            trackingName="get_started_home"
+ *            trackingLocation="home_hero"
+ *            trackingDestination="contact_form"
+ *            sx={{ ... }}
+ *            onClick={() => setContactOpen(true)}
+ *          >
+ *            Get Started Today
+ *          </TrackedCTAButton>
+ *
+ * 4. Test it:
+ *    - Run: npm run build && npm start
+ *    - Open another terminal: npm run ga:realtime -- --watch
+ *    - Visit your site and click the button
+ *    - You should see the click event in realtime!
+ *
+ * 5. Repeat for other important buttons:
+ *    - Flow page CTA buttons
+ *    - Communication page CTA buttons
+ *    - Navbar links
+ *    - Footer links
+ *    - Social media buttons
+ */

@@ -1,6 +1,7 @@
 'use client';
 
-import { Container, Typography, Button } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import { TrackedCTAButton } from '@/components/TrackedButton';
 
 const CTA: React.FC = () => {
   return (
@@ -21,7 +22,15 @@ const CTA: React.FC = () => {
         >
           India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts always unlimited!
         </Typography>
-        <Button
+        <TrackedCTAButton
+          trackingName="get_started_flow_cta"
+          trackingLocation="flow_cta_section"
+          trackingDestination="https://flow.rxsynapse.com"
+          trackingParams={{
+            pageSection: 'bottom_cta',
+            priority: 'secondary',
+            conversionGoal: 'telegram_signup',
+          }}
           variant="contained"
           size="large"
           href="https://flow.rxsynapse.com"
@@ -39,7 +48,7 @@ const CTA: React.FC = () => {
           }}
         >
           Get Started Free on Telegram
-        </Button>
+        </TrackedCTAButton>
       </Container>
     </>
   );

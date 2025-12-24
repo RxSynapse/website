@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { TrackedCTAButton } from '@/components/TrackedButton';
 import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
@@ -85,7 +86,15 @@ const Hero: React.FC = () => {
       </Typography>
 
       {/* CTA Button */}
-      <Button
+      <TrackedCTAButton
+        trackingName="view_demo_communication"
+        trackingLocation="communication_hero"
+        trackingDestination="analytics_demo_section"
+        trackingParams={{
+          pageSection: 'hero',
+          priority: 'primary',
+          interactionType: 'scroll_to_demo',
+        }}
         variant="contained"
         sx={{
           mt: 4,
@@ -106,7 +115,7 @@ const Hero: React.FC = () => {
         }}
       >
         View Demo
-      </Button>
+      </TrackedCTAButton>
     </Box>
   );
 };

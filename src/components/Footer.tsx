@@ -16,6 +16,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
+import { trackOutboundLink, trackNavigation } from '@/lib/analytics';
 
 const footerLinks = [
   { label: "Services", path: "/", id: "services" },
@@ -29,7 +30,14 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-  const handleNavigation = (path: string, id: string) => {
+  const handleNavigation = (path: string, id: string, label: string) => {
+    // Track navigation
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+    trackNavigation(currentPath, path, {
+      navigationType: 'click',
+      navigationElement: 'footer',
+    });
+
     // For same-page navigation, scroll to section
     if (typeof window !== 'undefined' && window.location.pathname === path && id) {
       const section = document.getElementById(id);
@@ -37,6 +45,14 @@ export default function Footer() {
         section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
+  };
+
+  const handleSocialClick = (platform: string, url: string) => {
+    trackOutboundLink(url, {
+      linkText: platform,
+      linkLocation: 'footer',
+      linkType: 'social',
+    });
   };
 
   return (
@@ -55,28 +71,34 @@ export default function Footer() {
             <List sx={{ mt: 2, display: "flex" }}>
               <IconButton
                 component="a"
-                href="#"
+                href="https://facebook.com/rxsynapse"
                 rel="nofollow noopener"
+                target="_blank"
                 aria-label="RxSynapse on Facebook"
                 sx={{ color: "white" }}
+                onClick={() => handleSocialClick('Facebook', 'https://facebook.com/rxsynapse')}
               >
                 <FacebookIcon />
               </IconButton>
               <IconButton
                 component="a"
-                href="#"
+                href="https://linkedin.com/company/rxsynapse"
                 rel="nofollow noopener"
+                target="_blank"
                 aria-label="RxSynapse on LinkedIn"
                 sx={{ color: "white" }}
+                onClick={() => handleSocialClick('LinkedIn', 'https://linkedin.com/company/rxsynapse')}
               >
                 <LinkedInIcon />
               </IconButton>
               <IconButton
                 component="a"
-                href="#"
+                href="https://twitter.com/rxsynapse"
                 rel="nofollow noopener"
+                target="_blank"
                 aria-label="RxSynapse on Twitter"
                 sx={{ color: "white" }}
+                onClick={() => handleSocialClick('Twitter', 'https://twitter.com/rxsynapse')}
               >
                 <TwitterIcon />
               </IconButton>
@@ -85,6 +107,7 @@ export default function Footer() {
                 rel="nofollow noopener"
                 href="mailto:contact@rxsynapse.com"
                 sx={{ color: "white" }}
+                onClick={() => handleSocialClick('Email', 'mailto:contact@rxsynapse.com')}
               >
                 <EmailIcon />
               </IconButton>
@@ -108,7 +131,7 @@ export default function Footer() {
                 <ListItem key={`${path}-${id}`} disablePadding>
                   <Link
                     href={path}
-                    onClick={() => handleNavigation(path, id)}
+                    onClick={() => handleNavigation(path, id, label)}
                     style={{
                       color: "inherit",
                       textDecoration: "none",

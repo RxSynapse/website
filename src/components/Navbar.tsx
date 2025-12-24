@@ -7,7 +7,6 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Button,
   List,
   ListItem,
   ListItemButton,
@@ -15,6 +14,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import { TrackedNavButton, TrackedCTAButton } from '@/components/TrackedButton';
+import { trackNavigation } from '@/lib/analytics';
 const Drawer = React.lazy(() => import("@mui/material/Drawer"));
 
 interface NavbarProps {
@@ -45,7 +46,14 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleNavigation = (path: string, id: string) => {
+  const handleNavigation = (path: string, id: string, label: string) => {
+    // Track navigation
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+    trackNavigation(currentPath, path, {
+      navigationType: 'click',
+      navigationElement: 'navbar',
+    });
+
     // For same-page navigation, scroll to section
     if (typeof window !== 'undefined' && window.location.pathname === path && id) {
       const section = document.getElementById(id);
@@ -69,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
             <ListItemButton
               component={Link}
               href={path}
-              onClick={() => handleNavigation(path, id)}
+              onClick={() => handleNavigation(path, id, label)}
               sx={{ textAlign: "center" }}
             >
               <ListItemText primary={label} />
@@ -130,21 +138,31 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
             aria-label="Desktop navigation"
           >
             {navItems.map(({ label, id, path }) => (
-              <Button
+              <TrackedNavButton
                 key={id}
+                trackingName={`nav_${id}`}
+                trackingLocation="navbar"
+                trackingDestination={path}
                 component={Link}
                 href={path}
-                onClick={() => handleNavigation(path, id)}
+                onClick={() => handleNavigation(path, id, label)}
                 sx={{ color: "#fff" }}
               >
                 {label}
-              </Button>
+              </TrackedNavButton>
             ))}
           </Box>
 
           {/* CTA */}
           {setContactOpen && (
-            <Button
+            <TrackedCTAButton
+              trackingName="get_started_navbar"
+              trackingLocation="navbar"
+              trackingDestination="contact_form"
+              trackingParams={{
+                priority: 'tertiary',
+                conversionGoal: 'contact_form_open',
+              }}
               variant="contained"
               sx={{
                 bgcolor: "#007BFF",
@@ -155,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
               onClick={() => setContactOpen(true)}
             >
               Get Started
-            </Button>
+            </TrackedCTAButton>
           )}
         </Toolbar>
       </AppBar>

@@ -3,9 +3,11 @@
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
+import { useComprehensiveTracking } from '@/hooks/useAnalytics';
 
 type GoogleAnalyticsProps = {
   measurementId: string;
+  enableAutoTracking?: boolean;
 };
 
 /**
@@ -15,14 +17,30 @@ type GoogleAnalyticsProps = {
  * 1. Loads the GA4 gtag.js script
  * 2. Initializes GA4 with your Measurement ID
  * 3. Automatically tracks page views on route changes
- * 4. Provides the gtag function for custom event tracking
+ * 4. Tracks landing pages, time on page, scroll depth, and outbound links
+ * 5. Provides the gtag function for custom event tracking
  *
  * Usage in layout.tsx:
- * <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+ * <GoogleAnalytics
+ *   measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
+ *   enableAutoTracking={true}
+ * />
  */
-export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
+export function GoogleAnalytics({
+  measurementId,
+  enableAutoTracking = true
+}: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  // Enable comprehensive automatic tracking
+  useComprehensiveTracking({
+    trackLandingPage: enableAutoTracking,
+    trackTimeOnPage: enableAutoTracking,
+    trackScrollDepth: enableAutoTracking,
+    trackOutboundLinks: enableAutoTracking,
+    trackNavigation: enableAutoTracking,
+  });
 
   // Track page views on route changes
   useEffect(() => {
