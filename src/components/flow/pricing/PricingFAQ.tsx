@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 const faqs = [
   {
-    question: 'How do I pay with Telegram Stars?',
-    answer: 'Open @rxflow_alerts_bot on Telegram, send /subscription, and choose your plan. Payment is processed securely through Telegram\'s in-app purchase system using Stars (Telegram\'s currency).',
+    question: 'What payment methods do you accept?',
+    answer: 'We accept all major payment methods through Razorpay including Credit/Debit Cards, UPI, Net Banking, and popular wallets. All payments are processed securely with industry-standard encryption.',
   },
   {
-    question: 'Can I pay with credit card or UPI?',
-    answer: 'Razorpay integration for credit card, UPI, and netbanking payments is coming soon. For now, Telegram Stars is the primary payment method.',
+    question: 'Is my payment information secure?',
+    answer: 'Yes! All payments are processed through Razorpay, a PCI DSS compliant payment gateway. We never store your card details or payment information on our servers.',
   },
   {
     question: 'What happens when my subscription expires?',

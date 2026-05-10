@@ -3,12 +3,12 @@
 import { Box, Container, Typography, Card, CardContent, Button, Chip } from '@mui/material';
 import { Check, Bolt } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import { PRICING_PLANS, formatPrice, formatStars } from '@/src/config/pricing';
+import { PRICING_PLANS, formatPrice } from '@/src/config/pricing';
 
 export default function PricingPlans() {
   const handleChoosePlan = (planId: string) => {
-    // Redirect to Telegram bot
-    window.open('https://t.me/rxflow_alerts_bot', '_blank');
+    // Redirect to payment page with selected plan
+    window.open(`https://flow.rxsynapse.com/payment?plan=${planId}`, '_blank');
   };
 
   return (
@@ -115,7 +115,7 @@ export default function PricingPlans() {
                         {formatPrice(plan.price)}
                       </Typography>
                       <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.5)', mt: 0.5 }}>
-                        {formatStars(plan.stars)} or via card/UPI
+                        Instant activation via UPI/Cards
                       </Typography>
                     </Box>
 
