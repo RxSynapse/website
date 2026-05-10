@@ -478,7 +478,7 @@ export default function TermsPage() {
             Before filing any legal claim, you agree to:
           </Typography>
           <Box component="ul">
-            <li>Contact us at legal@rxsynapse.com to attempt informal resolution</li>
+            <li>Contact us at contact@rxsynapse.com to attempt informal resolution</li>
             <li>Provide a detailed description of the dispute and your desired resolution</li>
             <li>Allow 30 days for good-faith negotiation and resolution attempts</li>
           </Box>
@@ -559,8 +559,7 @@ export default function TermsPage() {
           </Typography>
           <Box component="ul" sx={{ listStyle: 'none', pl: 0 }}>
             <li><strong>Company Name:</strong> RxSynapse</li>
-            <li><strong>Email:</strong> legal@rxsynapse.com</li>
-            <li><strong>Support:</strong> support@rxsynapse.com</li>
+            <li><strong>Email:</strong> contact@rxsynapse.com</li>
             <li><strong>Website:</strong> <MuiLink href="https://rxsynapse.com" target="_blank" rel="noopener noreferrer">https://rxsynapse.com</MuiLink></li>
           </Box>
 

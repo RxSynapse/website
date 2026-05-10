@@ -334,8 +334,7 @@ export default function PrivacyPage() {
           </Typography>
           <Box component="ul" sx={{ listStyle: 'none', pl: 0 }}>
             <li><strong>Company:</strong> RxSynapse</li>
-            <li><strong>Email:</strong> privacy@rxsynapse.com</li>
-            <li><strong>Support:</strong> support@rxsynapse.com</li>
+            <li><strong>Email:</strong> contact@rxsynapse.com</li>
             <li><strong>Website:</strong> <MuiLink href="https://rxsynapse.com" target="_blank" rel="noopener noreferrer">https://rxsynapse.com</MuiLink></li>
           </Box>
 
