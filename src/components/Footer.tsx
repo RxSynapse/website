@@ -165,13 +165,17 @@ export default function Footer() {
         <Divider sx={{ bgcolor: "gray", my: 3 }} />
         <Typography variant="body2" align="center" sx={{ opacity: 0.6 }}>
           © {new Date().getFullYear()} RxSynapse. All rights reserved. |{" "}
-          <MuiLink href="#" underline="hover" color="inherit">
-            Privacy Policy
-          </MuiLink>{" "}
+          <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <MuiLink component="span" underline="hover" color="inherit" sx={{ cursor: 'pointer' }}>
+              Privacy Policy
+            </MuiLink>
+          </Link>{" "}
           |{" "}
-          <MuiLink href="#" underline="hover" color="inherit">
-            Terms of Service
-          </MuiLink>
+          <Link href="/terms" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <MuiLink component="span" underline="hover" color="inherit" sx={{ cursor: 'pointer' }}>
+              Terms of Service
+            </MuiLink>
+          </Link>
         </Typography>
       </Container>
     </Box>
