@@ -20,7 +20,7 @@ export default function PricingPlans() {
         color: '#fff',
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ overflow: 'visible' }}>
         {/* Plans Grid */}
         <Box
           sx={{
@@ -32,7 +32,8 @@ export default function PricingPlans() {
               lg: 'repeat(5, 1fr)',
             },
             gap: 3,
-            pt: 2, // Add top padding to prevent badge clipping
+            pt: 3, // Increased padding to prevent badge clipping
+            overflow: 'visible',
           }}
         >
           {PRICING_PLANS.map((plan, index) => {
@@ -47,6 +48,7 @@ export default function PricingPlans() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                style={{ overflow: 'visible' }}
               >
                 <Card
                   sx={{
