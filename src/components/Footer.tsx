@@ -11,9 +11,7 @@ import {
   ListItem,
   Link as MuiLink,
 } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { trackOutboundLink, trackNavigation } from '@/lib/analytics';
@@ -71,17 +69,6 @@ export default function Footer() {
             <List sx={{ mt: 2, display: "flex" }}>
               <IconButton
                 component="a"
-                href="https://facebook.com/rxsynapse"
-                rel="nofollow noopener"
-                target="_blank"
-                aria-label="RxSynapse on Facebook"
-                sx={{ color: "white" }}
-                onClick={() => handleSocialClick('Facebook', 'https://facebook.com/rxsynapse')}
-              >
-                <FacebookIcon />
-              </IconButton>
-              <IconButton
-                component="a"
                 href="https://linkedin.com/company/rxsynapse"
                 rel="nofollow noopener"
                 target="_blank"
@@ -90,17 +77,6 @@ export default function Footer() {
                 onClick={() => handleSocialClick('LinkedIn', 'https://linkedin.com/company/rxsynapse')}
               >
                 <LinkedInIcon />
-              </IconButton>
-              <IconButton
-                component="a"
-                href="https://twitter.com/rxsynapse"
-                rel="nofollow noopener"
-                target="_blank"
-                aria-label="RxSynapse on Twitter"
-                sx={{ color: "white" }}
-                onClick={() => handleSocialClick('Twitter', 'https://twitter.com/rxsynapse')}
-              >
-                <TwitterIcon />
               </IconButton>
               <IconButton
                 component="a"

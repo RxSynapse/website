@@ -42,13 +42,6 @@ export const metadata: Metadata = {
       alt: 'RxSynapse - AI-Powered BFSI Solutions for Trading Intelligence and Customer Communication',
     }],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'RxSynapse - AI-Powered BFSI Solutions',
-    description: 'Leading AI-driven solutions for trading intelligence and customer communication',
-    images: ['/images/og-image.jpg'],
-    creator: '@rxsynapse',
-  },
   robots: {
     index: true,
     follow: true,
@@ -98,9 +91,7 @@ export default function RootLayout({
                 addressCountry: 'IN'
               },
               sameAs: [
-                'https://facebook.com/rxsynapse',
                 'https://linkedin.com/company/rxsynapse',
-                'https://twitter.com/rxsynapse',
               ],
               makesOffer: [
                 {
