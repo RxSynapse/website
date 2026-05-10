@@ -66,7 +66,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     price: 799,
     stars: 533,
     duration: 90,
-    savings: 'Save 70% vs daily',
+    savings: 'Save 70% vs daily (₹8.8/day)',
     features: [
       'Unlimited alerts (all severities)',
       'Valid for 90 days',
@@ -82,7 +82,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     stars: 1600,
     duration: 365,
     badge: '💎 BEST VALUE',
-    savings: 'Save 78% vs daily',
+    savings: 'Save 78% vs daily (₹6.5/day)',
     features: [
       'Unlimited alerts (all severities)',
       'Valid for 365 days',
