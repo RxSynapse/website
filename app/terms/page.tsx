@@ -9,23 +9,23 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <Box sx={{ bgcolor: '#0a0a0a', minHeight: '100vh', py: 8 }}>
-      <Container maxWidth="md">
+    <Box sx={{ bgcolor: '#0a0a0a', minHeight: '100vh', py: { xs: 4, md: 8 } }}>
+      <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         {/* Header */}
-        <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: { xs: 4, md: 6 } }}>
           <Link href="/" style={{ color: '#60a5fa', textDecoration: 'none' }}>
             ← Back to Home
           </Link>
-          <Typography variant="h2" component="h1" sx={{ mt: 3, mb: 2, color: 'white', fontWeight: 'bold' }}>
+          <Typography variant="h2" component="h1" sx={{ mt: 3, mb: 2, color: 'white', fontWeight: 'bold', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3rem' } }}>
             Terms of Service
           </Typography>
-          <Typography variant="body1" sx={{ color: '#9ca3af' }}>
+          <Typography variant="body1" sx={{ color: '#9ca3af', fontSize: { xs: '0.875rem', sm: '1rem' } }}>
             Last Updated: May 10, 2026
           </Typography>
         </Box>
 
         {/* Content */}
-        <Box sx={{ color: '#d1d5db', '& h2': { color: 'white', mt: 6, mb: 3, fontSize: '1.875rem', fontWeight: 'bold' }, '& h3': { color: 'white', mt: 4, mb: 2, fontSize: '1.5rem', fontWeight: 'semibold' }, '& h4': { color: 'white', mt: 3, mb: 1.5, fontSize: '1.25rem', fontWeight: 'medium' }, '& p': { mb: 2, lineHeight: 1.7 }, '& ul': { mb: 3, pl: 4 }, '& li': { mb: 1.5 }, '& a': { color: '#60a5fa', '&:hover': { color: '#93c5fd' } }, '& strong': { color: 'white' } }}>
+        <Box sx={{ color: '#d1d5db', '& h2': { color: 'white', mt: { xs: 4, md: 6 }, mb: { xs: 2, md: 3 }, fontSize: { xs: '1.5rem', sm: '1.75rem', md: '1.875rem' }, fontWeight: 'bold' }, '& h3': { color: 'white', mt: { xs: 3, md: 4 }, mb: 2, fontSize: { xs: '1.25rem', sm: '1.375rem', md: '1.5rem' }, fontWeight: 'semibold' }, '& h4': { color: 'white', mt: { xs: 2, md: 3 }, mb: 1.5, fontSize: { xs: '1.125rem', sm: '1.25rem' }, fontWeight: 'medium' }, '& p': { mb: 2, lineHeight: 1.7, fontSize: { xs: '0.875rem', sm: '1rem' } }, '& ul': { mb: 3, pl: { xs: 3, sm: 4 } }, '& li': { mb: 1.5, fontSize: { xs: '0.875rem', sm: '1rem' } }, '& a': { color: '#60a5fa', '&:hover': { color: '#93c5fd' } }, '& strong': { color: 'white' } }}>
 
           {/* Introduction */}
           <Typography paragraph>
@@ -127,46 +127,46 @@ export default function TermsPage() {
           <Typography variant="h3" component="h3">
             4.1 Available Plans
           </Typography>
-          <TableContainer component={Paper} sx={{ bgcolor: '#1f2937', mt: 2, mb: 3 }}>
-            <Table>
+          <TableContainer component={Paper} sx={{ bgcolor: '#1f2937', mt: 2, mb: 3, overflowX: 'auto' }}>
+            <Table size={{ xs: 'small', sm: 'medium' }}>
               <TableHead>
                 <TableRow sx={{ bgcolor: '#374151' }}>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Plan</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Price (INR)</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Telegram Stars</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Duration</TableCell>
+                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Plan</TableCell>
+                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Price (INR)</TableCell>
+                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Telegram Stars</TableCell>
+                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Duration</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell sx={{ color: '#d1d5db' }}>1 Day Pass</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>₹29</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>20 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>1 day</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>1 Day Pass</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹29</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>20 Stars</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>1 day</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell sx={{ color: '#d1d5db' }}>7 Day Pass</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>₹149</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>100 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>7 days</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>7 Day Pass</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹149</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>100 Stars</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>7 days</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell sx={{ color: '#d1d5db' }}>1 Month</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>₹299</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>200 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>30 days</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>1 Month</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹299</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>200 Stars</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>30 days</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell sx={{ color: '#d1d5db' }}>3 Months</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>₹799</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>533 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>90 days</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>3 Months</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹799</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>533 Stars</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>90 days</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell sx={{ color: '#d1d5db' }}>1 Year</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>₹2,399</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>1,600 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db' }}>365 days</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>1 Year</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹2,399</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>1,600 Stars</TableCell>
+                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>365 days</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

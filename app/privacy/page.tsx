@@ -9,23 +9,23 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Box sx={{ bgcolor: '#0a0a0a', minHeight: '100vh', py: 8 }}>
-      <Container maxWidth="md">
+    <Box sx={{ bgcolor: '#0a0a0a', minHeight: '100vh', py: { xs: 4, md: 8 } }}>
+      <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         {/* Header */}
-        <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: { xs: 4, md: 6 } }}>
           <Link href="/" style={{ color: '#60a5fa', textDecoration: 'none' }}>
             ← Back to Home
           </Link>
-          <Typography variant="h2" component="h1" sx={{ mt: 3, mb: 2, color: 'white', fontWeight: 'bold' }}>
+          <Typography variant="h2" component="h1" sx={{ mt: 3, mb: 2, color: 'white', fontWeight: 'bold', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3rem' } }}>
             Privacy Policy
           </Typography>
-          <Typography variant="body1" sx={{ color: '#9ca3af' }}>
+          <Typography variant="body1" sx={{ color: '#9ca3af', fontSize: { xs: '0.875rem', sm: '1rem' } }}>
             Last Updated: May 10, 2026
           </Typography>
         </Box>
 
         {/* Content */}
-        <Box sx={{ color: '#d1d5db', '& h2': { color: 'white', mt: 6, mb: 3, fontSize: '1.875rem', fontWeight: 'bold' }, '& h3': { color: 'white', mt: 4, mb: 2, fontSize: '1.5rem', fontWeight: 'semibold' }, '& p': { mb: 2, lineHeight: 1.7 }, '& ul': { mb: 3, pl: 4 }, '& li': { mb: 1.5 }, '& a': { color: '#60a5fa', '&:hover': { color: '#93c5fd' } }, '& strong': { color: 'white' } }}>
+        <Box sx={{ color: '#d1d5db', '& h2': { color: 'white', mt: { xs: 4, md: 6 }, mb: { xs: 2, md: 3 }, fontSize: { xs: '1.5rem', sm: '1.75rem', md: '1.875rem' }, fontWeight: 'bold' }, '& h3': { color: 'white', mt: { xs: 3, md: 4 }, mb: 2, fontSize: { xs: '1.25rem', sm: '1.375rem', md: '1.5rem' }, fontWeight: 'semibold' }, '& p': { mb: 2, lineHeight: 1.7, fontSize: { xs: '0.875rem', sm: '1rem' } }, '& ul': { mb: 3, pl: { xs: 3, sm: 4 } }, '& li': { mb: 1.5, fontSize: { xs: '0.875rem', sm: '1rem' } }, '& a': { color: '#60a5fa', '&:hover': { color: '#93c5fd' } }, '& strong': { color: 'white' } }}>
 
           {/* Introduction */}
           <Typography paragraph>
