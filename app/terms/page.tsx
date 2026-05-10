@@ -128,7 +128,7 @@ export default function TermsPage() {
             4.1 Available Plans
           </Typography>
           <TableContainer component={Paper} sx={{ bgcolor: '#1f2937', mt: 2, mb: 3, overflowX: 'auto' }}>
-            <Table size={{ xs: 'small', sm: 'medium' }}>
+            <Table size="small">
               <TableHead>
                 <TableRow sx={{ bgcolor: '#374151' }}>
                   <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Plan</TableCell>
