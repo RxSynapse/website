@@ -8,20 +8,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified,
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/flow`,
       lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'daily' as const,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/communication`,
       lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
   ];
 }
