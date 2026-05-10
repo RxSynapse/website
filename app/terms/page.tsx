@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Container, Typography, Box, Link as MuiLink, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Container, Typography, Box, Link as MuiLink } from '@mui/material';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | RxSynapse',
-  description: 'Terms of Service for RxSynapse and RxFlow - Read our terms and conditions before using the platform',
+  description: 'Terms of Service for RxSynapse - Read our terms and conditions before using our BFSI solutions',
 };
 
 export default function TermsPage() {
@@ -29,10 +29,10 @@ export default function TermsPage() {
 
           {/* Introduction */}
           <Typography paragraph>
-            Welcome to RxFlow, a real-time options intelligence platform operated by RxSynapse (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of our platform, website, Telegram bot, and related services (collectively, the &quot;Services&quot;).
+            Welcome to RxSynapse (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of our AI-powered solutions for the BFSI sector, including RxFlow (trading intelligence), RxCommunication (conversational AI), and related services (collectively, the &quot;Services&quot;).
           </Typography>
           <Typography paragraph>
-            By accessing or using RxFlow, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our Services.
+            By accessing or using any RxSynapse service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our Services.
           </Typography>
 
           {/* Acceptance */}
@@ -40,10 +40,11 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </Typography>
           <Box component="ul">
-            <li>You must be at least 18 years old to use RxFlow</li>
+            <li>You must be at least 18 years old to use RxSynapse services</li>
             <li>You must have the legal capacity to enter into binding contracts</li>
-            <li>You represent that all information you provide is accurate and current</li>
+            <li>You represent that all information you provide is accurate, current, and complete</li>
             <li>You agree to comply with all applicable laws and regulations</li>
+            <li>If you are using our services on behalf of a company, you represent that you have authority to bind that company</li>
           </Box>
 
           {/* Account Registration */}
@@ -55,175 +56,142 @@ export default function TermsPage() {
             2.1 Account Creation
           </Typography>
           <Box component="ul">
-            <li>You must register with a valid phone number for authentication</li>
-            <li>You are responsible for maintaining the confidentiality of your account credentials</li>
-            <li>You must notify us immediately of any unauthorized access or security breach</li>
-            <li>You may not share your account with others or create multiple accounts</li>
+            <li>You must register with valid contact information (email and/or phone number)</li>
+            <li>Choose a strong password and keep your account credentials confidential</li>
+            <li>You are responsible for all activity that occurs under your account</li>
+            <li>Notify us immediately of any unauthorized access or security breach</li>
+            <li>You may not share your account with others or create multiple accounts without authorization</li>
+            <li>Business accounts may have additional setup requirements</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            2.2 Account Termination
+            2.2 Account Suspension and Termination
           </Typography>
           <Typography paragraph>
             We reserve the right to suspend or terminate your account if you:
           </Typography>
           <Box component="ul">
-            <li>Violate these Terms of Service</li>
-            <li>Engage in fraudulent or illegal activities</li>
-            <li>Abuse or misuse the platform or services</li>
-            <li>Harass other users or our support team</li>
+            <li>Violate these Terms of Service or any applicable laws</li>
+            <li>Engage in fraudulent, abusive, or illegal activities</li>
+            <li>Misuse or abuse the platform or services</li>
+            <li>Harass other users, our staff, or partners</li>
+            <li>Attempt to access unauthorized areas or data</li>
+            <li>Use the service for purposes that compete with or harm RxSynapse</li>
           </Box>
 
           {/* Service Description */}
           <Typography variant="h2" component="h2">
-            3. Service Description
-          </Typography>
-
-          <Typography variant="h3" component="h3">
-            3.1 Platform Features
+            3. Services Overview
           </Typography>
           <Typography paragraph>
-            RxFlow provides:
+            RxSynapse provides AI-powered solutions for the BFSI sector:
+          </Typography>
+
+          <Typography variant="h3" component="h3">
+            3.1 RxFlow - Trading Intelligence
           </Typography>
           <Box component="ul">
-            <li><strong>Real-Time Options Monitoring:</strong> Tracks 940+ option strikes across Nifty, BankNifty, FinNifty, MidcapNifty, and 15 top stocks</li>
-            <li><strong>Unusual Activity Detection:</strong> Identifies volume spikes, open interest changes, and aggressive buying/selling patterns</li>
-            <li><strong>Smart Money Correlation:</strong> Correlates options activity with FII/DII flows, bulk deals, and block deals</li>
-            <li><strong>Alert Delivery:</strong> Instant notifications via Telegram with customizable severity levels</li>
-            <li><strong>Performance Tracking:</strong> Tracks alert outcomes at 15min, 30min, 1hr, and 1-day intervals</li>
-            <li><strong>Daily Summaries:</strong> Comprehensive daily reports with feedback collection</li>
+            <li>Real-time market data analysis and unusual activity detection</li>
+            <li>Smart money flow tracking and institutional trade monitoring</li>
+            <li>Customizable alerts and notifications via multiple channels</li>
+            <li>Performance tracking and analytics dashboards</li>
+            <li>Integration with communication platforms (Telegram, etc.)</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            3.2 Subscription Tiers
-          </Typography>
-
-          <Typography variant="h4" component="h4">
-            FREE Tier
+            3.2 RxCommunication - Conversational AI
           </Typography>
           <Box component="ul">
-            <li>EXTREME severity alerts: Unlimited</li>
-            <li>HIGH severity alerts: 25 per day</li>
-            <li>MEDIUM severity alerts: 25 per day</li>
-            <li>LOW severity alerts: 50 per day</li>
-            <li>Default watchlist (indices and top stocks)</li>
+            <li>IVR-less customer support and communication automation</li>
+            <li>Natural language processing for customer interactions</li>
+            <li>Multi-channel communication management</li>
+            <li>Analytics and insights on customer engagement</li>
+            <li>Integration with existing business systems</li>
           </Box>
 
-          <Typography variant="h4" component="h4">
-            PAID Tier (Premium)
+          <Typography variant="h3" component="h3">
+            3.3 Subscription Models
+          </Typography>
+          <Typography paragraph>
+            Our services operate on subscription-based models with various tiers:
           </Typography>
           <Box component="ul">
-            <li>Unlimited alerts across all severity levels (LOW, MEDIUM, HIGH, EXTREME)</li>
-            <li>Custom watchlists with strike-level granularity</li>
-            <li>Priority alert delivery</li>
-            <li>Full access to historical performance data</li>
+            <li><strong>Free Tier:</strong> Limited access to core features with usage quotas</li>
+            <li><strong>Premium Tiers:</strong> Enhanced features, higher limits, and priority support</li>
+            <li><strong>Enterprise Plans:</strong> Custom solutions with dedicated support and SLAs</li>
+            <li><strong>Trial Periods:</strong> Some services offer trial periods for evaluation</li>
           </Box>
+          <Typography paragraph>
+            Specific pricing, features, and terms for each service are available on the respective product pages.
+          </Typography>
 
-          {/* Subscription Plans */}
+          {/* Payment Terms */}
           <Typography variant="h2" component="h2">
-            4. Subscription Plans and Pricing
+            4. Payment Terms and Billing
           </Typography>
 
           <Typography variant="h3" component="h3">
-            4.1 Available Plans
-          </Typography>
-          <TableContainer component={Paper} sx={{ bgcolor: '#1f2937', mt: 2, mb: 3, overflowX: 'auto' }}>
-            <Table size="small">
-              <TableHead>
-                <TableRow sx={{ bgcolor: '#374151' }}>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Plan</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Price (INR)</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Telegram Stars</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>Duration</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>1 Day Pass</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹29</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>20 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>1 day</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>7 Day Pass</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹149</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>100 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>7 days</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>1 Month</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹299</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>200 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>30 days</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>3 Months</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹799</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>533 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>90 days</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, whiteSpace: 'nowrap' }}>1 Year</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>₹2,399</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>1,600 Stars</TableCell>
-                  <TableCell sx={{ color: '#d1d5db', fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>365 days</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </TableContainer>
-
-          <Typography variant="h3" component="h3">
-            4.2 Payment Methods
+            4.1 Payment Methods
           </Typography>
           <Box component="ul">
-            <li><strong>Telegram Stars:</strong> Primary payment method via Telegram&apos;s in-app purchase system</li>
-            <li><strong>Razorpay:</strong> Credit card, debit card, UPI, net banking, and other methods (when available)</li>
-            <li><strong>Manual Payment:</strong> Available for enterprise or special cases (contact support)</li>
+            <li><strong>Credit/Debit Cards:</strong> Processed securely through Razorpay</li>
+            <li><strong>UPI & Net Banking:</strong> Indian payment methods via Razorpay</li>
+            <li><strong>Telegram Stars:</strong> In-app purchases for certain services</li>
+            <li><strong>Wire Transfer:</strong> Available for enterprise accounts</li>
+            <li><strong>Purchase Orders:</strong> Available for qualifying business customers</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            4.3 GST and Taxes
+            4.2 Taxes and Compliance
           </Typography>
           <Box component="ul">
-            <li>All prices are inclusive of 18% GST as per Indian tax regulations</li>
+            <li>All prices are inclusive of applicable GST (18%) as per Indian tax regulations</li>
             <li>GST breakdown: 9% CGST + 9% SGST (intra-state) or 18% IGST (inter-state)</li>
-            <li>Tax invoices are generated automatically and available via Razorpay</li>
-            <li>GSTIN and tax details are stored for compliance purposes</li>
+            <li>Tax invoices are generated automatically and available in your account</li>
+            <li>GSTIN and other tax details are stored for compliance purposes</li>
+            <li>International customers may be subject to additional taxes in their jurisdiction</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            4.4 Billing and Renewal
+            4.3 Billing and Renewal
           </Typography>
           <Box component="ul">
-            <li>Subscriptions are prepaid for the selected duration</li>
-            <li>Subscriptions do NOT auto-renew unless explicitly configured</li>
-            <li>You will receive notifications 3 days and 1 day before subscription expiry</li>
-            <li>Upon expiry, your account automatically downgrades to the FREE tier</li>
+            <li>Subscriptions are billed in advance for the selected period (monthly, quarterly, annually)</li>
+            <li>Auto-renewal is enabled by default unless you opt out or cancel</li>
+            <li>You will receive renewal reminders before your subscription expires</li>
+            <li>Upon expiry without renewal, accounts may downgrade to free tier or be suspended</li>
+            <li>Enterprise contracts have custom billing terms as specified in agreements</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            4.5 Refund Policy
+            4.4 Refund Policy
           </Typography>
           <Typography paragraph>
-            Due to the digital nature of our service and instant access provided upon purchase, <strong>all sales are final and non-refundable</strong>. Exceptions may be made at our sole discretion in cases of:
+            <strong>General Policy:</strong> Due to the digital nature of our services and instant access upon purchase, subscriptions are generally non-refundable.
+          </Typography>
+          <Typography paragraph>
+            <strong>Exceptions may be granted at our sole discretion for:</strong>
           </Typography>
           <Box component="ul">
-            <li>Technical failures preventing service access</li>
-            <li>Duplicate payments or billing errors</li>
-            <li>Service outages lasting more than 48 hours</li>
+            <li>Technical failures preventing service access for extended periods (48+ hours)</li>
+            <li>Duplicate or erroneous charges due to processing errors</li>
+            <li>Billing mistakes or unauthorized charges</li>
+            <li>Service outages exceeding our SLA commitments (enterprise customers)</li>
           </Box>
           <Typography paragraph>
-            We recommend starting with a 1-day pass (₹29) to evaluate the service before committing to longer subscriptions.
+            <strong>Trial Periods:</strong> If a trial period is offered, you may cancel before it ends to avoid charges. No refunds are provided for trial conversions unless there was a billing error.
+          </Typography>
+          <Typography paragraph>
+            <strong>Cancellations:</strong> You may cancel your subscription at any time. Access continues until the end of the current billing period, but no prorated refunds are provided for unused time.
           </Typography>
 
           <Typography variant="h3" component="h3">
-            4.6 Upgrades and Downgrades
+            4.5 Plan Changes
           </Typography>
           <Box component="ul">
-            <li>You can purchase a new subscription plan at any time</li>
-            <li>The new plan activates immediately upon successful payment</li>
-            <li>Any remaining days from your current plan will be forfeited (no prorated refunds)</li>
-            <li>Downgrades take effect automatically when your current subscription expires</li>
+            <li><strong>Upgrades:</strong> Take effect immediately; you are charged the prorated difference</li>
+            <li><strong>Downgrades:</strong> Take effect at the end of the current billing period</li>
+            <li><strong>Feature Changes:</strong> We reserve the right to modify features, limits, and pricing with 30 days notice</li>
           </Box>
 
           {/* Acceptable Use */}
@@ -235,13 +203,14 @@ export default function TermsPage() {
             5.1 Permitted Use
           </Typography>
           <Typography paragraph>
-            You may use RxFlow for:
+            You may use RxSynapse services for:
           </Typography>
           <Box component="ul">
-            <li>Personal trading research and market analysis</li>
-            <li>Monitoring unusual options activity for educational purposes</li>
-            <li>Receiving real-time alerts for your watchlist</li>
-            <li>Tracking smart money flows and institutional trades</li>
+            <li>Lawful business and personal purposes as intended by the service</li>
+            <li>Market research, analysis, and decision support</li>
+            <li>Customer communication and engagement (RxCommunication)</li>
+            <li>Integrating with your existing systems and workflows</li>
+            <li>Training your team and authorized users</li>
           </Box>
 
           <Typography variant="h3" component="h3">
@@ -251,63 +220,68 @@ export default function TermsPage() {
             You may NOT:
           </Typography>
           <Box component="ul">
-            <li>Use automated bots, scrapers, or scripts to access the platform (except authorized trading bots)</li>
-            <li>Reverse engineer, decompile, or attempt to extract source code</li>
-            <li>Resell, redistribute, or sublicense our alerts or data</li>
-            <li>Share your account credentials or subscription with others</li>
-            <li>Interfere with or disrupt the platform&apos;s operation or servers</li>
-            <li>Engage in fraudulent activity, including chargeback abuse</li>
-            <li>Harass, threaten, or abuse other users or support staff via Telegram</li>
-            <li>Use the service for illegal activities or market manipulation</li>
+            <li>Use automated bots, scrapers, or tools to access services without authorization</li>
+            <li>Reverse engineer, decompile, or attempt to extract source code or algorithms</li>
+            <li>Resell, redistribute, or sublicense our services without written permission</li>
+            <li>Share account credentials or allow unauthorized access</li>
+            <li>Interfere with or disrupt service operation, servers, or networks</li>
+            <li>Attempt to bypass security measures, rate limits, or access controls</li>
+            <li>Use services for illegal activities, fraud, or market manipulation</li>
+            <li>Transmit viruses, malware, or harmful code</li>
+            <li>Harass, threaten, or abuse other users or our staff</li>
+            <li>Violate intellectual property rights or third-party rights</li>
+            <li>Use services to compete with or harm RxSynapse</li>
           </Box>
 
           {/* Disclaimer */}
           <Box sx={{ bgcolor: '#7f1d1d20', border: '1px solid #7f1d1d', borderRadius: 2, p: 3, mt: 6, mb: 6 }}>
             <Typography variant="h2" component="h2" sx={{ mt: 0 }}>
-              6. IMPORTANT DISCLAIMER
+              6. IMPORTANT DISCLAIMERS
             </Typography>
 
             <Typography variant="h3" component="h3">
-              6.1 Not Financial Advice
+              6.1 Informational Services Only
             </Typography>
             <Box component="ul">
-              <li>RxFlow provides <strong>informational and analytical tools only</strong></li>
-              <li>Alerts and data are <strong>NOT investment recommendations or financial advice</strong></li>
-              <li>We are NOT a registered investment advisor, broker, or financial institution</li>
-              <li>You should consult with a qualified financial advisor before making trading decisions</li>
+              <li>RxSynapse services provide <strong>informational, analytical, and communication tools only</strong></li>
+              <li>Our services are <strong>NOT investment advice, financial advice, or trading recommendations</strong></li>
+              <li>We are NOT a registered investment advisor, broker, dealer, or financial institution</li>
+              <li>You should consult qualified professionals (financial advisors, lawyers, accountants) before making decisions</li>
+              <li>Any insights, alerts, or data provided are for informational purposes and should not be solely relied upon</li>
             </Box>
 
             <Typography variant="h3" component="h3">
-              6.2 Trading Risks
+              6.2 No Guarantees of Accuracy or Results
+            </Typography>
+            <Box component="ul">
+              <li><strong>Data Accuracy:</strong> We strive for accuracy but do not guarantee that all data is error-free, complete, or current</li>
+              <li><strong>Third-Party Data:</strong> Some data comes from third parties; we are not responsible for their errors or delays</li>
+              <li><strong>Service Availability:</strong> While we aim for high uptime, we do not guarantee uninterrupted access</li>
+              <li><strong>Performance:</strong> Past performance or historical data does not predict future results</li>
+            </Box>
+
+            <Typography variant="h3" component="h3">
+              6.3 Trading and Financial Risks
             </Typography>
             <Typography paragraph>
-              <strong>Options trading involves substantial risk of loss and is not suitable for all investors.</strong> You acknowledge that:
+              <strong>If using RxFlow or similar trading-related services:</strong>
             </Typography>
             <Box component="ul">
-              <li>You can lose your entire investment or more</li>
-              <li>Past performance is not indicative of future results</li>
-              <li>Market conditions can change rapidly and unpredictably</li>
-              <li>Our alerts may be delayed, inaccurate, or incomplete</li>
+              <li>Trading and investing involve substantial risk of financial loss</li>
+              <li>You may lose your entire investment or more</li>
+              <li>Market conditions are unpredictable and can change rapidly</li>
               <li>You are solely responsible for your trading decisions and outcomes</li>
-            </Box>
-
-            <Typography variant="h3" component="h3">
-              6.3 Alert Accuracy
-            </Typography>
-            <Box component="ul">
-              <li>We make no guarantees about alert accuracy or success rates</li>
-              <li>Performance tracking shows historical volatility-based outcomes (10%+ move in any direction)</li>
-              <li>Success rates are statistical and do not predict future performance</li>
-              <li>Market data may be delayed or subject to errors from third-party providers</li>
+              <li>RxSynapse is not liable for any trading losses, missed opportunities, or damages</li>
             </Box>
 
             <Typography variant="h3" component="h3">
               6.4 Regulatory Compliance
             </Typography>
             <Box component="ul">
-              <li>You are responsible for complying with SEBI regulations and Indian securities laws</li>
-              <li>RxFlow is an analytical platform, not a trading platform or brokerage</li>
-              <li>We do not execute trades or hold customer funds</li>
+              <li>You are responsible for complying with all applicable laws and regulations</li>
+              <li>This includes SEBI regulations, RBI guidelines, tax laws, and data protection laws</li>
+              <li>RxSynapse provides tools; you are responsible for how you use them</li>
+              <li>We do not execute trades, hold funds, or act as a broker</li>
             </Box>
           </Box>
 
@@ -317,249 +291,277 @@ export default function TermsPage() {
           </Typography>
 
           <Typography variant="h3" component="h3">
-            7.1 Our Rights
+            7.1 RxSynapse's Rights
           </Typography>
           <Typography paragraph>
-            All content, features, functionality, trademarks, logos, and technology on RxFlow are owned by RxSynapse and protected by copyright, trademark, and other intellectual property laws. This includes:
+            All content, features, functionality, trademarks, logos, technology, algorithms, and designs on RxSynapse platforms are owned by RxSynapse or its licensors and protected by intellectual property laws. This includes:
           </Typography>
           <Box component="ul">
-            <li>Detection algorithms and proprietary analysis methods</li>
-            <li>Smart money correlation engine</li>
-            <li>Alert generation logic and severity classification</li>
-            <li>Platform design, UI/UX, and branding</li>
-            <li>Documentation, guides, and educational content</li>
+            <li>Proprietary algorithms, AI models, and analysis methods</li>
+            <li>Platform design, user interface, and user experience</li>
+            <li>Software code, architecture, and technical implementation</li>
+            <li>Trademarks, logos, and brand assets (RxSynapse, RxFlow, RxCommunication)</li>
+            <li>Documentation, guides, training materials, and content</li>
+            <li>Data aggregation, processing, and presentation methods</li>
           </Box>
 
           <Typography variant="h3" component="h3">
             7.2 Limited License
           </Typography>
           <Typography paragraph>
-            We grant you a limited, non-exclusive, non-transferable, revocable license to access and use RxFlow for personal, non-commercial purposes in accordance with these Terms.
+            We grant you a limited, non-exclusive, non-transferable, revocable license to access and use RxSynapse services for their intended purposes in accordance with these Terms. This license does not grant you any ownership rights.
           </Typography>
 
           <Typography variant="h3" component="h3">
-            7.3 Feedback
+            7.3 Your Content and Feedback
           </Typography>
-          <Typography paragraph>
-            Any feedback, suggestions, or ideas you provide to us become our property and may be used without compensation or attribution.
-          </Typography>
-
-          {/* Data and Privacy */}
-          <Typography variant="h2" component="h2">
-            8. Data and Privacy
-          </Typography>
-          <Typography paragraph>
-            Your use of RxFlow is also governed by our <Link href="/privacy" style={{ color: '#60a5fa', textDecoration: 'underline' }}>Privacy Policy</Link>, which describes how we collect, use, and protect your personal data. By using our Services, you consent to our data practices as described in the Privacy Policy.
-          </Typography>
+          <Box component="ul">
+            <li><strong>Your Data:</strong> You retain ownership of data you input into our services</li>
+            <li><strong>License to Us:</strong> You grant us a license to use your data to provide and improve services</li>
+            <li><strong>Feedback:</strong> Any suggestions, ideas, or feedback you provide become our property and may be used without compensation</li>
+            <li><strong>Confidentiality:</strong> We treat your data as confidential per our Privacy Policy</li>
+          </Box>
 
           {/* Limitation of Liability */}
           <Typography variant="h2" component="h2">
-            9. Limitation of Liability
+            8. Limitation of Liability
           </Typography>
 
           <Typography variant="h3" component="h3">
-            9.1 Service Provided &quot;AS IS&quot;
+            8.1 Service Provided &quot;AS IS&quot;
           </Typography>
           <Typography paragraph>
-            RxFlow is provided on an <strong>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot;</strong> basis without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
+            RxSynapse services are provided on an <strong>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot;</strong> basis without warranties of any kind, either express or implied, including but not limited to:
           </Typography>
+          <Box component="ul">
+            <li>Warranties of merchantability or fitness for a particular purpose</li>
+            <li>Warranties of non-infringement or title</li>
+            <li>Warranties that services will be uninterrupted, error-free, or secure</li>
+            <li>Warranties regarding accuracy, completeness, or reliability of data</li>
+          </Box>
 
           <Typography variant="h3" component="h3">
-            9.2 No Liability for Trading Losses
+            8.2 No Liability for Losses or Damages
           </Typography>
           <Typography paragraph>
             <strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, RXSYNAPSE SHALL NOT BE LIABLE FOR:</strong>
           </Typography>
           <Box component="ul">
-            <li>Any trading losses, missed opportunities, or financial damages</li>
-            <li>Errors, delays, or inaccuracies in alerts or market data</li>
-            <li>Service interruptions, downtime, or technical failures</li>
-            <li>Third-party service failures (Telegram, Firebase, Razorpay, Angel One)</li>
-            <li>Indirect, incidental, consequential, or punitive damages</li>
+            <li>Any financial losses, trading losses, lost profits, or missed opportunities</li>
+            <li>Errors, inaccuracies, delays, or omissions in data or services</li>
+            <li>Service interruptions, downtime, outages, or performance issues</li>
+            <li>Third-party service failures or data provider issues</li>
+            <li>Unauthorized access, data breaches, or security incidents beyond our control</li>
+            <li>Indirect, incidental, consequential, special, exemplary, or punitive damages</li>
+            <li>Loss of data, revenue, goodwill, or business opportunities</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            9.3 Maximum Liability Cap
+            8.3 Liability Cap
           </Typography>
           <Typography paragraph>
-            In any case, our total liability to you for all claims arising from or related to RxFlow shall not exceed the amount you paid us in subscription fees during the 12 months preceding the claim.
+            In any case, RxSynapse&apos;s total liability to you for all claims arising from or related to our services shall not exceed the amount you paid to RxSynapse in the 12 months preceding the claim, or ₹10,000, whichever is greater.
           </Typography>
 
           {/* Indemnification */}
           <Typography variant="h2" component="h2">
-            10. Indemnification
+            9. Indemnification
           </Typography>
           <Typography paragraph>
-            You agree to indemnify, defend, and hold harmless RxSynapse, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including legal fees) arising from:
+            You agree to indemnify, defend, and hold harmless RxSynapse, its affiliates, officers, directors, employees, contractors, agents, and partners from any claims, liabilities, damages, losses, costs, or expenses (including reasonable legal fees) arising from:
           </Typography>
           <Box component="ul">
-            <li>Your use or misuse of RxFlow</li>
+            <li>Your use or misuse of RxSynapse services</li>
             <li>Your violation of these Terms of Service</li>
-            <li>Your trading activities or financial decisions</li>
-            <li>Your violation of any third-party rights or applicable laws</li>
-          </Box>
-
-          {/* Third-Party Services */}
-          <Typography variant="h2" component="h2">
-            11. Third-Party Services and Links
-          </Typography>
-          <Box component="ul">
-            <li>RxFlow integrates with third-party services (Firebase, Razorpay, Telegram, Angel One, Google Analytics)</li>
-            <li>We are not responsible for the availability, accuracy, or content of third-party services</li>
-            <li>Your use of third-party services is subject to their respective terms and policies</li>
-            <li>We may display links to external websites; we do not endorse or control these sites</li>
+            <li>Your violation of any applicable laws or regulations</li>
+            <li>Your violation of third-party rights (intellectual property, privacy, etc.)</li>
+            <li>Your trading activities, financial decisions, or business operations</li>
+            <li>Your content, data, or communications through our services</li>
           </Box>
 
           {/* Service Availability */}
           <Typography variant="h2" component="h2">
-            12. Service Availability and Modifications
+            10. Service Availability and Modifications
           </Typography>
 
           <Typography variant="h3" component="h3">
-            12.1 Availability
+            10.1 Availability
           </Typography>
           <Box component="ul">
-            <li>We strive for 99% uptime but do not guarantee uninterrupted service</li>
-            <li>Maintenance windows may be scheduled with advance notice</li>
-            <li>Market data streaming depends on Angel One API availability</li>
-            <li>Telegram alert delivery depends on Telegram&apos;s infrastructure</li>
+            <li>We strive for high availability (target: 99.5%+ uptime) but do not guarantee uninterrupted service</li>
+            <li>Scheduled maintenance windows will be announced in advance when possible</li>
+            <li>Emergency maintenance may occur without prior notice</li>
+            <li>Service availability depends on third-party providers (hosting, data, APIs)</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            12.2 Modifications
+            10.2 Service Modifications
           </Typography>
           <Typography paragraph>
             We reserve the right to:
           </Typography>
           <Box component="ul">
-            <li>Modify, suspend, or discontinue any feature or service at any time</li>
-            <li>Change pricing plans and subscription tiers with 30 days notice</li>
-            <li>Update detection algorithms and alert logic to improve accuracy</li>
-            <li>Add or remove supported symbols and strikes</li>
+            <li>Modify, update, or discontinue features or services at any time</li>
+            <li>Change pricing, plans, and subscription tiers with 30 days notice to existing customers</li>
+            <li>Improve algorithms, models, and data processing methods</li>
+            <li>Add or remove third-party integrations</li>
+            <li>Update user interfaces and workflows</li>
           </Box>
 
           {/* Termination */}
           <Typography variant="h2" component="h2">
-            13. Termination
+            11. Termination
           </Typography>
 
           <Typography variant="h3" component="h3">
-            13.1 Termination by You
+            11.1 Termination by You
           </Typography>
           <Box component="ul">
-            <li>You may delete your account at any time through profile settings</li>
-            <li>Account deletion is permanent and irreversible</li>
-            <li>No refunds will be provided for unused subscription periods</li>
+            <li>You may cancel your account or subscription at any time through account settings</li>
+            <li>Cancellation takes effect at the end of the current billing period</li>
+            <li>No refunds for unused time unless specified in Section 4.4</li>
+            <li>You may request account deletion; processed within 30 days</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            13.2 Termination by Us
+            11.2 Termination by Us
           </Typography>
           <Typography paragraph>
             We may suspend or terminate your account immediately without notice if:
           </Typography>
           <Box component="ul">
-            <li>You violate these Terms of Service</li>
-            <li>You engage in fraudulent or illegal activity</li>
-            <li>You abuse or misuse the platform</li>
-            <li>Required by law or regulatory authority</li>
+            <li>You materially breach these Terms of Service</li>
+            <li>You engage in fraudulent, illegal, or abusive activities</li>
+            <li>Your account poses a security risk</li>
+            <li>Required by law, court order, or regulatory authority</li>
+            <li>Your payment method fails and is not updated</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            13.3 Effect of Termination
+            11.3 Effect of Termination
           </Typography>
           <Box component="ul">
-            <li>Your right to use RxFlow immediately ceases</li>
-            <li>All subscriptions and services are cancelled without refund</li>
-            <li>User data is deleted per our data retention policy (except payment records for compliance)</li>
+            <li>Your right to use RxSynapse services immediately ceases</li>
+            <li>Subscriptions are cancelled without refund (unless specified otherwise)</li>
+            <li>Data is deleted per our data retention policy (payment records retained for compliance)</li>
+            <li>Provisions that by their nature should survive (indemnification, liability, disputes) continue</li>
+          </Box>
+
+          {/* Third-Party Services */}
+          <Typography variant="h2" component="h2">
+            12. Third-Party Services and Links
+          </Typography>
+          <Box component="ul">
+            <li>Our services integrate with third-party platforms (payment gateways, communication APIs, data providers)</li>
+            <li>We are not responsible for third-party service availability, accuracy, or content</li>
+            <li>Your use of third-party services is subject to their respective terms and policies</li>
+            <li>We may display links to external websites; we do not endorse or control these sites</li>
+            <li>Third-party terms may impose additional restrictions or obligations on you</li>
           </Box>
 
           {/* Governing Law */}
           <Typography variant="h2" component="h2">
-            14. Governing Law and Dispute Resolution
+            13. Governing Law and Dispute Resolution
           </Typography>
 
           <Typography variant="h3" component="h3">
-            14.1 Governing Law
+            13.1 Governing Law
           </Typography>
           <Typography paragraph>
-            These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in India.
+            These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in India (specific location to be determined based on company registration).
           </Typography>
 
           <Typography variant="h3" component="h3">
-            14.2 Dispute Resolution
+            13.2 Informal Resolution
           </Typography>
           <Typography paragraph>
             Before filing any legal claim, you agree to:
           </Typography>
           <Box component="ul">
-            <li>Contact us at support@rxsynapse.com to attempt informal resolution</li>
-            <li>Provide a detailed description of the dispute and proposed resolution</li>
-            <li>Allow 30 days for good-faith negotiation</li>
+            <li>Contact us at legal@rxsynapse.com to attempt informal resolution</li>
+            <li>Provide a detailed description of the dispute and your desired resolution</li>
+            <li>Allow 30 days for good-faith negotiation and resolution attempts</li>
           </Box>
 
           <Typography variant="h3" component="h3">
-            14.3 Arbitration
+            13.3 Arbitration
           </Typography>
           <Typography paragraph>
-            If informal resolution fails, disputes shall be resolved through binding arbitration in accordance with the Arbitration and Conciliation Act, 1996, with arbitration conducted in India.
+            If informal resolution fails, disputes shall be resolved through binding arbitration in accordance with the Arbitration and Conciliation Act, 1996. Arbitration shall be conducted in India by a single arbitrator mutually agreed upon or appointed per the Act.
+          </Typography>
+          <Typography paragraph>
+            <strong>Exceptions:</strong> Either party may seek injunctive or equitable relief in court for intellectual property disputes or urgent matters.
           </Typography>
 
-          {/* Severability */}
+          {/* General Provisions */}
           <Typography variant="h2" component="h2">
-            15. Severability and Waiver
+            14. General Provisions
           </Typography>
 
           <Typography variant="h3" component="h3">
-            15.1 Severability
+            14.1 Severability
           </Typography>
           <Typography paragraph>
             If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining provisions remain in full force and effect.
           </Typography>
 
           <Typography variant="h3" component="h3">
-            15.2 Waiver
+            14.2 Waiver
           </Typography>
           <Typography paragraph>
-            Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by our authorized representative.
+            Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by an authorized representative of RxSynapse.
+          </Typography>
+
+          <Typography variant="h3" component="h3">
+            14.3 Assignment
+          </Typography>
+          <Typography paragraph>
+            You may not assign or transfer these Terms or your account without our written consent. We may assign or transfer these Terms in connection with a merger, acquisition, or sale of assets.
+          </Typography>
+
+          <Typography variant="h3" component="h3">
+            14.4 Force Majeure
+          </Typography>
+          <Typography paragraph>
+            RxSynapse shall not be liable for any failure to perform due to causes beyond our reasonable control, including but not limited to acts of God, war, terrorism, pandemics, labor disputes, internet failures, or government actions.
           </Typography>
 
           {/* Changes to Terms */}
           <Typography variant="h2" component="h2">
-            16. Changes to These Terms
+            15. Changes to These Terms
           </Typography>
           <Typography paragraph>
             We may update these Terms from time to time. Material changes will be notified via:
           </Typography>
           <Box component="ul">
-            <li>Email notification (if email is provided)</li>
-            <li>Telegram bot notification</li>
-            <li>Prominent notice on our website</li>
+            <li>Email notification to your registered email address</li>
+            <li>In-app notification or prominent notice</li>
+            <li>Website announcement</li>
           </Box>
           <Typography paragraph>
-            The &quot;Last Updated&quot; date at the top indicates when the Terms were last revised. Your continued use of RxFlow after changes are posted constitutes acceptance of the updated Terms.
+            The &quot;Last Updated&quot; date at the top indicates when the Terms were last revised. Your continued use of RxSynapse services after changes are posted constitutes acceptance of the updated Terms. If you do not agree with the changes, you must stop using our services and may cancel your account.
           </Typography>
 
           {/* Entire Agreement */}
           <Typography variant="h2" component="h2">
-            17. Entire Agreement
+            16. Entire Agreement
           </Typography>
           <Typography paragraph>
-            These Terms, together with our Privacy Policy, constitute the entire agreement between you and RxSynapse regarding RxFlow and supersede all prior agreements, representations, and understandings.
+            These Terms, together with our Privacy Policy and any service-specific terms, constitute the entire agreement between you and RxSynapse regarding our services and supersede all prior agreements, representations, and understandings.
           </Typography>
 
           {/* Contact */}
           <Typography variant="h2" component="h2">
-            18. Contact Information
+            17. Contact Information
           </Typography>
           <Typography paragraph>
             For questions, concerns, or notices regarding these Terms of Service, please contact us:
           </Typography>
           <Box component="ul" sx={{ listStyle: 'none', pl: 0 }}>
             <li><strong>Company Name:</strong> RxSynapse</li>
-            <li><strong>Email:</strong> support@rxsynapse.com</li>
-            <li><strong>Telegram:</strong> <MuiLink href="https://t.me/rxflow_alerts_bot" target="_blank" rel="noopener noreferrer">@rxflow_alerts_bot</MuiLink></li>
-            <li><strong>Website:</strong> <MuiLink href="https://flow.rxsynapse.com" target="_blank" rel="noopener noreferrer">https://flow.rxsynapse.com</MuiLink></li>
+            <li><strong>Email:</strong> legal@rxsynapse.com</li>
+            <li><strong>Support:</strong> support@rxsynapse.com</li>
+            <li><strong>Website:</strong> <MuiLink href="https://rxsynapse.com" target="_blank" rel="noopener noreferrer">https://rxsynapse.com</MuiLink></li>
           </Box>
 
           {/* Acknowledgment */}
@@ -568,10 +570,10 @@ export default function TermsPage() {
               Acknowledgment
             </Typography>
             <Typography paragraph>
-              <strong>By using RxFlow, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong> You further acknowledge that options trading involves substantial risk and that RxFlow provides informational tools only, not financial advice.
+              <strong>By using any RxSynapse service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong> You further acknowledge that our services are informational tools and not financial advice, and that you are solely responsible for your decisions and their outcomes.
             </Typography>
             <Typography paragraph sx={{ mb: 0 }}>
-              If you do not agree with these Terms, you must discontinue use of our Services immediately.
+              If you do not agree with these Terms, you must discontinue use of our services immediately.
             </Typography>
           </Box>
         </Box>
