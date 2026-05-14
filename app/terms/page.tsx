@@ -136,7 +136,7 @@ export default function TermsPage() {
           <Box component="ul">
             <li><strong>Credit/Debit Cards:</strong> Processed securely through Razorpay</li>
             <li><strong>UPI & Net Banking:</strong> Indian payment methods via Razorpay</li>
-            <li><strong>Telegram Stars:</strong> In-app purchases for certain services</li>
+            <li><strong>Wallets:</strong> Popular wallets supported via Razorpay</li>
             <li><strong>Wire Transfer:</strong> Available for enterprise accounts</li>
             <li><strong>Purchase Orders:</strong> Available for qualifying business customers</li>
           </Box>

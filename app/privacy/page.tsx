@@ -75,7 +75,7 @@ export default function PrivacyPage() {
           </Typography>
           <Box component="ul">
             <li><strong>Billing Details:</strong> Payment method, billing address, transaction history</li>
-            <li><strong>Payment Processor Data:</strong> Processed securely through third-party payment gateways (Razorpay, Telegram Stars)</li>
+            <li><strong>Payment Processor Data:</strong> Processed securely through third-party payment gateway (Razorpay)</li>
             <li><strong>Tax Information:</strong> GST numbers and tax compliance data for Indian regulations</li>
             <li><strong>Invoice Data:</strong> Purchase history, subscription details, payment receipts</li>
           </Box>
@@ -129,11 +129,10 @@ export default function PrivacyPage() {
             3.2 Payment Processing
           </Typography>
           <Box component="ul">
-            <li><strong>Razorpay:</strong> Payment gateway for credit/debit cards, UPI, net banking</li>
-            <li><strong>Telegram Stars:</strong> In-app purchases through Telegram platform</li>
+            <li><strong>Razorpay:</strong> Payment gateway for credit/debit cards, UPI, net banking, and wallets</li>
             <li><strong>Data Shared:</strong> Payment amount, billing information, transaction details</li>
-            <li><strong>Note:</strong> Payment processors handle sensitive financial data securely; we do not store complete card numbers</li>
-            <li><strong>Privacy Policies:</strong> <MuiLink href="https://razorpay.com/privacy/" target="_blank" rel="noopener noreferrer">Razorpay</MuiLink> | <MuiLink href="https://telegram.org/privacy" target="_blank" rel="noopener noreferrer">Telegram</MuiLink></li>
+            <li><strong>Note:</strong> Payment processor handles sensitive financial data securely; we do not store complete card numbers</li>
+            <li><strong>Privacy Policy:</strong> <MuiLink href="https://razorpay.com/privacy/" target="_blank" rel="noopener noreferrer">Razorpay Privacy Policy</MuiLink></li>
           </Box>
 
           <Typography variant="h3" component="h3">

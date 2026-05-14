@@ -14,8 +14,16 @@ const faqs = [
     answer: 'Yes! All payments are processed through Razorpay, a PCI DSS compliant payment gateway. We never store your card details or payment information on our servers.',
   },
   {
+    question: 'How does the trading-day subscription logic work?',
+    answer: 'Subscriptions are calculated based on actual trading days, not calendar days. Weekend purchases start counting from Monday to ensure you get actual trading time. All subscriptions expire at 8 AM on weekdays only - never on Saturday or Sunday when markets are closed. For the 1 Day Pass: daytime purchases (9 AM-7 PM) get 2 full trading days, while night purchases get 1 full trading day.',
+  },
+  {
     question: 'What happens when my subscription expires?',
-    answer: 'Your account automatically downgrades to the FREE tier with daily quota limits. You can renew anytime to restore unlimited access.',
+    answer: 'Your subscription expires at 8 AM on a weekday (never on weekends). Your account automatically downgrades to the FREE tier with daily quota limits: 50 LOW alerts, 25 MEDIUM alerts, and 25 HIGH alerts per day. EXTREME alerts remain unlimited forever. You can renew anytime to restore unlimited access to all severity levels.',
+  },
+  {
+    question: 'What are Preferred Expiries and Outcome Tracking?',
+    answer: 'Premium users get two powerful features: (1) Preferred Expiries - Set your preferred contract expiry dates (weekly/monthly) to filter alerts for your trading strategy. (2) Outcome Tracking - Track alert performance at 15min, 30min, 1hr, and 1day intervals to measure your edge and refine your strategy based on actual results.',
   },
   {
     question: 'Can I upgrade or downgrade mid-cycle?',
@@ -23,11 +31,15 @@ const faqs = [
   },
   {
     question: 'Is there a refund policy?',
-    answer: 'Due to the digital nature of the service and instant access provided, all sales are final. We recommend starting with a 1-day pass to try the service.',
+    answer: 'Due to the digital nature of the service and instant access provided, all sales are final. We recommend starting with a 1-day pass to try the service. The 1 Day Pass is perfect for testing RxFlow before committing to longer plans.',
+  },
+  {
+    question: 'What do I get with the FREE tier?',
+    answer: 'The FREE tier includes unlimited EXTREME alerts (top 1% unusual activity) forever, plus daily quotas of 50 LOW alerts, 25 MEDIUM alerts, and 25 HIGH alerts. Quotas reset daily at 9:15 AM IST when the market opens. You can customize severity filters, trading hours, and watchlists using /settings command.',
   },
   {
     question: 'How do I get started?',
-    answer: 'Start by joining our Telegram bot @rxflow_alerts_bot. You can use the FREE tier to experience the alerts. When ready, upgrade to unlock unlimited features.',
+    answer: 'Start by joining our Telegram bot at https://t.me/RxFlowBot. Type /subscribe to activate your FREE account and start receiving alerts immediately. When ready, use /upgrade to view premium plans and unlock unlimited alerts, preferred expiries, and outcome tracking.',
   },
 ];
 

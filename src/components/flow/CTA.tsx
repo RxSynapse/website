@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box, Link } from "@mui/material";
 import { TrackedCTAButton } from '@/components/TrackedButton';
 
 const CTA: React.FC = () => {
@@ -22,33 +22,37 @@ const CTA: React.FC = () => {
         >
           India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts always unlimited!
         </Typography>
-        <TrackedCTAButton
-          trackingName="get_started_flow_cta"
-          trackingLocation="flow_cta_section"
-          trackingDestination="https://flow.rxsynapse.com"
-          trackingParams={{
-            pageSection: 'bottom_cta',
-            priority: 'secondary',
-            conversionGoal: 'telegram_signup',
-          }}
-          variant="contained"
-          size="large"
-          href="https://flow.rxsynapse.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            mt: 3,
-            px: 5,
-            py: 1.5,
-            fontSize: "1.1rem",
-            "&:hover": {
-              transform: "scale(1.05)",
-              transition: "all 0.2s"
-            }
-          }}
-        >
-          Get Started Free on Telegram
-        </TrackedCTAButton>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 3 }}>
+          <TrackedCTAButton
+            trackingName="get_started_flow_cta"
+            trackingLocation="flow_cta_section"
+            trackingDestination="https://flow.rxsynapse.com"
+            trackingParams={{
+              pageSection: 'bottom_cta',
+              priority: 'secondary',
+              conversionGoal: 'telegram_signup',
+            }}
+            variant="contained"
+            size="large"
+            href="https://flow.rxsynapse.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              px: 5,
+              py: 1.5,
+              fontSize: "1.1rem",
+              "&:hover": {
+                transform: "scale(1.05)",
+                transition: "all 0.2s"
+              }
+            }}
+          >
+            Get Started Free on Telegram
+          </TrackedCTAButton>
+          <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+            Want unlimited alerts? <Link href="/flow/pricing" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>View pricing →</Link>
+          </Typography>
+        </Box>
       </Container>
     </>
   );

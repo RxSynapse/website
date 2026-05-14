@@ -26,7 +26,7 @@ const SEOContent: React.FC = () => {
       title: "Why Use Telegram for Options Trading Alerts?",
       icon: <Speed fontSize="large" color="primary" />,
       content:
-        "Telegram offers several advantages for trading alerts: (1) Cross-platform sync - alerts appear instantly on mobile, desktop, and web, (2) No app downloads required - works natively in Telegram, (3) Fast delivery with <2 second latency, (4) Customizable notifications per severity level, (5) Works even when your trading platform is down, (6) Secure Telegram Stars payment - no external processors. Unlike web dashboards that require constant monitoring, Telegram alerts come to you automatically, ensuring you never miss critical market moves.",
+        "Telegram offers several advantages for trading alerts: (1) Cross-platform sync - alerts appear instantly on mobile, desktop, and web, (2) No app downloads required - works natively in Telegram, (3) Fast delivery with <2 second latency, (4) Customizable notifications per severity level, (5) Works even when your trading platform is down, (6) Seamless payment integration via web dashboard with instant activation. Unlike web dashboards that require constant monitoring, Telegram alerts come to you automatically, ensuring you never miss critical market moves.",
     },
     {
       title: "RxFlow vs Bloomberg Terminal for Indian Options",

@@ -8,38 +8,38 @@ const features = [
   {
     icon: Bolt,
     title: 'Unlimited Alerts',
-    description: 'Get every unusual activity alert across all severity levels - EXTREME, HIGH, MEDIUM, and LOW.',
+    description: 'Get every unusual activity alert across all severity levels - EXTREME, HIGH, MEDIUM, and LOW. No daily quotas or restrictions.',
     gradient: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)',
   },
   {
     icon: Check,
-    title: 'Custom Watchlists',
-    description: 'Create strike-level watchlists tailored to your trading strategy and risk appetite.',
+    title: 'Preferred Expiries',
+    description: 'Filter alerts by your preferred contract expiry dates (weekly/monthly). Focus on strikes that match your trading timeframe and strategy.',
     gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
   },
   {
+    icon: Schedule,
+    title: 'Outcome Tracking',
+    description: 'Track alert performance at 15min, 30min, 1hr, and 1day intervals. Measure your edge and refine your strategy based on actual results.',
+    gradient: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)',
+  },
+  {
     icon: TrendingUp,
-    title: 'Smart Money Tracking',
-    description: 'Track institutional trades, FII/DII flows, and bulk deals - follow the smart money.',
+    title: 'Custom Watchlists',
+    description: 'Create strike-level watchlists tailored to your trading strategy. Get alerts only for the specific strikes and instruments you trade.',
     gradient: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
   },
   {
     icon: Notifications,
-    title: 'Real-Time Delivery',
-    description: 'Instant Telegram notifications the moment unusual activity is detected - zero delay.',
+    title: 'Smart Money Correlation',
+    description: 'Receive correlation alerts combining options flow with FII/DII data and bulk deals - see the complete institutional picture.',
     gradient: 'linear-gradient(135deg, #F59E0B 0%, #EF4444 100%)',
   },
   {
     icon: BarChart,
-    title: 'Multi-Signal Analysis',
-    description: 'Correlation alerts combining options flow, FII/DII data, and bulk deal intelligence.',
+    title: 'Real-Time Intelligence',
+    description: 'Instant Telegram notifications with <2 second latency. 528+ strikes monitored live across Nifty, BankNifty, FinNifty, MidcapNifty & top stocks.',
     gradient: 'linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%)',
-  },
-  {
-    icon: Schedule,
-    title: 'Performance Tracking',
-    description: 'Track alert outcomes at 15min, 30min, 1hr, and 1day intervals to measure edge.',
-    gradient: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)',
   },
 ];
 

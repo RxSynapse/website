@@ -19,9 +19,9 @@ const FAQ: React.FC = () => {
         "RxFlow uses sophisticated algorithms with 7-day historical baseline analysis to filter out market noise. Each alert is scored 0-100 based on 10+ parameters including volume spike magnitude, OI changes, aggression patterns, and premium movements. EXTREME severity alerts represent the top 1% of unusual activity, ensuring you only see genuinely significant institutional moves. Our data comes directly from NSE/BSE via Angel One's real-time feed with <2 second latency.",
     },
     {
-      question: "What are Telegram Stars and how do they work?",
+      question: "What payment methods are available?",
       answer:
-        "Telegram Stars are Telegram's official in-app currency used for premium services. You can purchase Stars directly within Telegram using your credit card, debit card, or UPI (in India). Payment is processed securely by Telegram, not us. Once you have Stars, you can subscribe to RxFlow premium plans directly in the bot using the /premium command. It's simple, secure, and takes less than a minute.",
+        "RxFlow accepts payments via Razorpay on our web dashboard at flow.rxsynapse.com. You can pay using Credit/Debit Cards, UPI, Net Banking, or popular wallets. All payments are GST-inclusive with instant activation and automatic invoice generation. Use the /upgrade command in the Telegram bot to view pricing and get redirected to the secure payment page.",
     },
     {
       question: "Can I cancel my premium subscription anytime?",

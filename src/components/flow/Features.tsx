@@ -58,9 +58,9 @@ const Features: React.FC = () => {
     },
     {
       title: "Affordable Premium Plans",
-      description: "Unlock unlimited alerts with Telegram Stars",
+      description: "Unlock unlimited alerts starting at ₹29",
       icon: <Assessment fontSize="medium" color="primary" />,
-      details: "Premium plans via Telegram Stars: 1 Day (20★ ≈ ₹41), 7 Days (100★ ≈ ₹205), 1 Month (200★ ≈ ₹410), 3 Months (533★ ≈ ₹1,093), 1 Year (1,600★ ≈ ₹3,280). Get unlimited alerts across all severity levels, priority delivery, and support our development. Pay securely directly in Telegram - no external payment processors.",
+      details: "Premium plans via Razorpay: 1 Day Pass (₹29), 7 Days (₹149), 1 Month (₹299), 3 Months (₹799), 1 Year (₹2,399). Get unlimited alerts across all severity levels, preferred expiries, outcome tracking, custom watchlists, and smart money correlation. Pay securely with UPI, Cards, Net Banking, or Wallets. GST-inclusive pricing with instant activation.",
     },
   ];
 
