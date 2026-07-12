@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://rxsynapse.com/flow/pricing',
     siteName: 'RxSynapse',
     images: [{
-      url: '/images/rxflow/og-pricing.jpg',
+      url: '/images/rxflow/og-image.jpg',
       width: 1200,
       height: 630,
       alt: 'RxFlow Pricing Plans',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'RxFlow Pricing - Plans Starting at ₹29',
     description: 'Choose the perfect RxFlow plan for your trading needs.',
-    images: ['/images/rxflow/og-pricing.jpg'],
+    images: ['/images/rxflow/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://rxsynapse.com/flow/pricing',

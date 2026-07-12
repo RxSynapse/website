@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: 'How do I get started?',
-    answer: 'Start by joining our Telegram bot at https://t.me/RxFlowBot. Type /subscribe to activate your FREE account and start receiving alerts immediately. When ready, use /upgrade to view premium plans and unlock unlimited alerts, preferred expiries, and outcome tracking.',
+    answer: 'Start by joining our Telegram bot at https://t.me/rxflow_alerts_bot. Type /subscribe to activate your FREE account and start receiving alerts immediately. When ready, use /upgrade to view premium plans and unlock unlimited alerts, preferred expiries, and outcome tracking.',
   },
 ];
 

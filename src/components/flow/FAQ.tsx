@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
     {
       question: "Do I need a credit card to use the free tier?",
       answer:
-        "No! The free tier requires zero payment information. Just start the bot on Telegram (@RxFlowBot), type /subscribe to activate your account, and you're ready. You get unlimited EXTREME alerts forever, plus generous daily quotas for HIGH (25/day), MEDIUM (25/day), and LOW (50/day) severity alerts. Quotas reset daily at 9:15 AM IST when market opens.",
+        "No! The free tier requires zero payment information. Just start the bot on Telegram (@rxflow_alerts_bot), type /subscribe to activate your account, and you're ready. You get unlimited EXTREME alerts forever, plus generous daily quotas for HIGH (25/day), MEDIUM (25/day), and LOW (50/day) severity alerts. Quotas reset daily at 9:15 AM IST when market opens.",
     },
     {
       question: "How do refunds work for premium subscriptions?",

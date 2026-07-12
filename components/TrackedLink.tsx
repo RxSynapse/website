@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link, { LinkProps } from 'next/link';
-import { trackButtonClick, trackNavigation } from '@/lib/analytics';
+import { trackButtonClick } from '@/lib/analytics';
 
 interface TrackedLinkProps extends Omit<LinkProps, 'onClick'> {
   /**
@@ -59,15 +59,7 @@ export function TrackedLink({
   ...linkProps
 }: TrackedLinkProps) {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    // Get current page
-    const currentPage = typeof window !== 'undefined' ? window.location.pathname : '';
     const destination = typeof href === 'string' ? href : href.toString();
-
-    // Track navigation
-    trackNavigation(currentPage, destination, {
-      navigationType: 'click',
-      navigationElement: trackingLocation || 'link',
-    });
 
     // Track as button click
     trackButtonClick(trackingName, {

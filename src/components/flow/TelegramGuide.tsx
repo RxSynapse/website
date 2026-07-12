@@ -24,7 +24,7 @@ const TelegramGuide: React.FC = () => {
     {
       number: "1",
       title: "Start the Bot",
-      description: "Open Telegram and search for @RxFlowBot, then click /start",
+      description: "Open Telegram and search for @rxflow_alerts_bot, then click /start",
       icon: <Telegram fontSize="large" color="primary" />,
     },
     {

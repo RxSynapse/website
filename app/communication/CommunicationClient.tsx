@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Box } from '@mui/material';
 import Hero from '@/src/components/communication/Hero';
 import Innovations from '@/src/components/communication/Innovations';
@@ -10,9 +9,10 @@ import CTA from '@/src/components/communication/CTA';
 import AnalyticsDemo from '@/src/components/communication/AnalyticsDemo';
 import AnalyticsDashboardDemo from '@/src/components/communication/AnalyticsDashboardDemo';
 import ContactUs from '@/src/components/ContactUs';
+import { useContactModal } from '@/app/components/ContactProvider';
 
 export default function CommunicationClient() {
-  const [isContactOpen, setContactOpen] = useState(false);
+  const setContactOpen = useContactModal();
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function CommunicationClient() {
         </Box>
         <CTA setContactOpen={setContactOpen} />
       </Box>
-      <ContactUs open={isContactOpen} setContactOpen={setContactOpen} />
+      <ContactUs />
     </>
   );
 }

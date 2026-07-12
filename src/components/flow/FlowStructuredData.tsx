@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * Comprehensive structured data for RxFlow page to improve SEO and rich snippets
- * Includes: SoftwareApplication, FAQPage, Product, AggregateRating schemas
+ * Includes: SoftwareApplication schema
  */
 const FlowStructuredData: React.FC = () => {
   const softwareApplicationSchema = {
@@ -21,13 +21,6 @@ const FlowStructuredData: React.FC = () => {
       lowPrice: "0",
       highPrice: "3280",
       priceCurrency: "INR",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
     },
     author: {
       "@type": "Organization",

@@ -1,125 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
-import {
-  trackLandingPage,
-  trackTimeOnPage,
-  trackScrollDepth,
-  trackOutboundLink,
-  trackNavigation,
-} from '@/lib/analytics';
+import { useEffect } from 'react';
+import { trackOutboundLink } from '@/lib/analytics';
 
 /**
- * Hook to track landing page (first page user visits)
- * Only fires once per session
- */
-export function useLandingPageTracking() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const hasTracked = useRef(false);
-
-  useEffect(() => {
-    // Only track landing page once per session
-    if (!hasTracked.current && typeof window !== 'undefined') {
-      hasTracked.current = true;
-
-      // Get UTM parameters
-      const urlParams = new URLSearchParams(searchParams?.toString());
-
-      trackLandingPage({
-        referrer: document.referrer || 'direct',
-        utm_source: urlParams.get('utm_source') || undefined,
-        utm_medium: urlParams.get('utm_medium') || undefined,
-        utm_campaign: urlParams.get('utm_campaign') || undefined,
-      });
-    }
-  }, []); // Empty dependency - only run once
-}
-
-/**
- * Hook to track time spent on current page
- * Automatically tracks when user leaves the page
- */
-export function useTimeOnPageTracking(pageName?: string) {
-  const pathname = usePathname();
-  const pageEntryTime = useRef<number>(Date.now());
-
-  useEffect(() => {
-    // Reset entry time when page changes
-    pageEntryTime.current = Date.now();
-
-    // Track time on page when user leaves
-    const handleBeforeUnload = () => {
-      trackTimeOnPage(pageEntryTime.current, {
-        pageName: pageName || pathname,
-        pageUrl: pathname,
-      });
-    };
-
-    // Track on page unload
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    // Track when component unmounts (page change)
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-      trackTimeOnPage(pageEntryTime.current, {
-        pageName: pageName || pathname,
-        pageUrl: pathname,
-      });
-    };
-  }, [pathname, pageName]);
-}
-
-/**
- * Hook to track scroll depth
- * Tracks at 25%, 50%, 75%, 90%, and 100% milestones
- */
-export function useScrollDepthTracking(pageName?: string) {
-  const pathname = usePathname();
-  const trackedMilestones = useRef<Set<number>>(new Set());
-
-  useEffect(() => {
-    // Reset tracked milestones on page change
-    trackedMilestones.current.clear();
-
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      const scrollPercentage = Math.round(
-        (scrollTop / (documentHeight - windowHeight)) * 100
-      );
-
-      // Track at milestones: 25%, 50%, 75%, 90%, 100%
-      const milestones = [25, 50, 75, 90, 100];
-
-      milestones.forEach((milestone) => {
-        if (
-          scrollPercentage >= milestone &&
-          !trackedMilestones.current.has(milestone)
-        ) {
-          trackedMilestones.current.add(milestone);
-          trackScrollDepth(milestone, {
-            pageName: pageName || pathname,
-            pageUrl: pathname,
-          });
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [pathname, pageName]);
-}
-
-/**
- * Hook to automatically track external link clicks
- * Add this to your root layout or page
+ * Hook to automatically track external link clicks.
+ *
+ * This is the only auto-tracking we run: GA4's built-in collection already
+ * covers pageviews, landing pages, UTM attribution, scroll (90%), and
+ * engagement time. Custom auto-events for those duplicated native data and
+ * drowned out the deliberate signals (cta_click, outbound_link, form_submit).
  */
 export function useOutboundLinkTracking() {
   useEffect(() => {
@@ -159,62 +49,19 @@ export function useOutboundLinkTracking() {
 }
 
 /**
- * Hook to track navigation between pages
- */
-export function usePageNavigationTracking() {
-  const pathname = usePathname();
-  const previousPathname = useRef<string>(pathname);
-
-  useEffect(() => {
-    if (previousPathname.current !== pathname) {
-      trackNavigation(previousPathname.current, pathname, {
-        navigationType: 'click',
-      });
-      previousPathname.current = pathname;
-    }
-  }, [pathname]);
-}
-
-/**
- * Combined hook that enables all automatic tracking
- * Use this in your root layout for comprehensive tracking
+ * Combined hook for automatic tracking.
+ * Use this in your root layout.
  */
 export function useComprehensiveTracking(options?: {
-  trackLandingPage?: boolean;
-  trackTimeOnPage?: boolean;
-  trackScrollDepth?: boolean;
   trackOutboundLinks?: boolean;
-  trackNavigation?: boolean;
-  pageName?: string;
 }) {
-  const {
-    trackLandingPage: enableLandingPage = true,
-    trackTimeOnPage: enableTimeOnPage = true,
-    trackScrollDepth: enableScrollDepth = true,
-    trackOutboundLinks: enableOutboundLinks = true,
-    trackNavigation: enableNavigation = true,
-    pageName,
-  } = options || {};
+  const { trackOutboundLinks: enableOutboundLinks = true } = options || {};
 
-  if (enableLandingPage) {
-    useLandingPageTracking();
-  }
+  useEffect(() => {
+    if (!enableOutboundLinks) return;
+  }, [enableOutboundLinks]);
 
-  if (enableTimeOnPage) {
-    useTimeOnPageTracking(pageName);
-  }
-
-  if (enableScrollDepth) {
-    useScrollDepthTracking(pageName);
-  }
-
-  if (enableOutboundLinks) {
-    useOutboundLinkTracking();
-  }
-
-  if (enableNavigation) {
-    usePageNavigationTracking();
-  }
+  useOutboundLinkTracking();
 }
 
 // Helper functions

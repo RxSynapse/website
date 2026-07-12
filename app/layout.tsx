@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import { Suspense } from 'react';
 import { Providers } from './providers';
+import { ContactProvider } from './components/ContactProvider';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
@@ -69,9 +70,11 @@ export default function RootLayout({
         </Suspense>
 
         <Providers>
-          <Navbar />
-          {children}
-          <Footer />
+          <ContactProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ContactProvider>
         </Providers>
 
         {/* Organization Structured Data */}

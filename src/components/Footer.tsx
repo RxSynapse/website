@@ -14,7 +14,7 @@ import {
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
-import { trackOutboundLink, trackNavigation } from '@/lib/analytics';
+import { trackOutboundLink } from '@/lib/analytics';
 
 const footerLinks = [
   { label: "Services", path: "/", id: "services" },
@@ -29,13 +29,6 @@ const footerLinks = [
 
 export default function Footer() {
   const handleNavigation = (path: string, id: string, label: string) => {
-    // Track navigation
-    const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
-    trackNavigation(currentPath, path, {
-      navigationType: 'click',
-      navigationElement: 'footer',
-    });
-
     // For same-page navigation, scroll to section
     if (typeof window !== 'undefined' && window.location.pathname === path && id) {
       const section = document.getElementById(id);

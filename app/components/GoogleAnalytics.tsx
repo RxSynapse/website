@@ -33,13 +33,10 @@ export function GoogleAnalytics({
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Enable comprehensive automatic tracking
+  // Enable automatic outbound-link tracking; GA4's native collection
+  // covers pageviews, landing pages, scroll, and engagement time
   useComprehensiveTracking({
-    trackLandingPage: enableAutoTracking,
-    trackTimeOnPage: enableAutoTracking,
-    trackScrollDepth: enableAutoTracking,
     trackOutboundLinks: enableAutoTracking,
-    trackNavigation: enableAutoTracking,
   });
 
   // Track page views on route changes

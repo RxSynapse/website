@@ -15,12 +15,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { TrackedNavButton, TrackedCTAButton } from '@/components/TrackedButton';
-import { trackNavigation } from '@/lib/analytics';
+import { useContactModal } from '@/app/components/ContactProvider';
 const Drawer = React.lazy(() => import("@mui/material/Drawer"));
-
-interface NavbarProps {
-  setContactOpen?: (state: boolean) => void;
-}
 
 interface NavItem {
   label: string;
@@ -39,21 +35,15 @@ const navItems: NavItem[] = [
   },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
+const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const setContactOpen = useContactModal();
 
   const handleDrawerToggle = (): void => {
     setMobileOpen(!mobileOpen);
   };
 
   const handleNavigation = (path: string, id: string, label: string) => {
-    // Track navigation
-    const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
-    trackNavigation(currentPath, path, {
-      navigationType: 'click',
-      navigationElement: 'navbar',
-    });
-
     // For same-page navigation, scroll to section
     if (typeof window !== 'undefined' && window.location.pathname === path && id) {
       const section = document.getElementById(id);
@@ -154,27 +144,25 @@ const Navbar: React.FC<NavbarProps> = ({ setContactOpen }) => {
           </Box>
 
           {/* CTA */}
-          {setContactOpen && (
-            <TrackedCTAButton
-              trackingName="get_started_navbar"
-              trackingLocation="navbar"
-              trackingDestination="contact_form"
-              trackingParams={{
-                priority: 'tertiary',
-                conversionGoal: 'contact_form_open',
-              }}
-              variant="contained"
-              sx={{
-                bgcolor: "#007BFF",
-                color: "#fff",
-                ml: 2,
-                "&:hover": { bgcolor: "#0056b3" },
-              }}
-              onClick={() => setContactOpen(true)}
-            >
-              Get Started
-            </TrackedCTAButton>
-          )}
+          <TrackedCTAButton
+            trackingName="get_started_navbar"
+            trackingLocation="navbar"
+            trackingDestination="contact_form"
+            trackingParams={{
+              priority: 'tertiary',
+              conversionGoal: 'contact_form_open',
+            }}
+            variant="contained"
+            sx={{
+              bgcolor: "#007BFF",
+              color: "#fff",
+              ml: 2,
+              "&:hover": { bgcolor: "#0056b3" },
+            }}
+            onClick={() => setContactOpen(true)}
+          >
+            Get Started
+          </TrackedCTAButton>
         </Toolbar>
       </AppBar>
 
