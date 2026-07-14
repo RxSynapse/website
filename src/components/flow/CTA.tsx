@@ -52,6 +52,9 @@ const CTA: React.FC = () => {
           <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.6)' }}>
             Want unlimited alerts? <Link href="/flow/pricing" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>View pricing →</Link>
           </Typography>
+          <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+            New to RxFlow? <Link href="https://flow.rxsynapse.com/docs/getting-started" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>Read the Getting Started guide →</Link>
+          </Typography>
         </Box>
       </Container>
     </>

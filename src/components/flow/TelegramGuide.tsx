@@ -10,6 +10,7 @@ import {
   CardContent,
   Button,
   Chip,
+  Link as MuiLink,
 } from "@mui/material";
 import {
   Telegram,
@@ -181,6 +182,12 @@ const TelegramGuide: React.FC = () => {
           </Button>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
             Quotas reset daily at 9:15 AM IST • Upgrade anytime for unlimited alerts
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            Every bot command explained in the{' '}
+            <MuiLink href="https://flow.rxsynapse.com/docs/telegram/bot-guide" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+              Telegram Bot Guide
+            </MuiLink>
           </Typography>
         </Box>
       </Container>
