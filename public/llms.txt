@@ -1,0 +1,15 @@
+# RxSynapse
+
+> RxSynapse is an Indian fintech company building AI-driven products for BFSI (banking, financial services, and insurance). Its flagship product is RxFlow, a real-time options intelligence and smart money tracking platform for Indian markets, delivered via Telegram bot and web dashboard.
+
+Products:
+
+- RxFlow (https://flow.rxsynapse.com): real-time unusual options activity alerts for NSE — NIFTY, BANKNIFTY, FINNIFTY, MIDCPNIFTY, and top stocks. Detects volume spikes, open interest changes, and aggressive buying/selling; tracks smart money via daily FII/DII flows, bulk deals, and block deals. Users receive alerts on Telegram (@rxflow_alerts_bot) with severity filtering and outcome tracking.
+- RxCommunication: IVR-less conversational AI customer support for BFSI.
+
+## Key Pages
+
+- [RxFlow product overview](https://rxsynapse.com/flow): features, comparisons, and how it works
+- [RxFlow documentation](https://flow.rxsynapse.com/docs): setup guides, bot command reference, smart money tracking explained
+- [RxFlow machine-readable summary](https://flow.rxsynapse.com/llms.txt): detailed product facts for AI assistants
+- [RxCommunication](https://rxsynapse.com/communication): conversational AI for customer support
