@@ -88,7 +88,7 @@ export default function PricingCTA() {
                 fontSize: '0.9rem',
               }}
             >
-              Already a user? <a href="https://flow.rxsynapse.com" style={{ color: '#3B82F6', textDecoration: 'none' }}>Sign in to your dashboard →</a>
+              Already a user? <a href="https://flow.rxsynapse.com" target="_blank" rel="noopener" style={{ color: '#3B82F6', textDecoration: 'none' }}>Sign in to your dashboard →</a>
             </Typography>
           </Box>
         </motion.div>

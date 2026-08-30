@@ -185,7 +185,7 @@ const TelegramGuide: React.FC = () => {
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
             Every bot command explained in the{' '}
-            <MuiLink href="https://flow.rxsynapse.com/docs/telegram/bot-guide" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+            <MuiLink href="https://flow.rxsynapse.com/docs/telegram/bot-guide" target="_blank" rel="noopener" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
               Telegram Bot Guide
             </MuiLink>
           </Typography>

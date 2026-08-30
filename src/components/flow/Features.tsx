@@ -58,9 +58,9 @@ const Features: React.FC = () => {
     },
     {
       title: "Affordable Premium Plans",
-      description: "Unlock unlimited alerts starting at ₹29",
+      description: "Unlock unlimited alerts from ₹799",
       icon: <Assessment fontSize="medium" color="primary" />,
-      details: "Premium plans via Razorpay: 1 Day Pass (₹29), 7 Days (₹149), 1 Month (₹299), 3 Months (₹799), 1 Year (₹2,399). Get unlimited alerts across all severity levels, preferred expiries, outcome tracking, custom watchlists, and smart money correlation. Pay securely with UPI, Cards, Net Banking, or Wallets. GST-inclusive pricing with instant activation.",
+      details: "Premium plans via Razorpay: 3 Months (₹799) or 1 Year (₹2,399). Get unlimited alerts across all severity levels, preferred expiries, outcome tracking, custom watchlists, and smart money correlation. Pay securely with UPI, Cards, Net Banking, or Wallets. GST-inclusive pricing with instant activation.",
     },
   ];
 

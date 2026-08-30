@@ -44,7 +44,7 @@ const Intelligence: React.FC = () => {
                 Stop wasting 2-3 hours daily checking NSE website, Excel sheets, and multiple platforms. Get all institutional activity intelligence in one unified, actionable dashboard.
               </Typography>
               <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-                RxFlow automatically aggregates FII/DII flows, bulk deals, insider trades, and participant-wise open interest - with historical pattern recognition to identify what matters.
+                RxSynapse automatically aggregates FII/DII flows, bulk deals, insider trades, and participant-wise open interest - with historical pattern recognition to identify what matters.
               </Typography>
               <List>
                 <ListItem>

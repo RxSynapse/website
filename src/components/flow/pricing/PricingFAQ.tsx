@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'How does the trading-day subscription logic work?',
-    answer: 'Subscriptions are calculated based on actual trading days, not calendar days. Weekend purchases start counting from Monday to ensure you get actual trading time. All subscriptions expire at 8 AM on weekdays only - never on Saturday or Sunday when markets are closed. For the 1 Day Pass: daytime purchases (9 AM-7 PM) get 2 full trading days, while night purchases get 1 full trading day.',
+    answer: 'Subscriptions are calculated based on actual trading days, not calendar days. Weekend purchases start counting from Monday to ensure you get actual trading time. All subscriptions expire at 8 AM on weekdays only - never on Saturday or Sunday when markets are closed.',
   },
   {
     question: 'What happens when my subscription expires?',
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: 'Is there a refund policy?',
-    answer: 'Due to the digital nature of the service and instant access provided, all sales are final. We recommend starting with a 1-day pass to try the service. The 1 Day Pass is perfect for testing RxFlow before committing to longer plans.',
+    answer: 'Due to the digital nature of the service and instant access provided, all sales are final. We recommend trying the free tier first - it includes unlimited EXTREME alerts and generous daily quotas, so you can evaluate RxSynapse fully before committing to a premium plan.',
   },
   {
     question: 'What do I get with the FREE tier?',
@@ -79,7 +79,7 @@ export default function PricingFAQ() {
               color: 'rgba(255, 255, 255, 0.6)',
             }}
           >
-            Everything you need to know about RxFlow subscriptions
+            Everything you need to know about RxSynapse subscriptions
           </Typography>
         </motion.div>
 

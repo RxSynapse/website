@@ -65,7 +65,7 @@ const TelegramAlertDemo: React.FC = () => {
                   </Box>
                   <Box>
                     <Typography variant="subtitle1" fontWeight="bold">
-                      RxFlow Bot
+                      RxSynapse Bot
                     </Typography>
                     <Typography variant="caption" sx={{ opacity: 0.9 }}>
                       Just now

@@ -21,7 +21,7 @@ const Results: React.FC = () => {
               gutterBottom
               sx={{fontWeight: 600}}
           >
-            Why Traders Choose RxFlow
+            Why Traders Choose RxSynapse
           </Typography>
           <Typography
               variant="subtitle1"

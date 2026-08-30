@@ -11,20 +11,14 @@ import {
   ListItem,
   Link as MuiLink,
 } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { trackOutboundLink } from '@/lib/analytics';
 
 const footerLinks = [
-  { label: "Services", path: "/", id: "services" },
-  { label: "About Us", path: "/", id: "about-us" },
-  { label: "RxFlow", path: "/flow", id: "flow-hero" },
-  {
-    label: "RxCommunication",
-    path: "/communication",
-    id: "communication-hero",
-  },
+  { label: "Pricing", path: "/pricing", id: "pricing" },
+  { label: "Docs", path: "https://flow.rxsynapse.com/docs", id: "docs" },
+  { label: "Open the App", path: "https://flow.rxsynapse.com", id: "app" },
 ];
 
 export default function Footer() {
@@ -51,30 +45,20 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Company Info */}
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={6}>
             <Typography variant="h6" fontWeight="bold">
               RxSynapse
             </Typography>
             <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
-              Transforming BFSI with AI-powered automation, integration, and
-              strategic insights.
+              Real-time options intelligence and smart money tracking for
+              Indian markets, delivered on Telegram.
             </Typography>
             <List sx={{ mt: 2, display: "flex" }}>
               <IconButton
                 component="a"
-                href="https://linkedin.com/company/rxsynapse"
-                rel="nofollow noopener"
-                target="_blank"
-                aria-label="RxSynapse on LinkedIn"
-                sx={{ color: "white" }}
-                onClick={() => handleSocialClick('LinkedIn', 'https://linkedin.com/company/rxsynapse')}
-              >
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton
-                component="a"
                 rel="nofollow noopener"
                 href="mailto:contact@rxsynapse.com"
+                aria-label="Email RxSynapse"
                 sx={{ color: "white" }}
                 onClick={() => handleSocialClick('Email', 'mailto:contact@rxsynapse.com')}
               >
@@ -88,7 +72,7 @@ export default function Footer() {
             item
             xs={12}
             sm={6}
-            md={4}
+            md={6}
             component="nav"
             aria-label="Footer navigation"
           >
@@ -96,38 +80,30 @@ export default function Footer() {
               Quick Links
             </Typography>
             <List>
-              {footerLinks.map(({ label, path, id }) => (
-                <ListItem key={`${path}-${id}`} disablePadding>
-                  <Link
-                    href={path}
-                    onClick={() => handleNavigation(path, id, label)}
-                    style={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      padding: "4px 0",
-                      display: "block",
-                    }}
-                  >
-                    {label}
-                  </Link>
-                </ListItem>
-              ))}
+              {footerLinks.map(({ label, path, id }) => {
+                const isExternal = path.startsWith("http");
+                return (
+                  <ListItem key={`${path}-${id}`} disablePadding>
+                    <Link
+                      href={path}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener" : undefined}
+                      onClick={() => handleNavigation(path, id, label)}
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                        padding: "4px 0",
+                        display: "block",
+                      }}
+                    >
+                      {label}
+                    </Link>
+                  </ListItem>
+                );
+              })}
             </List>
           </Grid>
 
-          {/* Contact Information */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" fontWeight="bold">
-              Contact
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ mt: 1, opacity: 0.8 }}
-              itemProp="email"
-            >
-              ✉️ contact@rxsynapse.com
-            </Typography>
-          </Grid>
         </Grid>
 
         {/* Divider and Copyright */}

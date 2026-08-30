@@ -8,14 +8,10 @@ export default function PricingHero() {
     <Box
       component="section"
       sx={{
-        minHeight: '60vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         bgcolor: '#000',
         color: '#fff',
-        pt: { xs: 12, md: 16 },
-        pb: { xs: 8, md: 12 },
+        pt: { xs: 8, md: 10 },
+        pb: { xs: 4, md: 5 },
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -73,7 +69,7 @@ export default function PricingHero() {
               fontSize: { xs: '0.9rem', md: '1rem' },
             }}
           >
-            Plans starting at just ₹29 • No credit card required to start
+            Free tier included • Premium plans from ₹799
           </Typography>
         </motion.div>
       </Container>

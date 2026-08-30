@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import { Suspense } from 'react';
 import { Providers } from './providers';
-import { ContactProvider } from './components/ContactProvider';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
@@ -16,11 +15,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL('https://rxsynapse.com'),
   title: {
-    default: 'RxSynapse - AI-Powered BFSI Solutions | Trading Intelligence & Communication Innovation',
+    default: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
     template: '%s | RxSynapse'
   },
-  description: 'Leading AI-driven solutions transforming BFSI with intelligent automation, real-time market intelligence, and conversational AI. RxFlow for options trading intelligence, RxCommunication for IVR-less customer support.',
-  keywords: ['RxSynapse', 'AI BFSI solutions', 'trading intelligence', 'options trading india', 'conversational AI banking', 'IVR-less customer support', 'smart money tracking', 'institutional flows'],
+  description: 'Real-time unusual options activity alerts and smart money tracking for Indian markets. FII/DII flows, bulk deals, and institutional intelligence delivered instantly on Telegram.',
+  keywords: ['RxSynapse', 'options trading alerts india', 'unusual options activity', 'smart money tracking', 'FII DII flows', 'institutional flows', 'nifty options alerts', 'telegram trading alerts'],
   authors: [{ name: 'RxSynapse' }],
   creator: 'RxSynapse',
   publisher: 'RxSynapse',
@@ -34,13 +33,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://rxsynapse.com',
     siteName: 'RxSynapse',
-    title: 'RxSynapse - AI-Powered BFSI Solutions',
-    description: 'Leading AI-driven solutions for trading intelligence and customer communication in BFSI',
+    title: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
+    description: 'Real-time unusual options activity alerts and smart money tracking for Indian markets, delivered instantly on Telegram.',
     images: [{
-      url: '/images/og-image.jpg',
+      url: '/images/rxflow/og-image.jpg',
       width: 1200,
       height: 630,
-      alt: 'RxSynapse - AI-Powered BFSI Solutions for Trading Intelligence and Customer Communication',
+      alt: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
     }],
   },
   robots: {
@@ -70,11 +69,9 @@ export default function RootLayout({
         </Suspense>
 
         <Providers>
-          <ContactProvider>
-            <Navbar />
-            {children}
-            <Footer />
-          </ContactProvider>
+          <Navbar />
+          {children}
+          <Footer />
         </Providers>
 
         {/* Organization Structured Data */}
@@ -87,7 +84,7 @@ export default function RootLayout({
               name: 'RxSynapse',
               url: 'https://rxsynapse.com',
               logo: 'https://rxsynapse.com/logo.png',
-              description: 'Leading AI-driven solutions for BFSI with intelligent automation, real-time market intelligence, and conversational AI',
+              description: 'Real-time options intelligence and smart money tracking platform for Indian markets',
               foundingDate: '2024',
               address: {
                 '@type': 'PostalAddress',
@@ -101,20 +98,10 @@ export default function RootLayout({
                   '@type': 'Offer',
                   itemOffered: {
                     '@type': 'SoftwareApplication',
-                    name: 'RxFlow',
+                    name: 'RxSynapse',
                     applicationCategory: 'FinanceApplication',
                     operatingSystem: 'Web',
                     description: 'Real-time options intelligence and smart money tracking platform for Indian markets'
-                  }
-                },
-                {
-                  '@type': 'Offer',
-                  itemOffered: {
-                    '@type': 'SoftwareApplication',
-                    name: 'RxCommunication',
-                    applicationCategory: 'BusinessApplication',
-                    operatingSystem: 'Web',
-                    description: 'IVR-less customer support and conversational AI platform for BFSI'
                   }
                 }
               ]

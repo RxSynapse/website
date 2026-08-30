@@ -31,7 +31,7 @@ const Testimonials: React.FC = () => {
       initials: "PK",
       rating: 5,
       quote:
-        "RxFlow's Telegram alerts are game-changing. I caught institutional positioning in BankNifty options that I would've missed otherwise. The 7-day baseline context helps filter noise.",
+        "RxSynapse's Telegram alerts are game-changing. I caught institutional positioning in BankNifty options that I would've missed otherwise. The 7-day baseline context helps filter noise.",
       color: "#f44336",
     },
     {

@@ -250,7 +250,7 @@ const AlertExplainer: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600 }}
         >
-          Understanding Your RxFlow Alerts
+          Understanding Your RxSynapse Alerts
         </Typography>
         <Typography
           variant="subtitle1"

@@ -49,7 +49,7 @@ const Integration: React.FC = () => {
               Enterprise-Grade Infrastructure
             </Typography>
             <Typography variant="body1" paragraph>
-              RxFlow is built on cutting-edge technology infrastructure designed for institutional-grade performance and reliability. Our platform processes millions of data points in real-time to deliver actionable intelligence.
+              RxSynapse is built on cutting-edge technology infrastructure designed for institutional-grade performance and reliability. Our platform processes millions of data points in real-time to deliver actionable intelligence.
             </Typography>
             <Typography variant="body1" paragraph>
               Track unusual options activity across Nifty, BankNifty, FinNifty, and top Indian stocks with sophisticated algorithms that detect patterns institutional traders watch for.

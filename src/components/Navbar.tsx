@@ -15,7 +15,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { TrackedNavButton, TrackedCTAButton } from '@/components/TrackedButton';
-import { useContactModal } from '@/app/components/ContactProvider';
 const Drawer = React.lazy(() => import("@mui/material/Drawer"));
 
 interface NavItem {
@@ -25,19 +24,12 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Services", path: "/", id: "services" },
-  { label: "About Us", path: "/", id: "about-us" },
-  { label: "RxFlow", path: "/flow", id: "flow-hero" },
-  {
-    label: "RxCommunication",
-    path: "/communication",
-    id: "communication-hero",
-  },
+  { label: "Pricing", path: "/pricing", id: "pricing" },
+  { label: "Docs", path: "https://flow.rxsynapse.com/docs", id: "docs" },
 ];
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const setContactOpen = useContactModal();
 
   const handleDrawerToggle = (): void => {
     setMobileOpen(!mobileOpen);
@@ -67,6 +59,8 @@ const Navbar: React.FC = () => {
             <ListItemButton
               component={Link}
               href={path}
+              target={path.startsWith("http") ? "_blank" : undefined}
+              rel={path.startsWith("http") ? "noopener" : undefined}
               onClick={() => handleNavigation(path, id, label)}
               sx={{ textAlign: "center" }}
             >
@@ -116,7 +110,7 @@ const Navbar: React.FC = () => {
             >
               <img
                 src="/logo/rxsynapse-white-logo.png"
-                alt="RxSynapse - AI-Powered BFSI Solutions"
+                alt="RxSynapse - Real-Time Options Intelligence"
               />
               RxSynapse
             </Typography>
@@ -135,6 +129,8 @@ const Navbar: React.FC = () => {
                 trackingDestination={path}
                 component={Link}
                 href={path}
+                target={path.startsWith("http") ? "_blank" : undefined}
+                rel={path.startsWith("http") ? "noopener" : undefined}
                 onClick={() => handleNavigation(path, id, label)}
                 sx={{ color: "#fff" }}
               >
@@ -147,19 +143,22 @@ const Navbar: React.FC = () => {
           <TrackedCTAButton
             trackingName="get_started_navbar"
             trackingLocation="navbar"
-            trackingDestination="contact_form"
+            trackingDestination="https://flow.rxsynapse.com"
             trackingParams={{
               priority: 'tertiary',
-              conversionGoal: 'contact_form_open',
+              conversionGoal: 'app_signup',
             }}
             variant="contained"
+            component="a"
+            href="https://flow.rxsynapse.com"
+            target="_blank"
+            rel="noopener"
             sx={{
               bgcolor: "#007BFF",
               color: "#fff",
               ml: 2,
               "&:hover": { bgcolor: "#0056b3" },
             }}
-            onClick={() => setContactOpen(true)}
           >
             Get Started
           </TrackedCTAButton>

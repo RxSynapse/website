@@ -14,13 +14,13 @@ const SEOContent: React.FC = () => {
       title: "What is Unusual Options Activity?",
       icon: <TrendingUp fontSize="large" color="primary" />,
       content:
-        "Unusual options activity refers to trading volumes or open interest changes that significantly exceed historical averages. When institutions or smart money take large positions, it creates detectable patterns in options flow. RxFlow's algorithms monitor 528+ strikes across Nifty, BankNifty, FinNifty, MidcapNifty and top 15 Indian stocks to detect volume spikes ranging from 3x to 20x above average. These patterns often precede major price movements, making them valuable leading indicators for retail traders.",
+        "Unusual options activity refers to trading volumes or open interest changes that significantly exceed historical averages. When institutions or smart money take large positions, it creates detectable patterns in options flow. RxSynapse's algorithms monitor 528+ strikes across Nifty, BankNifty, FinNifty, MidcapNifty and top 15 Indian stocks to detect volume spikes ranging from 3x to 20x above average. These patterns often precede major price movements, making them valuable leading indicators for retail traders.",
     },
     {
       title: "How to Track Smart Money in Indian Markets?",
       icon: <ShowChart fontSize="large" color="primary" />,
       content:
-        "Smart money tracking involves monitoring institutional flows (FII/DII data), bulk deals, block deals, insider trading disclosures, and unusual options activity. Traditional methods require manually checking NSE/BSE websites, Excel analysis, and multiple data sources - taking 2-3 hours daily. RxFlow automates this entire process, aggregating FII/DII flows, participant-wise OI, bulk deals from NSE/BSE, and unusual options activity into instant Telegram alerts. Track institutional positioning in real-time without manual effort.",
+        "Smart money tracking involves monitoring institutional flows (FII/DII data), bulk deals, block deals, insider trading disclosures, and unusual options activity. Traditional methods require manually checking NSE/BSE websites, Excel analysis, and multiple data sources - taking 2-3 hours daily. RxSynapse automates this entire process, aggregating FII/DII flows, participant-wise OI, bulk deals from NSE/BSE, and unusual options activity into instant Telegram alerts. Track institutional positioning in real-time without manual effort.",
     },
     {
       title: "Why Use Telegram for Options Trading Alerts?",
@@ -29,10 +29,10 @@ const SEOContent: React.FC = () => {
         "Telegram offers several advantages for trading alerts: (1) Cross-platform sync - alerts appear instantly on mobile, desktop, and web, (2) No app downloads required - works natively in Telegram, (3) Fast delivery with <2 second latency, (4) Customizable notifications per severity level, (5) Works even when your trading platform is down, (6) Seamless payment integration via web dashboard with instant activation. Unlike web dashboards that require constant monitoring, Telegram alerts come to you automatically, ensuring you never miss critical market moves.",
     },
     {
-      title: "RxFlow vs Bloomberg Terminal for Indian Options",
+      title: "RxSynapse vs Bloomberg Terminal for Indian Options",
       icon: <Assessment fontSize="large" color="primary" />,
       content:
-        "Bloomberg Terminal costs ₹20 lakh+ per month ($25,000+) with complex setup requiring days of training. RxFlow starts at ₹410/month (or free tier) with 2-minute Telegram setup. While Bloomberg offers global coverage, RxFlow specializes in Indian markets (NSE/BSE) with focus on Nifty derivatives, stock F&O, and Indian equities. For retail traders and institutions focused on Indian markets, RxFlow provides institutional-grade intelligence at 0.002% of Bloomberg's cost. No terminals, no training, no complexity.",
+        "Bloomberg Terminal costs ₹20 lakh+ per month ($25,000+) with complex setup requiring days of training. RxSynapse starts at ₹200/month on the annual plan (or free tier) with 2-minute Telegram setup. While Bloomberg offers global coverage, RxSynapse specializes in Indian markets (NSE/BSE) with focus on Nifty derivatives, stock F&O, and Indian equities. For retail traders and institutions focused on Indian markets, RxSynapse provides institutional-grade intelligence at 0.002% of Bloomberg's cost. No terminals, no training, no complexity.",
     },
   ];
 
@@ -83,10 +83,10 @@ const SEOContent: React.FC = () => {
           <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
             <strong>Options trading in India</strong> has grown exponentially with Nifty, BankNifty, FinNifty, and MidcapNifty
             derivatives becoming key instruments for retail and institutional traders. <strong>Real-time options data</strong>,
-            combined with <strong>institutional flow tracking</strong>, provides edge in timing entries and exits. RxFlow brings
+            combined with <strong>institutional flow tracking</strong>, provides edge in timing entries and exits. RxSynapse brings
             Wall Street-grade <strong>options intelligence</strong> to Indian markets, making it accessible to retail traders through
             free Telegram alerts. Whether you're tracking <strong>Nifty options weekly expiry</strong>,
-            <strong>BankNifty monthly options</strong>, or stock F&O activity, RxFlow's <strong>unusual options activity scanner</strong>
+            <strong>BankNifty monthly options</strong>, or stock F&O activity, RxSynapse's <strong>unusual options activity scanner</strong>
             helps you identify opportunities before they become obvious.
           </Typography>
         </Box>

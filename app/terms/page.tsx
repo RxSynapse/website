@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | RxSynapse',
-  description: 'Terms of Service for RxSynapse - Read our terms and conditions before using our BFSI solutions',
+  description: 'Terms of Service for RxSynapse - Read our terms and conditions before using our options intelligence platform',
 };
 
 export default function TermsPage() {
@@ -20,7 +20,7 @@ export default function TermsPage() {
             Terms of Service
           </Typography>
           <Typography variant="body1" sx={{ color: '#9ca3af', fontSize: { xs: '0.875rem', sm: '1rem' } }}>
-            Last Updated: May 10, 2026
+            Last Updated: August 30, 2026
           </Typography>
         </Box>
 
@@ -29,7 +29,7 @@ export default function TermsPage() {
 
           {/* Introduction */}
           <Typography paragraph>
-            Welcome to RxSynapse (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of our AI-powered solutions for the BFSI sector, including RxFlow (trading intelligence), RxCommunication (conversational AI), and related services (collectively, the &quot;Services&quot;).
+            Welcome to RxSynapse (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of our real-time options intelligence platform (formerly known as RxFlow) and related services (collectively, the &quot;Services&quot;).
           </Typography>
           <Typography paragraph>
             By accessing or using any RxSynapse service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our Services.
@@ -56,12 +56,11 @@ export default function TermsPage() {
             2.1 Account Creation
           </Typography>
           <Box component="ul">
-            <li>You must register with valid contact information (email and/or phone number)</li>
-            <li>Choose a strong password and keep your account credentials confidential</li>
+            <li>You must register with a valid phone number, verified via one-time password</li>
+            <li>Keep access to your phone number and Telegram account secure; anyone with access to them can access your account</li>
             <li>You are responsible for all activity that occurs under your account</li>
             <li>Notify us immediately of any unauthorized access or security breach</li>
             <li>You may not share your account with others or create multiple accounts without authorization</li>
-            <li>Business accounts may have additional setup requirements</li>
           </Box>
 
           <Typography variant="h3" component="h3">
@@ -84,11 +83,11 @@ export default function TermsPage() {
             3. Services Overview
           </Typography>
           <Typography paragraph>
-            RxSynapse provides AI-powered solutions for the BFSI sector:
+            RxSynapse provides the following services:
           </Typography>
 
           <Typography variant="h3" component="h3">
-            3.1 RxFlow - Trading Intelligence
+            3.1 Trading Intelligence
           </Typography>
           <Box component="ul">
             <li>Real-time market data analysis and unusual activity detection</li>
@@ -99,18 +98,7 @@ export default function TermsPage() {
           </Box>
 
           <Typography variant="h3" component="h3">
-            3.2 RxCommunication - Conversational AI
-          </Typography>
-          <Box component="ul">
-            <li>IVR-less customer support and communication automation</li>
-            <li>Natural language processing for customer interactions</li>
-            <li>Multi-channel communication management</li>
-            <li>Analytics and insights on customer engagement</li>
-            <li>Integration with existing business systems</li>
-          </Box>
-
-          <Typography variant="h3" component="h3">
-            3.3 Subscription Models
+            3.2 Subscription Models
           </Typography>
           <Typography paragraph>
             Our services operate on subscription-based models with various tiers:
@@ -208,7 +196,6 @@ export default function TermsPage() {
           <Box component="ul">
             <li>Lawful business and personal purposes as intended by the service</li>
             <li>Market research, analysis, and decision support</li>
-            <li>Customer communication and engagement (RxCommunication)</li>
             <li>Integrating with your existing systems and workflows</li>
             <li>Training your team and authorized users</li>
           </Box>
@@ -264,7 +251,7 @@ export default function TermsPage() {
               6.3 Trading and Financial Risks
             </Typography>
             <Typography paragraph>
-              <strong>If using RxFlow or similar trading-related services:</strong>
+              <strong>When using our trading-related services:</strong>
             </Typography>
             <Box component="ul">
               <li>Trading and investing involve substantial risk of financial loss</li>
@@ -300,7 +287,7 @@ export default function TermsPage() {
             <li>Proprietary algorithms, AI models, and analysis methods</li>
             <li>Platform design, user interface, and user experience</li>
             <li>Software code, architecture, and technical implementation</li>
-            <li>Trademarks, logos, and brand assets (RxSynapse, RxFlow, RxCommunication)</li>
+            <li>Trademarks, logos, and brand assets (RxSynapse, RxFlow)</li>
             <li>Documentation, guides, training materials, and content</li>
             <li>Data aggregation, processing, and presentation methods</li>
           </Box>
@@ -534,8 +521,8 @@ export default function TermsPage() {
             We may update these Terms from time to time. Material changes will be notified via:
           </Typography>
           <Box component="ul">
-            <li>Email notification to your registered email address</li>
             <li>In-app notification or prominent notice</li>
+            <li>Telegram notification via the bot</li>
             <li>Website announcement</li>
           </Box>
           <Typography paragraph>

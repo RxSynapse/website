@@ -24,7 +24,7 @@ const Comparison: React.FC = () => {
   const features: ComparisonFeature[] = [
     {
       feature: "Monthly Price",
-      rxflow: { value: "₹410/mo or ₹41/day", highlight: true },
+      rxflow: { value: "From ₹200/mo (free tier available)", highlight: true },
       bloomberg: { value: "₹9,999+/mo" },
       unusualWhales: { value: "₹8,250/mo" },
     },
@@ -109,7 +109,7 @@ const Comparison: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600 }}
         >
-          How RxFlow Compares
+          How RxSynapse Compares
         </Typography>
         <Typography
           variant="subtitle1"
@@ -131,7 +131,7 @@ const Comparison: React.FC = () => {
           <Grid item xs={3}>
             <Box sx={{ textAlign: "center" }}>
               <Chip
-                label="RxFlow"
+                label="RxSynapse"
                 color="primary"
                 sx={{ fontWeight: 600, mb: 1 }}
               />
@@ -201,7 +201,7 @@ const Comparison: React.FC = () => {
         {/* Footer CTA */}
         <Box sx={{ textAlign: "center", mt: 6 }}>
           <Typography variant="body1" color="primary.main" fontWeight="600" gutterBottom>
-            Get started with RxFlow's generous free tier today
+            Get started with RxSynapse's generous free tier today
           </Typography>
           <Typography variant="body2" color="text.secondary">
             No credit card required • EXTREME alerts always unlimited • Upgrade anytime

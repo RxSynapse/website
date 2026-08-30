@@ -14,14 +14,19 @@ import { ExpandMore } from "@mui/icons-material";
 const FAQ: React.FC = () => {
   const faqs = [
     {
+      question: "Is RxSynapse the same as RxFlow?",
+      answer:
+        "Yes. RxFlow is now RxSynapse - same product, same team, same Telegram bot (@rxflow_alerts_bot). We consolidated under one name; only the branding changed. All existing subscriptions, alerts, and links continue to work exactly as before.",
+    },
+    {
       question: "How accurate are the alerts?",
       answer:
-        "RxFlow uses sophisticated algorithms with 7-day historical baseline analysis to filter out market noise. Each alert is scored 0-100 based on 10+ parameters including volume spike magnitude, OI changes, aggression patterns, and premium movements. EXTREME severity alerts represent the top 1% of unusual activity, ensuring you only see genuinely significant institutional moves. Our data comes directly from NSE/BSE via Angel One's real-time feed with <2 second latency.",
+        "RxSynapse uses sophisticated algorithms with 7-day historical baseline analysis to filter out market noise. Each alert is scored 0-100 based on 10+ parameters including volume spike magnitude, OI changes, aggression patterns, and premium movements. EXTREME severity alerts represent the top 1% of unusual activity, ensuring you only see genuinely significant institutional moves. Our data comes directly from NSE/BSE via Angel One's real-time feed with <2 second latency.",
     },
     {
       question: "What payment methods are available?",
       answer:
-        "RxFlow accepts payments via Razorpay on our web dashboard at flow.rxsynapse.com. You can pay using Credit/Debit Cards, UPI, Net Banking, or popular wallets. All payments are GST-inclusive with instant activation and automatic invoice generation. Use the /upgrade command in the Telegram bot to view pricing and get redirected to the secure payment page.",
+        "RxSynapse accepts payments via Razorpay on our web dashboard at flow.rxsynapse.com. You can pay using Credit/Debit Cards, UPI, Net Banking, or popular wallets. All payments are GST-inclusive with instant activation and automatic invoice generation. Use the /upgrade command in the Telegram bot to view pricing and get redirected to the secure payment page.",
     },
     {
       question: "Can I cancel my premium subscription anytime?",
@@ -31,7 +36,7 @@ const FAQ: React.FC = () => {
     {
       question: "Which instruments and strikes are covered?",
       answer:
-        "RxFlow monitors 528+ option strikes in real-time across: (1) Nifty - 21 strikes, (2) BankNifty - 21 strikes, (3) FinNifty - 21 strikes, (4) MidcapNifty - 21 strikes, and (5) 15 top stocks (RELIANCE, SBIN, HDFCBANK, INFY, TCS, ICICIBANK, KOTAKBANK, ITC, HINDUNILVR, BHARTIARTL, BAJFINANCE, LT, ASIANPAINT, AXISBANK, TITAN) - 12 strikes each. Strikes are dynamically selected around current spot prices and refreshed daily.",
+        "RxSynapse monitors 528+ option strikes in real-time across: (1) Nifty - 21 strikes, (2) BankNifty - 21 strikes, (3) FinNifty - 21 strikes, (4) MidcapNifty - 21 strikes, and (5) 15 top stocks (RELIANCE, SBIN, HDFCBANK, INFY, TCS, ICICIBANK, KOTAKBANK, ITC, HINDUNILVR, BHARTIARTL, BAJFINANCE, LT, ASIANPAINT, AXISBANK, TITAN) - 12 strikes each. Strikes are dynamically selected around current spot prices and refreshed daily.",
     },
     {
       question: "Do I need a credit card to use the free tier?",
@@ -51,12 +56,12 @@ const FAQ: React.FC = () => {
     {
       question: "Is my data secure and private?",
       answer:
-        "Yes. RxFlow only stores your Telegram user ID, subscription preferences (severity filters, trading hours, watchlist), and premium status. We never ask for or store your trading account credentials, financial information, or personal details. All communication happens via Telegram's encrypted messaging platform. We don't share your data with third parties. Your alert history is kept for 7 days for correlation analysis, then automatically purged.",
+        "Yes. RxSynapse only stores your Telegram user ID, subscription preferences (severity filters, trading hours, watchlist), and premium status. We never ask for or store your trading account credentials, financial information, or personal details. All communication happens via Telegram's encrypted messaging platform. We don't share your data with third parties. Your alert history is kept for 7 days for correlation analysis, then automatically purged.",
     },
     {
       question: "How fast are the alerts delivered?",
       answer:
-        "Alerts are delivered with <2 second average latency from the moment unusual activity is detected in the market. Our infrastructure processes real-time tick data from NSE/BSE via Angel One's WebSocket feed, runs detection algorithms in-memory, and sends alerts directly to Telegram. You'll often receive RxFlow alerts before you see the activity reflected on trading platforms or NSE's website.",
+        "Alerts are delivered with <2 second average latency from the moment unusual activity is detected in the market. Our infrastructure processes real-time tick data from NSE/BSE via Angel One's WebSocket feed, runs detection algorithms in-memory, and sends alerts directly to Telegram. You'll often receive RxSynapse alerts before you see the activity reflected on trading platforms or NSE's website.",
     },
     {
       question: "Can I customize which alerts I receive?",
@@ -84,7 +89,7 @@ const FAQ: React.FC = () => {
           paragraph
           sx={{ mb: 6 }}
         >
-          Everything you need to know about RxFlow
+          Everything you need to know about RxSynapse
         </Typography>
 
         <Box sx={{ maxWidth: 900, mx: "auto" }}>

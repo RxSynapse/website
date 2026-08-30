@@ -8,23 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/flow`,
-      lastModified,
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/flow/pricing`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/communication`,
+      url: `${baseUrl}/pricing`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.9,

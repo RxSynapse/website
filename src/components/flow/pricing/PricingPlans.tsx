@@ -15,7 +15,8 @@ export default function PricingPlans() {
     <Box
       component="section"
       sx={{
-        py: { xs: 8, md: 12 },
+        pt: { xs: 2, md: 3 },
+        pb: { xs: 8, md: 12 },
         bgcolor: '#000',
         color: '#fff',
       }}
@@ -28,10 +29,10 @@ export default function PricingPlans() {
             gridTemplateColumns: {
               xs: '1fr',
               sm: 'repeat(2, 1fr)',
-              md: 'repeat(3, 1fr)',
-              lg: 'repeat(5, 1fr)',
             },
             gap: 3,
+            maxWidth: 860,
+            mx: 'auto',
             pt: 3, // Increased padding to prevent badge clipping
             overflow: 'visible',
           }}
@@ -55,14 +56,14 @@ export default function PricingPlans() {
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
+                    overflow: 'visible',
                     bgcolor: isHighlighted ? 'rgba(59, 130, 246, 0.05)' : 'rgba(255, 255, 255, 0.02)',
                     border: isHighlighted ? '2px solid #3B82F6' : '1px solid rgba(255, 255, 255, 0.1)',
                     borderRadius: 3,
                     position: 'relative',
-                    transform: isHighlighted ? 'scale(1.05)' : 'scale(1)',
                     transition: 'transform 0.3s, box-shadow 0.3s',
                     '&:hover': {
-                      transform: isHighlighted ? 'scale(1.07)' : 'scale(1.02)',
+                      transform: 'translateY(-4px)',
                       boxShadow: isHighlighted
                         ? '0 20px 40px rgba(59, 130, 246, 0.3)'
                         : '0 10px 30px rgba(0, 0, 0, 0.5)',

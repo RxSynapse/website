@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | RxSynapse',
-  description: 'Privacy Policy for RxSynapse - Learn how we collect, use, and protect your data across our BFSI solutions',
+  description: 'Privacy Policy for RxSynapse - Learn how we collect, use, and protect your data on our options intelligence platform',
 };
 
 export default function PrivacyPage() {
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </Typography>
           <Typography variant="body1" sx={{ color: '#9ca3af', fontSize: { xs: '0.875rem', sm: '1rem' } }}>
-            Last Updated: May 10, 2026
+            Last Updated: August 30, 2026
           </Typography>
         </Box>
 
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
 
           {/* Introduction */}
           <Typography paragraph>
-            RxSynapse (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides AI-powered solutions for the BFSI sector, including RxFlow (real-time trading intelligence) and RxCommunication (conversational AI platform). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
+            RxSynapse (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides a real-time options intelligence and smart money tracking platform (formerly known as RxFlow). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
           </Typography>
           <Typography paragraph>
             By using any RxSynapse service, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.
@@ -44,10 +44,10 @@ export default function PrivacyPage() {
             1.1 Account Information
           </Typography>
           <Box component="ul">
-            <li><strong>Contact Information:</strong> Name, email address, phone number</li>
-            <li><strong>Account Credentials:</strong> Username, password (encrypted), authentication tokens</li>
-            <li><strong>Profile Information:</strong> User preferences, settings, and customization options</li>
-            <li><strong>Company Information:</strong> For business accounts, company name, role, and organizational details</li>
+            <li><strong>Contact Information:</strong> Phone number (verified via one-time password)</li>
+            <li><strong>Telegram Identity:</strong> Telegram user ID and username when you link the Telegram bot</li>
+            <li><strong>Account Credentials:</strong> Authentication tokens issued after phone verification</li>
+            <li><strong>Profile Information:</strong> Alert preferences, severity filters, watchlist, and customization options</li>
           </Box>
 
           <Typography variant="h3" component="h3">
@@ -57,7 +57,6 @@ export default function PrivacyPage() {
             <li><strong>Service Usage:</strong> Features accessed, frequency of use, session duration</li>
             <li><strong>Interaction Data:</strong> Queries, searches, filters, and preferences within our platforms</li>
             <li><strong>Performance Metrics:</strong> Response times, error logs, and system diagnostics</li>
-            <li><strong>Communication Data:</strong> Messages sent through our platforms (for RxCommunication users)</li>
           </Box>
 
           <Typography variant="h3" component="h3">
@@ -84,9 +83,9 @@ export default function PrivacyPage() {
             1.5 Integration Data
           </Typography>
           <Box component="ul">
-            <li><strong>Third-Party Integrations:</strong> Data from integrated services (Telegram, communication platforms)</li>
+            <li><strong>Third-Party Integrations:</strong> Data from the Telegram Bot API when you link your account</li>
             <li><strong>API Usage:</strong> API calls, integration logs, and third-party service interactions</li>
-            <li><strong>Notification Preferences:</strong> Delivery channels (email, SMS, push, Telegram)</li>
+            <li><strong>Notification Preferences:</strong> Alert delivery settings for Telegram</li>
           </Box>
 
           {/* How We Use Information */}
@@ -97,7 +96,7 @@ export default function PrivacyPage() {
             We use the collected information for the following purposes:
           </Typography>
           <Box component="ul">
-            <li><strong>Service Delivery:</strong> Provide, operate, and maintain our AI-powered BFSI solutions</li>
+            <li><strong>Service Delivery:</strong> Provide, operate, and maintain our options intelligence platform</li>
             <li><strong>Authentication & Security:</strong> Verify user identity, prevent fraud, and protect accounts</li>
             <li><strong>Personalization:</strong> Customize user experience based on preferences and usage patterns</li>
             <li><strong>Communication:</strong> Send service updates, notifications, alerts, and support messages</li>
@@ -139,10 +138,8 @@ export default function PrivacyPage() {
             3.3 Communication Platforms
           </Typography>
           <Box component="ul">
-            <li><strong>Telegram Bot API:</strong> Real-time notifications and bot interactions</li>
-            <li><strong>Email Services:</strong> Transactional emails and notifications</li>
-            <li><strong>SMS Providers:</strong> SMS notifications and alerts (when applicable)</li>
-            <li><strong>Data Shared:</strong> User identifiers, message content, delivery preferences</li>
+            <li><strong>Telegram Bot API:</strong> Real-time alerts and bot interactions</li>
+            <li><strong>Data Shared:</strong> Telegram user ID, message content, delivery preferences</li>
           </Box>
 
           <Typography variant="h3" component="h3">
@@ -184,7 +181,7 @@ export default function PrivacyPage() {
           </Typography>
           <Box component="ul">
             <li><strong>Encryption:</strong> All data transmitted over HTTPS/TLS; sensitive data encrypted at rest</li>
-            <li><strong>Authentication:</strong> Secure JWT tokens, password hashing (bcrypt), multi-factor authentication options</li>
+            <li><strong>Authentication:</strong> Phone number verification via one-time password (Firebase Authentication) and secure JWT session tokens; we never store passwords</li>
             <li><strong>Access Control:</strong> Role-based access control (RBAC), principle of least privilege</li>
             <li><strong>Monitoring:</strong> 24/7 security monitoring, intrusion detection, audit logging</li>
             <li><strong>API Security:</strong> Rate limiting, CORS protection, input validation</li>
@@ -239,9 +236,8 @@ export default function PrivacyPage() {
             5.4 Marketing Communications
           </Typography>
           <Box component="ul">
-            <li>Opt out of marketing emails via unsubscribe links</li>
-            <li>Manage notification preferences in account settings</li>
-            <li>Transactional messages (receipts, security alerts) cannot be disabled</li>
+            <li>Manage alert and notification preferences in account settings or via the Telegram bot&apos;s /settings command</li>
+            <li>Transactional messages (payment receipts, security alerts) cannot be disabled</li>
           </Box>
 
           <Typography variant="h3" component="h3">
@@ -315,10 +311,9 @@ export default function PrivacyPage() {
             For material changes, we will notify you via:
           </Typography>
           <Box component="ul">
-            <li>Email notification to your registered email address</li>
             <li>In-app notification or alert</li>
             <li>Prominent notice on our website or services</li>
-            <li>Telegram notification (if applicable)</li>
+            <li>Telegram notification via the bot</li>
           </Box>
           <Typography paragraph>
             Your continued use of RxSynapse services after changes are posted constitutes acceptance of the updated policy.

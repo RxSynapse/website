@@ -1,29 +1,43 @@
 import type { Metadata } from 'next';
-import HomeClient from './HomeClient';
+import { Box } from '@mui/material';
+import FlowStructuredData from '@/src/components/flow/FlowStructuredData';
+import Hero from '@/src/components/flow/Hero';
+import Innovations from '@/src/components/flow/Innovations';
+import TelegramAlertDemo from '@/src/components/flow/TelegramAlertDemo';
+import AlertExplainer from '@/src/components/flow/AlertExplainer';
+import TelegramGuide from '@/src/components/flow/TelegramGuide';
+import Features from '@/src/components/flow/Features';
+import Comparison from '@/src/components/flow/Comparison';
+import Integration from '@/src/components/flow/Integration';
+import Intelligence from '@/src/components/flow/Intelligence';
+import Results from '@/src/components/flow/Results';
+import SEOContent from '@/src/components/flow/SEOContent';
+import FAQ from '@/src/components/flow/FAQ';
+import CTA from '@/src/components/flow/CTA';
 
 export const metadata: Metadata = {
-  title: 'RxSynapse - AI-Powered BFSI Solutions | Trading Intelligence & Communication Innovation',
-  description: 'Leading AI-driven solutions transforming BFSI with intelligent automation, real-time market intelligence, and conversational AI. RxFlow offers institutional-grade options intelligence for traders. RxCommunication delivers IVR-less customer support and autonomous service automation for financial institutions.',
-  keywords: ['RxSynapse', 'AI BFSI solutions', 'financial technology innovation', 'banking automation AI', 'trading intelligence platform', 'options trading india', 'smart money tracking', 'unusual options activity', 'FII DII flows', 'institutional trading intelligence', 'conversational AI banking', 'IVR-less customer support', 'AI customer service financial services', 'real-time market intelligence', 'automated trading analysis', 'financial services AI', 'fintech innovation india', 'digital transformation banking', 'AI-powered trading tools', 'market intelligence platform', 'customer experience automation', 'voice AI banking', 'sentiment analysis finance', 'AI call center solutions', 'financial data analytics', 'predictive analytics trading', 'machine learning finance', 'cognitive computing banks', 'risk management AI', 'fraud detection fintech', 'compliance automation', 'financial reporting automation', 'banking chatbots AI', 'customer engagement automation', 'process optimization finance', 'intelligent banking systems', 'algorithmic trading intelligence', 'options flow analysis', 'smart money indicators', 'derivative market intelligence', 'F&O trading tools india'],
+  title: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking | Institutional Grade Intelligence',
+  description: 'Get FREE institutional-grade options trading alerts on Telegram. Track unusual options activity, smart money flows & FII/DII data in real-time. 528+ strikes monitored live across Nifty, BankNifty, FinNifty & top stocks. Start in 2 minutes - No credit card needed. India\'s #1 alternative to Bloomberg Terminal & Unusual Whales for Indian markets.',
+  keywords: ['options trading alerts india', 'unusual options activity scanner', 'smart money tracking india', 'institutional flow tracking', 'nifty options alerts telegram', 'banknifty options activity', 'free options trading alerts', 'real-time options data india', 'FII DII data real-time', 'options flow scanner india', 'telegram trading bot india', 'unusual whales india alternative', 'bloomberg terminal alternative india', 'options intelligence platform', 'open interest analysis live', 'nifty 50 options tracker', 'banknifty weekly options', 'finnifty options live', 'midcap nifty options', 'stock options alerts india', 'NSE options live data', 'BSE options tracking', 'institutional options activity', 'smart money indicators india', 'options volume spike alerts', 'aggressive options trading detection', 'option chain analysis real-time', 'derivatives market intelligence india', 'F&O trading alerts', 'options Greeks live', 'implied volatility tracker', 'max pain calculator live', 'put call ratio analysis', 'options sweep scanner india', 'large options orders tracker', 'bulk deals NSE live', 'insider trading alerts india', 'institutional buying selling data', 'premium options trading signals', 'best options trading platform india', 'options trading for beginners india', 'learn options trading', 'options trading strategies india', 'options trading telegram channel', 'free trading signals india telegram', 'day trading alerts india', 'intraday options tips', 'options trading course india', 'retail trader tools india', 'discount broker alternatives'],
   openGraph: {
-    title: 'RxSynapse - AI-Powered BFSI Solutions | Trading Intelligence',
-    description: 'Leading AI-driven solutions transforming BFSI with intelligent automation, real-time market intelligence, and conversational AI.',
+    title: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
+    description: 'Get FREE institutional-grade options trading alerts on Telegram. Track unusual options activity, smart money flows & FII/DII data in real-time.',
     url: 'https://rxsynapse.com',
     siteName: 'RxSynapse',
     images: [{
-      url: '/images/og-image.jpg',
+      url: '/images/rxflow/og-image.jpg',
       width: 1200,
       height: 630,
-      alt: 'RxSynapse - AI-Powered BFSI Solutions',
+      alt: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
     }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RxSynapse - AI-Powered BFSI Solutions',
-    description: 'Leading AI-driven solutions for trading intelligence and customer communication',
-    images: ['/images/og-image.jpg'],
+    title: 'RxSynapse - Real-Time Options Trading Alerts',
+    description: 'Get FREE institutional-grade options trading alerts on Telegram. Track unusual activity & smart money flows.',
+    images: ['/images/rxflow/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://rxsynapse.com',
@@ -31,5 +45,24 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomeClient />;
+  return (
+    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
+      <FlowStructuredData />
+      <Box id="hero">
+        <Hero />
+      </Box>
+      <Innovations />
+      <TelegramAlertDemo />
+      <AlertExplainer />
+      <TelegramGuide />
+      <Features />
+      <Comparison />
+      <Integration />
+      <Intelligence />
+      <Results />
+      <SEOContent />
+      <FAQ />
+      <CTA />
+    </Box>
+  );
 }

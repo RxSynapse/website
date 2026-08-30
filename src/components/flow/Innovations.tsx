@@ -32,7 +32,7 @@ const Innovations: React.FC = () => {
     {
       title: "Truly Free Tier",
       description:
-        "Unlike other platforms that paywall everything, RxFlow offers generous free daily quotas. EXTREME severity alerts are unlimited forever - we never paywall critical market information",
+        "Unlike other platforms that paywall everything, RxSynapse offers generous free daily quotas. EXTREME severity alerts are unlimited forever - we never paywall critical market information",
       icon: <CheckCircle fontSize="large" color="primary" />,
       features: [
         "∞ Unlimited EXTREME alerts (top 1% activity) - always free!",
@@ -85,7 +85,7 @@ const Innovations: React.FC = () => {
           paragraph
           sx={{ mb: 6 }}
         >
-          RxFlow brings institutional-grade options intelligence to individual traders via Telegram.
+          RxSynapse brings institutional-grade options intelligence to individual traders via Telegram.
           Start free with generous daily quotas - EXTREME alerts always unlimited!
         </Typography>
 
