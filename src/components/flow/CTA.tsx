@@ -20,7 +20,7 @@ const CTA: React.FC = () => {
           paragraph
           sx={{ maxWidth: 600, mx: "auto" }}
         >
-          India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts always unlimited!
+          India's first real-time options intelligence platform. Track unusual activity, institutional flows, and smart money movements. Start with our generous free tier - EXTREME alerts are always unlimited.
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 3 }}>
           <TrackedCTAButton

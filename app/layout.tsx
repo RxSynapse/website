@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     title: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
     description: 'Real-time unusual options activity alerts and smart money tracking for Indian markets, delivered instantly on Telegram.',
     images: [{
-      url: '/images/rxflow/og-image.jpg',
+      url: '/images/og-rxsynapse.jpg',
       width: 1200,
       height: 630,
-      alt: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
+      alt: 'RxSynapse - Real-Time Options Intelligence for Indian Markets',
     }],
   },
   robots: {

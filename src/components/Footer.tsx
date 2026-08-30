@@ -108,6 +108,11 @@ export default function Footer() {
 
         {/* Divider and Copyright */}
         <Divider sx={{ bgcolor: "gray", my: 3 }} />
+        <Typography variant="caption" component="p" align="center" sx={{ opacity: 0.5, mb: 1.5, maxWidth: 720, mx: "auto" }}>
+          Market data and alerts are informational tools only, not investment advice or trading
+          recommendations. RxSynapse is not a SEBI-registered investment advisor. Trading in
+          securities and derivatives involves substantial risk of loss.
+        </Typography>
         <Typography variant="body2" align="center" sx={{ opacity: 0.6 }}>
           © {new Date().getFullYear()} RxSynapse. All rights reserved. |{" "}
           <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>

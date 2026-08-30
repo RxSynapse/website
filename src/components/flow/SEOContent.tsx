@@ -14,7 +14,7 @@ const SEOContent: React.FC = () => {
       title: "What is Unusual Options Activity?",
       icon: <TrendingUp fontSize="large" color="primary" />,
       content:
-        "Unusual options activity refers to trading volumes or open interest changes that significantly exceed historical averages. When institutions or smart money take large positions, it creates detectable patterns in options flow. RxSynapse's algorithms monitor 528+ strikes across Nifty, BankNifty, FinNifty, MidcapNifty and top 15 Indian stocks to detect volume spikes ranging from 3x to 20x above average. These patterns often precede major price movements, making them valuable leading indicators for retail traders.",
+        "Unusual options activity refers to trading volumes or open interest changes that significantly exceed historical averages. When institutions or smart money take large positions, it creates detectable patterns in options flow. RxSynapse's algorithms monitor 528+ strikes across Nifty, BankNifty, FinNifty, MidcapNifty and top 15 Indian stocks to detect abnormal volume spikes against historical baselines. These patterns often precede major price movements, making them valuable leading indicators for retail traders.",
     },
     {
       title: "How to Track Smart Money in Indian Markets?",
@@ -32,7 +32,7 @@ const SEOContent: React.FC = () => {
       title: "RxSynapse vs Bloomberg Terminal for Indian Options",
       icon: <Assessment fontSize="large" color="primary" />,
       content:
-        "Bloomberg Terminal costs ₹20 lakh+ per month ($25,000+) with complex setup requiring days of training. RxSynapse starts at ₹200/month on the annual plan (or free tier) with 2-minute Telegram setup. While Bloomberg offers global coverage, RxSynapse specializes in Indian markets (NSE/BSE) with focus on Nifty derivatives, stock F&O, and Indian equities. For retail traders and institutions focused on Indian markets, RxSynapse provides institutional-grade intelligence at 0.002% of Bloomberg's cost. No terminals, no training, no complexity.",
+        "Bloomberg Terminal costs ₹20 lakh+ per year ($25,000+) with complex setup requiring days of training. RxSynapse starts at ₹200/month on the annual plan (or free tier) with 2-minute Telegram setup. While Bloomberg offers global coverage, RxSynapse specializes in Indian markets (NSE/BSE) with focus on Nifty derivatives, stock F&O, and Indian equities. For retail traders and institutions focused on Indian markets, RxSynapse provides institutional-grade intelligence at a tiny fraction of Bloomberg's cost. No terminals, no training, no complexity.",
     },
   ];
 
@@ -85,8 +85,8 @@ const SEOContent: React.FC = () => {
             derivatives becoming key instruments for retail and institutional traders. <strong>Real-time options data</strong>,
             combined with <strong>institutional flow tracking</strong>, provides edge in timing entries and exits. RxSynapse brings
             Wall Street-grade <strong>options intelligence</strong> to Indian markets, making it accessible to retail traders through
-            free Telegram alerts. Whether you're tracking <strong>Nifty options weekly expiry</strong>,
-            <strong>BankNifty monthly options</strong>, or stock F&O activity, RxSynapse's <strong>unusual options activity scanner</strong>
+            free Telegram alerts. Whether you're tracking <strong>Nifty options weekly expiry</strong>,{' '}
+            <strong>BankNifty monthly options</strong>, or stock F&O activity, RxSynapse's <strong>unusual options activity scanner</strong>{' '}
             helps you identify opportunities before they become obvious.
           </Typography>
         </Box>

@@ -43,13 +43,13 @@ const TelegramGuide: React.FC = () => {
     {
       number: "4",
       title: "Receive Real-Time Alerts",
-      description: "Get instant unusual options activity alerts directly in Telegram!",
+      description: "Get instant unusual options activity alerts directly in Telegram",
       icon: <Notifications fontSize="large" color="primary" />,
     },
   ];
 
   const quotas = [
-    { severity: "EXTREME", quota: "∞ Unlimited", color: "#f44336", description: "Top 1% activity - Always FREE!" },
+    { severity: "EXTREME", quota: "∞ Unlimited", color: "#f44336", description: "Top 1% activity - always free" },
     { severity: "HIGH", quota: "25/day", color: "#ff9800", description: "Top 5% activity" },
     { severity: "MEDIUM", quota: "25/day", color: "#ffc107", description: "Top 10% activity" },
     { severity: "LOW", quota: "50/day", color: "#2196f3", description: "All unusual activity" },
@@ -66,7 +66,7 @@ const TelegramGuide: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 600, mb: 2 }}
         >
-          Get Started in Minutes - It's Free!
+          Get Started in Minutes, Free
         </Typography>
         <Typography
           variant="subtitle1"

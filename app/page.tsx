@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     url: 'https://rxsynapse.com',
     siteName: 'RxSynapse',
     images: [{
-      url: '/images/rxflow/og-image.jpg',
+      url: '/images/og-rxsynapse.jpg',
       width: 1200,
       height: 630,
-      alt: 'RxSynapse - Real-Time Options Trading Alerts & Smart Money Tracking',
+      alt: 'RxSynapse - Real-Time Options Intelligence for Indian Markets',
     }],
     locale: 'en_US',
     type: 'website',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'RxSynapse - Real-Time Options Trading Alerts',
     description: 'Get FREE institutional-grade options trading alerts on Telegram. Track unusual activity & smart money flows.',
-    images: ['/images/rxflow/og-image.jpg'],
+    images: ['/images/og-rxsynapse.jpg'],
   },
   alternates: {
     canonical: 'https://rxsynapse.com',

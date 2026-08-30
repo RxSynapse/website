@@ -41,7 +41,7 @@ const Features: React.FC = () => {
       description: "Detect unusual options activity the moment it happens",
       icon: <Dashboard fontSize="medium" color="primary" />,
       details:
-        "Real-time monitoring of volume spikes (3x-20x thresholds), open interest changes, aggressive buy/sell detection, and premium value movements across Nifty, BankNifty, FinNifty, and top 50 Indian stocks. Get instant alerts when institutions make large moves.",
+        "Real-time monitoring of volume spikes, open interest changes, aggressive buy/sell detection, and premium value movements across Nifty, BankNifty, FinNifty, and top Indian stocks. Get instant alerts when institutions make large moves.",
     },
     {
       title: "Historical Baseline Analysis",

@@ -25,7 +25,7 @@ const Comparison: React.FC = () => {
     {
       feature: "Monthly Price",
       rxflow: { value: "From ₹200/mo (free tier available)", highlight: true },
-      bloomberg: { value: "₹9,999+/mo" },
+      bloomberg: { value: "₹2,00,000+/mo" },
       unusualWhales: { value: "₹8,250/mo" },
     },
     {

@@ -21,7 +21,7 @@ const FAQ: React.FC = () => {
     {
       question: "How accurate are the alerts?",
       answer:
-        "RxSynapse uses sophisticated algorithms with 7-day historical baseline analysis to filter out market noise. Each alert is scored 0-100 based on 10+ parameters including volume spike magnitude, OI changes, aggression patterns, and premium movements. EXTREME severity alerts represent the top 1% of unusual activity, ensuring you only see genuinely significant institutional moves. Our data comes directly from NSE/BSE via Angel One's real-time feed with <2 second latency.",
+        "RxSynapse uses sophisticated algorithms with 7-day historical baseline analysis to filter out market noise. Each alert is scored 0-100 based on 10+ parameters including volume spike magnitude, OI changes, aggression patterns, and premium movements. EXTREME severity alerts represent the top 1% of unusual activity, ensuring you only see genuinely significant institutional moves. Our data comes directly from NSE/BSE via a licensed real-time market data feed with <2 second latency.",
     },
     {
       question: "What payment methods are available?",
@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
     {
       question: "Which instruments and strikes are covered?",
       answer:
-        "RxSynapse monitors 528+ option strikes in real-time across: (1) Nifty - 21 strikes, (2) BankNifty - 21 strikes, (3) FinNifty - 21 strikes, (4) MidcapNifty - 21 strikes, and (5) 15 top stocks (RELIANCE, SBIN, HDFCBANK, INFY, TCS, ICICIBANK, KOTAKBANK, ITC, HINDUNILVR, BHARTIARTL, BAJFINANCE, LT, ASIANPAINT, AXISBANK, TITAN) - 12 strikes each. Strikes are dynamically selected around current spot prices and refreshed daily.",
+        "RxSynapse monitors 264 strike levels - each on both the call and put side, so 528+ live option contracts - across: (1) Nifty - 21 strikes, (2) BankNifty - 21 strikes, (3) FinNifty - 21 strikes, (4) MidcapNifty - 21 strikes, and (5) 15 top stocks (RELIANCE, SBIN, HDFCBANK, INFY, TCS, ICICIBANK, KOTAKBANK, ITC, HINDUNILVR, BHARTIARTL, BAJFINANCE, LT, ASIANPAINT, AXISBANK, TITAN) - 12 strikes each. Strikes are dynamically selected around current spot prices and refreshed daily.",
     },
     {
       question: "Do I need a credit card to use the free tier?",
@@ -46,7 +46,7 @@ const FAQ: React.FC = () => {
     {
       question: "How do refunds work for premium subscriptions?",
       answer:
-        "Refunds are handled by Telegram according to their refund policy, as Stars are purchased from Telegram. Generally, Telegram allows refunds for accidental purchases within a short window. For subscription-related issues or concerns, contact our support via the /help command in the bot, and we'll do our best to assist. Premium subscriptions are billed upfront, and unused time is not prorated upon cancellation.",
+        "Due to the digital nature of the service and instant access on activation, payments (processed securely via Razorpay) are generally non-refundable. If you experience a billing error or a payment issue, contact our support via the /help command in the bot and we'll do our best to assist. Premium subscriptions are billed upfront, and unused time is not prorated upon cancellation.",
     },
     {
       question: "What's the difference between alert severity levels?",
@@ -61,7 +61,7 @@ const FAQ: React.FC = () => {
     {
       question: "How fast are the alerts delivered?",
       answer:
-        "Alerts are delivered with <2 second average latency from the moment unusual activity is detected in the market. Our infrastructure processes real-time tick data from NSE/BSE via Angel One's WebSocket feed, runs detection algorithms in-memory, and sends alerts directly to Telegram. You'll often receive RxSynapse alerts before you see the activity reflected on trading platforms or NSE's website.",
+        "Alerts are delivered with <2 second average latency from the moment unusual activity is detected in the market. Our infrastructure processes real-time tick data from NSE/BSE via a licensed exchange data feed, runs detection algorithms in-memory, and sends alerts directly to Telegram. You'll often receive RxSynapse alerts before you see the activity reflected on trading platforms or NSE's website.",
     },
     {
       question: "Can I customize which alerts I receive?",
@@ -72,6 +72,21 @@ const FAQ: React.FC = () => {
 
   return (
     <Box sx={{ py: 8, bgcolor: "background.default" }}>
+      {/* FAQPage structured data for rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+          }),
+        }}
+      />
       <Container maxWidth="lg">
         <Typography
           variant="h4"

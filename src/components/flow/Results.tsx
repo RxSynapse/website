@@ -30,8 +30,8 @@ const Results: React.FC = () => {
               paragraph
               sx={{mb: 4}}
           >
-            Now Live! Join traders receiving real-time unusual options alerts on Telegram.
-            Start free today - no credit card required.
+            Join traders receiving real-time unusual options alerts on Telegram.
+            Start free - no credit card required.
           </Typography>
           <Grid container spacing={4} sx={{mt: 4}}>
             {stats.map((stat, index) => (

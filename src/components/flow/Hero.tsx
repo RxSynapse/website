@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
     <Box
       component="section"
       sx={{
-        minHeight: "100vh",
+        minHeight: { xs: "70vh", md: "78vh" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
         variant="h6"
         sx={{ mt: 2, maxWidth: "700px", opacity: 0.8 }}
       >
-        Track unusual options activity and institutional flows. Get instant Telegram alerts - start free!
+        Track unusual options activity and institutional flows, with instant alerts on Telegram. Start free.
       </Typography>
 
       {/* CTA Button */}

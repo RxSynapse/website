@@ -18,18 +18,76 @@ const Intelligence: React.FC = () => {
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
+              {/* Mock of the daily smart-money digest as it arrives on Telegram */}
               <Box
-                component="img"
-                src="/market/wallet/virtual-wallet.png"
-                alt="Smart Money Intelligence Dashboard"
                 sx={{
-                  width: "100%",
-                  borderRadius: 2,
+                  bgcolor: "#0d1520",
+                  border: "1px solid rgba(59, 130, 246, 0.25)",
+                  borderRadius: 3,
                   boxShadow: 3,
-                  maxHeight: 400,
-                  objectFit: "contain",
+                  overflow: "hidden",
                 }}
-              />
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1.5,
+                    px: 2.5,
+                    py: 1.5,
+                    bgcolor: "rgba(59, 130, 246, 0.08)",
+                    borderBottom: "1px solid rgba(59, 130, 246, 0.15)",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 34,
+                      height: 34,
+                      borderRadius: "50%",
+                      bgcolor: "#3B82F6",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: 700,
+                      fontSize: "0.9rem",
+                      color: "#fff",
+                    }}
+                  >
+                    Rx
+                  </Box>
+                  <Box>
+                    <Typography variant="body2" sx={{ fontWeight: 600, color: "#fff", lineHeight: 1.2 }}>
+                      RxSynapse
+                    </Typography>
+                    <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.5)" }}>
+                      bot · 4:05 PM
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    p: 2.5,
+                    fontFamily: "'Courier New', monospace",
+                    fontSize: { xs: "0.72rem", sm: "0.8rem" },
+                    lineHeight: 1.9,
+                    color: "rgba(255,255,255,0.85)",
+                    whiteSpace: "pre-line",
+                  }}
+                >
+                  {`📊 SMART MONEY DIGEST | NSE close
+━━━━━━━━━━━━━━━━━━━━━━
+FII: ₹-1,240 Cr (3rd straight day of selling)
+DII: ₹+1,875 Cr (absorbing supply)
+
+📋 BULK DEALS: SBIN | 3 deals | Net Buy ₹42 Cr
+Operator: [Featured] | Direction: BULLISH
+
+🔥 CORRELATION: PSU banks | DII absorption +
+operator buying | Score: 72/100
+
+Sector OI: FII index futures net short +8%`}
+                </Box>
+              </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <Typography

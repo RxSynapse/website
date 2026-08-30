@@ -47,7 +47,7 @@ const Innovations: React.FC = () => {
         "Detect institutional-level options activity the moment it happens - large orders, volume spikes, and aggressive trades across Nifty, BankNifty, FinNifty and top stocks",
       icon: <AutoAwesome fontSize="large" color="primary" />,
       features: [
-        "Multi-threshold volume spike detection (3x to 20x above average)",
+        "Multi-threshold volume spike detection against rolling baselines",
         "Real-time Open Interest change tracking with directional context",
         "Aggressive order flow analysis (buy-side vs sell-side aggression)",
         "Smart premium value filtering to focus on significant trades",
@@ -86,7 +86,7 @@ const Innovations: React.FC = () => {
           sx={{ mb: 6 }}
         >
           RxSynapse brings institutional-grade options intelligence to individual traders via Telegram.
-          Start free with generous daily quotas - EXTREME alerts always unlimited!
+          Start free with generous daily quotas. EXTREME alerts are always unlimited.
         </Typography>
 
         <Grid container spacing={4}>

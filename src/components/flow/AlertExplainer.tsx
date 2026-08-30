@@ -42,9 +42,9 @@ const AlertExplainer: React.FC = () => {
       icon: <TrendingUp fontSize="large" color="primary" />,
       description: "Real-time detection of volume spikes, OI changes, and aggressive trading",
       triggers: [
-        "Volume 3x-20x above 7-day average",
-        "Open Interest changes 10-60%+",
-        "Aggressive buy/sell side pressure (70%+)",
+        "Volume spikes far above the 7-day baseline",
+        "Significant open interest changes",
+        "One-sided aggressive buying or selling pressure",
         "Rapid premium movements",
       ],
       example: "🔥 EXTREME: NIFTY 24500 CE | Vol: 8.5x avg | OI: +2.1k (Long buildup) | Agg: 94% BUY | Score: 96/100",
@@ -57,11 +57,11 @@ const AlertExplainer: React.FC = () => {
       description: "Multiple signals aligning - options + bulk deals + block deals + operator activity",
       triggers: [
         "Unusual options activity + bulk deals in same symbol",
-        "High correlation score (65-100 points)",
+        "High composite correlation score",
         "All signals agree on direction (bullish/bearish)",
-        "2+ independent signals within 24 hours",
+        "Multiple independent signals in a short window",
       ],
-      example: "⚡ HIGH CONFIDENCE CORRELATION: RELIANCE | Score: 75/100 | Signals: Options (35) + Bulk Deals (25) + Operator (15) | Direction: BULLISH 📈",
+      example: "⚡ HIGH CONFIDENCE CORRELATION: RELIANCE | Score: 75/100 | Signals: Options + Bulk Deals + Operator | Direction: BULLISH 📈",
       action: "Highest conviction - Multiple institutional players positioning",
     },
     {
@@ -70,7 +70,7 @@ const AlertExplainer: React.FC = () => {
       icon: <Psychology fontSize="large" color="primary" />,
       description: "Repeated positioning over multiple days suggesting sustained institutional interest",
       triggers: [
-        "3+ correlation alerts in same symbol within 7 days",
+        "Repeated correlation alerts in the same symbol across sessions",
         "Consistent directional agreement (all bullish or all bearish)",
         "Minimum score threshold maintained",
         "Pattern recognition across time periods",
@@ -84,9 +84,9 @@ const AlertExplainer: React.FC = () => {
       icon: <ShowChart fontSize="large" color="primary" />,
       description: "Large block purchases/sales reported to NSE/BSE, often by known operators",
       triggers: [
-        "Deal value ≥ ₹5 crore",
-        "Net directional value ≥ ₹5 crore (buy - sell)",
-        "3+ deals in same symbol = strong signal",
+        "Deals large enough to signal institutional intent",
+        "Strong net directional value (buys minus sells)",
+        "Multiple deals in the same symbol = strong signal",
         "Featured operators tracked separately",
       ],
       example: "📊 BULK DEALS: SBIN | 3 deals | Net Buy: ₹42 Cr | Operator: [Featured] | Direction: BULLISH",
@@ -98,8 +98,8 @@ const AlertExplainer: React.FC = () => {
       icon: <AccountBalance fontSize="large" color="primary" />,
       description: "Single large institutional trades executed off the open market",
       triggers: [
-        "Trade value ≥ ₹25 crore",
-        "₹100+ crore = highly significant",
+        "Institutional-size trades only",
+        "The largest trades flagged as highly significant",
         "Reported after market hours",
         "Institutional or HNI activity",
       ],
@@ -128,7 +128,7 @@ const AlertExplainer: React.FC = () => {
       percentile: "Top 1%",
       quota: "∞ Unlimited (Always FREE)",
       description: "Only the most significant institutional moves - never miss these",
-      threshold: "Score 80-100: 20x+ volume OR 60%+ OI OR exceptional correlation",
+      threshold: "The rarest, most extreme readings across volume, OI, and correlation",
       icon: <LocalFireDepartment />,
     },
     {
@@ -137,7 +137,7 @@ const AlertExplainer: React.FC = () => {
       percentile: "Top 5%",
       quota: "25 alerts/day (Free tier)",
       description: "Strong unusual activity worth immediate investigation",
-      threshold: "Score 65-79: 10x+ volume OR 40%+ OI OR strong correlation",
+      threshold: "Strong multi-factor unusual activity",
       icon: <Warning />,
     },
     {
@@ -146,16 +146,16 @@ const AlertExplainer: React.FC = () => {
       percentile: "Top 10%",
       quota: "25 alerts/day (Free tier)",
       description: "Moderate unusual activity - monitor for confirmation",
-      threshold: "Score 45-64: 5x+ volume OR 20%+ OI OR moderate correlation",
+      threshold: "Clear deviations from historical baseline",
       icon: <TrendingUp />,
     },
     {
       severity: "LOW",
       color: "#2196f3",
-      percentile: "Top 20%",
+      percentile: "Beyond baseline",
       quota: "50 alerts/day (Free tier)",
       description: "All detected unusual activity beyond baseline",
-      threshold: "Score 0-44: 3x+ volume OR 10%+ OI OR baseline correlation",
+      threshold: "All activity meaningfully beyond baseline",
       icon: <Info />,
     },
   ];
@@ -163,27 +163,27 @@ const AlertExplainer: React.FC = () => {
   const correlationScoring = [
     {
       signal: "Unusual Options Activity",
-      maxPoints: 35,
+      weight: "Highest",
       description: "Most important - direct market signal with volume/OI/aggression",
     },
     {
       signal: "Bulk Deals (Operator Activity)",
-      maxPoints: 20,
+      weight: "Strong",
       description: "Strong confirmation - known operators accumulating/distributing",
     },
     {
       signal: "Block Deals (Large Trades)",
-      maxPoints: 10,
+      weight: "Supporting",
       description: "Institutional positioning - large off-market trades",
     },
     {
       signal: "Featured Operator Bonus",
-      maxPoints: 10,
+      weight: "Bonus",
       description: "Quality multiplier when bulk deals involve successful operators",
     },
     {
       signal: "FII/DII Institutional Flows",
-      maxPoints: 25,
+      weight: "Strong",
       description: "Coming Soon - Foreign & domestic institutional buying/selling data",
       comingSoon: true,
     },
@@ -191,19 +191,19 @@ const AlertExplainer: React.FC = () => {
 
   const interpretationExamples = [
     {
-      title: "🚀 Perfect Storm (Multiple Signals Align)",
+      title: "Perfect Storm (Multiple Signals Align)",
       alerts: [
         "🔥 EXTREME: RELIANCE 2800 CE | Vol: 15x | OI: +4.2k | Agg: 91% BUY | Score: 94",
-        "💰 SMART MONEY CORRELATION: RELIANCE | Score: 85/100 (Options 35 + Bulk 20 + Block 10 + Operator 20)",
+        "💰 SMART MONEY CORRELATION: RELIANCE | Score: 85/100 (options + bulk + block + operator aligned)",
         "📊 BULK DEALS: RELIANCE | 4 deals | Net Buy: ₹68 Cr | 2 featured operators",
       ],
       interpretation:
-        "Ultimate high-conviction setup. Options volume exploding, institutions buying bulk shares, known operators accumulating, AND large block trades. All signals pointing BULLISH. This is what you wait for.",
+        "Ultimate high-conviction setup. Options volume exploding, institutions buying bulk shares, known operators accumulating, AND large block trades. All signals pointing BULLISH - the rarest and highest-conviction pattern the system detects.",
       action:
-        "STRONG BUY signal. Consider: Long RELIANCE equity, 2800 CE calls, bull call spreads. Set tight stops. Target: Previous resistance levels.",
+        "The strongest form of institutional consensus the system detects. Traders typically watch for bullish continuation with tight risk management. Illustrative pattern - not a recommendation.",
     },
     {
-      title: "🔁 Accumulation Pattern (Multi-Day Build)",
+      title: "Accumulation Pattern (Multi-Day Build)",
       alerts: [
         "Day 1: 📊 BULK DEALS: HDFCBANK | ₹25 Cr net buy",
         "Day 2: 🎯 Options: HDFCBANK 1700 CE | 6x volume | Score: 71",
@@ -213,10 +213,10 @@ const AlertExplainer: React.FC = () => {
       interpretation:
         "Sustained institutional accumulation over multiple days. Not a one-time trade - this is position building for a larger move. Operators started Day 1, options players joined Day 2-3, pattern confirmed Day 5.",
       action:
-        "Trend signal - Consider swing trades (5-15 day holding). DCA into position. Watch for breakout above resistance.",
+        "Sustained positioning that tends to play out over days rather than minutes - often watched for multi-day trend continuation.",
     },
     {
-      title: "⚠️ Divergence Warning (Conflicting Signals)",
+      title: "Divergence Warning (Conflicting Signals)",
       alerts: [
         "🎯 Options: TATAMOTORS 950 CE | High activity | BULLISH",
         "📊 Bulk Deals: TATAMOTORS | ₹18 Cr net SELL | BEARISH",
@@ -225,10 +225,10 @@ const AlertExplainer: React.FC = () => {
       interpretation:
         "Mixed signals = uncertainty. Options traders betting on upside, but bulk deal sellers exiting. Either (1) Options traders wrong, (2) Sellers wrong, or (3) Range-bound consolidation ahead. Market at inflection point.",
       action:
-        "WAIT for clarity. Avoid directional bets. Consider: Iron condors, strangles, or stay cash. Let one side win first.",
+        "Institutional disagreement means uncertainty - many traders wait for one side to win before committing to a direction.",
     },
     {
-      title: "📊 Operator Lead (Bulk Deals → Options)",
+      title: "Operator Lead (Bulk Deals → Options)",
       alerts: [
         "Day 1: 📊 BULK DEALS: BAJFINANCE | ₹42 Cr net buy | Featured operator",
         "Day 2: 🎯 Options: BAJFINANCE 7500 CE | 8x volume | Following bulk activity",
@@ -236,7 +236,7 @@ const AlertExplainer: React.FC = () => {
       interpretation:
         "Classic pattern: Operators accumulate shares first (Day 1), options market follows (Day 2). Bulk deals often LEAD options by 1-2 days. Featured operator increases confidence - they have track record.",
       action:
-        "Follow the smart money. If you see bulk deals first, watch for options activity next day. Enter early in the chain.",
+        "Bulk deals often lead options flow by a session - a sequence worth watching when it repeats.",
     },
   ];
 
@@ -295,7 +295,7 @@ const AlertExplainer: React.FC = () => {
                         <Box sx={{ mr: 2 }}>{alert.icon}</Box>
                         <Box sx={{ flexGrow: 1 }}>
                           <Typography variant="h6" fontWeight="600">
-                            {alert.emoji} {alert.type}
+                            {alert.type}
                           </Typography>
                         </Box>
                       </Box>
@@ -403,7 +403,7 @@ const AlertExplainer: React.FC = () => {
               <TableHead>
                 <TableRow sx={{ bgcolor: "primary.main" }}>
                   <TableCell sx={{ color: "white", fontWeight: "bold" }}>Signal Type</TableCell>
-                  <TableCell sx={{ color: "white", fontWeight: "bold" }}>Max Points</TableCell>
+                  <TableCell sx={{ color: "white", fontWeight: "bold" }}>Weight</TableCell>
                   <TableCell sx={{ color: "white", fontWeight: "bold" }}>What It Measures</TableCell>
                 </TableRow>
               </TableHead>
@@ -423,7 +423,7 @@ const AlertExplainer: React.FC = () => {
                       )}
                     </TableCell>
                     <TableCell sx={{ fontFamily: "monospace", color: "primary.main" }}>
-                      {item.maxPoints} pts
+                      {item.weight}
                     </TableCell>
                     <TableCell>{item.description}</TableCell>
                   </TableRow>
@@ -433,7 +433,7 @@ const AlertExplainer: React.FC = () => {
           </TableContainer>
           <Box sx={{ mt: 2, p: 2, bgcolor: "action.hover", borderRadius: 1 }}>
             <Typography variant="caption">
-              <strong>Example:</strong> Score 85/100 = Options Activity (35 pts) + Bulk Deals (20 pts) + Block Deals (10 pts) + Featured Operator Bonus (10 pts) + Historical Pattern Boost (10 pts) = HIGH confidence correlation alert
+              <strong>Example:</strong> When options activity, bulk deals, and block deals all align in the same direction, the composite score rises into the HIGH-confidence range - the more independent signals agree, the higher the conviction
             </Typography>
           </Box>
         </Box>
@@ -482,7 +482,7 @@ const AlertExplainer: React.FC = () => {
                   <strong>Interpretation:</strong> {example.interpretation}
                 </Typography>
                 <Typography variant="body2" color="primary.main" fontWeight="600">
-                  <strong>Action:</strong> {example.action}
+                  <strong>Reading:</strong> {example.action}
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -492,7 +492,7 @@ const AlertExplainer: React.FC = () => {
         {/* Key Takeaways */}
         <Card sx={{ bgcolor: "primary.main", color: "white", p: 3 }}>
           <Typography variant="h6" gutterBottom fontWeight="600">
-            🎓 Key Takeaways
+            Key Takeaways
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>

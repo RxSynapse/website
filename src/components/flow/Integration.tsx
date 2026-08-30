@@ -15,7 +15,7 @@ const Integration: React.FC = () => {
   const capabilities = [
     {
       name: "Lightning-Fast Processing",
-      description: "Real-time data analysis with millisecond latency",
+      description: "Tick data processed in milliseconds, alerts within 2 seconds",
       icon: <Speed fontSize="large" color="primary" />
     },
     {
@@ -74,18 +74,51 @@ const Integration: React.FC = () => {
             </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
+            {/* Terminal-style live pipeline panel; figures match claims made elsewhere on the page */}
             <Box
-              component="img"
-              src="/market/integration/engine.png"
-              alt="Real-time Options Intelligence Architecture"
               sx={{
-                width: "100%",
-                borderRadius: 2,
+                bgcolor: "#0d1520",
+                border: "1px solid rgba(59, 130, 246, 0.25)",
+                borderRadius: 3,
                 boxShadow: 3,
-                maxHeight: 400,
-                objectFit: "contain",
+                overflow: "hidden",
               }}
-            />
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  px: 2.5,
+                  py: 1.5,
+                  bgcolor: "rgba(59, 130, 246, 0.08)",
+                  borderBottom: "1px solid rgba(59, 130, 246, 0.15)",
+                }}
+              >
+                <Box sx={{ width: 9, height: 9, borderRadius: "50%", bgcolor: "#10B981" }} />
+                <Typography variant="body2" sx={{ fontWeight: 600, color: "#fff" }}>
+                  Market Data Pipeline
+                </Typography>
+                <Typography variant="caption" sx={{ ml: "auto", color: "rgba(255,255,255,0.5)" }}>
+                  market hours · live
+                </Typography>
+              </Box>
+              <Box sx={{ p: 2.5, fontFamily: "'Courier New', monospace", fontSize: { xs: "0.75rem", sm: "0.85rem" }, color: "rgba(255,255,255,0.85)" }}>
+                {[
+                  ["Tick feed (NSE/BSE)", "connected"],
+                  ["Option strikes monitored", "528+"],
+                  ["Indices covered", "4 + 15 stocks"],
+                  ["Detection latency", "< 2 sec"],
+                  ["Baseline window", "7-day rolling"],
+                  ["Smart money sources", "FII/DII · bulk · block"],
+                ].map(([label, value]) => (
+                  <Box key={label} sx={{ display: "flex", justifyContent: "space-between", gap: 2, py: 1, borderBottom: "1px dashed rgba(255,255,255,0.08)", "&:last-child": { borderBottom: "none" } }}>
+                    <Box component="span" sx={{ color: "rgba(255,255,255,0.55)" }}>{label}</Box>
+                    <Box component="span" sx={{ color: "#3B82F6", textAlign: "right" }}>{value}</Box>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Container>
