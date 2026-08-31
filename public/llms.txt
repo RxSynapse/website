@@ -7,6 +7,6 @@ The platform provides real-time unusual options activity alerts for NSE — NIFT
 ## Key Pages
 
 - [Product overview](https://rxsynapse.com): features, comparisons, and how it works
-- [Pricing](https://rxsynapse.com/pricing): plans starting at ₹29
+- [Pricing](https://rxsynapse.com/pricing): free tier available; premium plans are 3 Months (₹799) or 1 Year (₹2,399)
 - [Documentation](https://flow.rxsynapse.com/docs): setup guides, bot command reference, smart money tracking explained
 - [App machine-readable summary](https://flow.rxsynapse.com/llms.txt): detailed product facts for AI assistants
