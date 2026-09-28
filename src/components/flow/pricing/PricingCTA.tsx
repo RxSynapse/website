@@ -3,6 +3,7 @@
 import { Box, Container, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Telegram } from '@mui/icons-material';
+import { APP_URL } from '@/src/config/site';
 
 export default function PricingCTA() {
   const handleOpenTelegram = () => {
@@ -88,7 +89,7 @@ export default function PricingCTA() {
                 fontSize: '0.9rem',
               }}
             >
-              Already a user? <a href="https://flow.rxsynapse.com" target="_blank" rel="noopener" style={{ color: '#3B82F6', textDecoration: 'none' }}>Sign in to your dashboard →</a>
+              Already a user? <a href={APP_URL} target="_blank" rel="noopener" style={{ color: '#3B82F6', textDecoration: 'none' }}>Sign in to your dashboard →</a>
             </Typography>
           </Box>
         </motion.div>

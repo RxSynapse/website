@@ -2,6 +2,7 @@
 
 import { Container, Typography, Box, Link } from "@mui/material";
 import { TrackedCTAButton } from '@/components/TrackedButton';
+import { APP_URL, appUrl } from '@/src/config/site';
 
 const CTA: React.FC = () => {
   return (
@@ -26,7 +27,6 @@ const CTA: React.FC = () => {
           <TrackedCTAButton
             trackingName="get_started_flow_cta"
             trackingLocation="flow_cta_section"
-            trackingDestination="https://flow.rxsynapse.com"
             trackingParams={{
               pageSection: 'bottom_cta',
               priority: 'secondary',
@@ -34,7 +34,7 @@ const CTA: React.FC = () => {
             }}
             variant="contained"
             size="large"
-            href="https://flow.rxsynapse.com"
+            href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -53,7 +53,7 @@ const CTA: React.FC = () => {
             Want unlimited alerts? <Link href="/pricing" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>View pricing →</Link>
           </Typography>
           <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.6)' }}>
-            New to RxSynapse? <Link href="https://flow.rxsynapse.com/docs/getting-started" target="_blank" rel="noopener" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>Read the Getting Started guide →</Link>
+            New to RxSynapse? <Link href={appUrl('/docs/getting-started')} target="_blank" rel="noopener" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>Read the Getting Started guide →</Link>
           </Typography>
         </Box>
       </Container>

@@ -19,6 +19,7 @@ import {
   Notifications,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import { APP_URL, appUrl } from '@/src/config/site';
 
 const TelegramGuide: React.FC = () => {
   const steps = [
@@ -164,7 +165,7 @@ const TelegramGuide: React.FC = () => {
           <Button
             variant="contained"
             size="large"
-            href="https://flow.rxsynapse.com"
+            href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
             startIcon={<Telegram />}
@@ -185,7 +186,7 @@ const TelegramGuide: React.FC = () => {
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
             Every bot command explained in the{' '}
-            <MuiLink href="https://flow.rxsynapse.com/docs/telegram/bot-guide" target="_blank" rel="noopener" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+            <MuiLink href={appUrl('/docs/telegram/bot-guide')} target="_blank" rel="noopener" sx={{ color: '#3B82F6', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
               Telegram Bot Guide
             </MuiLink>
           </Typography>

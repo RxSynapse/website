@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { TrackedCTAButton } from '@/components/TrackedButton';
 import { motion } from "framer-motion";
+import { APP_URL } from '@/src/config/site';
 
 const Hero: React.FC = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -88,14 +89,13 @@ const Hero: React.FC = () => {
       <TrackedCTAButton
         trackingName="start_telegram_flow"
         trackingLocation="flow_hero"
-        trackingDestination="https://flow.rxsynapse.com"
         trackingParams={{
           pageSection: 'hero',
           priority: 'primary',
           conversionGoal: 'telegram_signup',
         }}
         variant="contained"
-        href="https://flow.rxsynapse.com"
+        href={APP_URL}
         target="_blank"
         rel="noopener noreferrer"
         sx={{

@@ -10,6 +10,7 @@ import {
   Box,
 } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
+import { APP_HOST } from '@/src/config/site';
 
 const FAQ: React.FC = () => {
   const faqs = [
@@ -26,7 +27,7 @@ const FAQ: React.FC = () => {
     {
       question: "What payment methods are available?",
       answer:
-        "RxSynapse accepts payments via Razorpay on our web dashboard at flow.rxsynapse.com. You can pay using Credit/Debit Cards, UPI, Net Banking, or popular wallets. All payments are GST-inclusive with instant activation and automatic invoice generation. Use the /upgrade command in the Telegram bot to view pricing and get redirected to the secure payment page.",
+        `RxSynapse accepts payments via Razorpay on our web dashboard at ${APP_HOST}. You can pay using Credit/Debit Cards, UPI, Net Banking, or popular wallets. All payments are GST-inclusive with instant activation and automatic invoice generation. Use the /upgrade command in the Telegram bot to view pricing and get redirected to the secure payment page.`,
     },
     {
       question: "Can I cancel my premium subscription anytime?",

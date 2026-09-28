@@ -21,7 +21,11 @@ interface TrackedButtonProps extends ButtonProps {
   trackingLocation?: string;
 
   /**
-   * Destination URL or action description
+   * Destination URL or action description.
+   *
+   * Defaults to `href`, so a link's analytics destination cannot drift away
+   * from where the link actually goes. Pass it explicitly only to describe an
+   * action that has no href.
    */
   trackingDestination?: string;
 
@@ -73,12 +77,17 @@ export function TrackedButton({
   children,
   ...buttonProps
 }: TrackedButtonProps) {
+  // Fall back to the real link target rather than making every call site
+  // repeat the URL as both href and trackingDestination.
+  const destination =
+    trackingDestination ?? (typeof buttonProps.href === 'string' ? buttonProps.href : undefined);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     // Track the click
     const params = {
       buttonType: trackingType,
       buttonLocation: trackingLocation,
-      buttonDestination: trackingDestination,
+      buttonDestination: destination,
       buttonText: typeof children === 'string' ? children : trackingName,
       ...trackingParams,
     };
@@ -86,7 +95,7 @@ export function TrackedButton({
     if (isCTA) {
       trackCTAClick(trackingName, {
         ctaLocation: trackingLocation,
-        ctaDestination: trackingDestination,
+        ctaDestination: destination,
         ctaText: typeof children === 'string' ? children : trackingName,
         ...trackingParams,
       });

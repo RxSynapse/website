@@ -4,11 +4,12 @@ import { Box, Container, Typography, Card, CardContent, Button, Chip } from '@mu
 import { Check, Bolt } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { PRICING_PLANS, formatPrice } from '@/src/config/pricing';
+import { APP_URL } from '@/src/config/site';
 
 export default function PricingPlans() {
   const handleChoosePlan = (planId: string) => {
     // Redirect to payment page with selected plan
-    window.open(`https://flow.rxsynapse.com/payment?plan=${planId}`, '_blank');
+    window.open(`${APP_URL}/payment?plan=${planId}`, '_blank');
   };
 
   return (

@@ -14,11 +14,12 @@ import {
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { trackOutboundLink } from '@/lib/analytics';
+import { APP_URL, appUrl } from '@/src/config/site';
 
 const footerLinks = [
   { label: "Pricing", path: "/pricing", id: "pricing" },
-  { label: "Docs", path: "https://flow.rxsynapse.com/docs", id: "docs" },
-  { label: "Open the App", path: "https://flow.rxsynapse.com", id: "app" },
+  { label: "Docs", path: appUrl('/docs'), id: "docs" },
+  { label: "Open the App", path: APP_URL, id: "app" },
 ];
 
 export default function Footer() {

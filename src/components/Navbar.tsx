@@ -15,6 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { TrackedNavButton, TrackedCTAButton } from '@/components/TrackedButton';
+import { APP_URL, appUrl } from '@/src/config/site';
 const Drawer = React.lazy(() => import("@mui/material/Drawer"));
 
 interface NavItem {
@@ -25,7 +26,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Pricing", path: "/pricing", id: "pricing" },
-  { label: "Docs", path: "https://flow.rxsynapse.com/docs", id: "docs" },
+  { label: "Docs", path: appUrl('/docs'), id: "docs" },
 ];
 
 const Navbar: React.FC = () => {
@@ -126,7 +127,6 @@ const Navbar: React.FC = () => {
                 key={id}
                 trackingName={`nav_${id}`}
                 trackingLocation="navbar"
-                trackingDestination={path}
                 component={Link}
                 href={path}
                 target={path.startsWith("http") ? "_blank" : undefined}
@@ -143,14 +143,13 @@ const Navbar: React.FC = () => {
           <TrackedCTAButton
             trackingName="get_started_navbar"
             trackingLocation="navbar"
-            trackingDestination="https://flow.rxsynapse.com"
             trackingParams={{
               priority: 'tertiary',
               conversionGoal: 'app_signup',
             }}
             variant="contained"
             component="a"
-            href="https://flow.rxsynapse.com"
+            href={APP_URL}
             target="_blank"
             rel="noopener"
             sx={{
